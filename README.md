@@ -12,9 +12,12 @@ para disfrutar en la intimidad. Pensamos en personas en una franja etaria entre 
 * Integrantes del equipo:
 
     o	López Crespo, Facundo:
+    
     o	Jurczyszyn, Santiago: 30 años. Ingeniero Biomédico. Actualmente diseño prótesis a medida para traumatología pero desde hace un tiempo tengo un gran entusiasmo por 
 aprender y poder trabajar dentro del dinámico mundo de la programación.
+
     o	Riso, Victoria:
+    
     o	Sušnik, Sebastián: 
 
 * Referencias utilizadas:
