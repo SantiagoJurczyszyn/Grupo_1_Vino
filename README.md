@@ -16,7 +16,7 @@ para disfrutar en la intimidad. Pensamos en personas en una franja etaria entre 
     o	Jurczyszyn, Santiago: 30 años. Ingeniero Biomédico. Actualmente diseño prótesis a medida para traumatología pero desde hace un tiempo tengo un gran entusiasmo por 
 aprender y poder trabajar dentro del dinámico mundo de la programación.
 
-    o	Riso, Victoria:
+    o	Riso, Victoria: Lic. en analisis de sistemas en otra vida. Haciendo este curso para volver a programar. Tambien tratando de vender vinos, parece!
     
     o	Sušnik, Sebastián: 
     
