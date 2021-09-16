@@ -19,5 +19,8 @@ aprender y poder trabajar dentro del dinámico mundo de la programación.
     o	Riso, Victoria:
     
     o	Sušnik, Sebastián: 
+    
+    Tablero de Trello: 
+    https://trello.com/b/JNsQ1Zwv/grupo1vinoteca
 
 * Referencias utilizadas:
