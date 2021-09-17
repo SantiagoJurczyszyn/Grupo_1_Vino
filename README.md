@@ -25,3 +25,6 @@ aprender y poder trabajar dentro del dinámico mundo de la programación.
     https://trello.com/b/JNsQ1Zwv/grupo1vinoteca
 
 * Referencias utilizadas:
+
+ > panda-gin.com - organización, responsive, colores.
+ > 
