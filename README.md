@@ -1,4 +1,4 @@
-# Grupo_1_Vinoteca
+# Grupo_1_Vino
 En este repositorio se trabajará el Proyecto Integrador del Grupo 1
 * Temática del Market Place y público objetivo
 El cliente nos ha pedido un sitio web donde pueda comercializar los productos relacionados a su vinoteca. En el mismo podrán encontrarse vinos de diversas 
