@@ -12,7 +12,7 @@ para disfrutar en la intimidad. Pensamos en personas en una franja etaria entre 
 
 * Integrantes del equipo:
 
-    o	López Crespo, Facundo:
+    o	López Crespo, Facundo: 32 años. Reside en Rosario. Nunca estudió programación pero lo invitaron a desarrollar un e-commerce para una vinoteca, le pareció una buena idea así que se puso a aprender herramientas nuevas.  
     
     o	Jurczyszyn, Santiago: 30 años. Ingeniero Biomédico. Actualmente diseño prótesis a medida para traumatología pero desde hace un tiempo tengo un gran entusiasmo por 
 aprender y poder trabajar dentro del dinámico mundo de la programación.
@@ -27,4 +27,5 @@ aprender y poder trabajar dentro del dinámico mundo de la programación.
 * Referencias utilizadas:
 
  > panda-gin.com - organización, responsive, colores.
- > 
+ > https://www.bodegasbianchi.com.ar/ - detalle del producto
+ > https://canelafina.com.ar/ - sencillez y estética
