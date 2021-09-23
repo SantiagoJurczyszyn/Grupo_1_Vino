@@ -24,5 +24,7 @@ aprender y poder trabajar dentro del dinámico mundo de la programación.
 
 * Referencias utilizadas:
  > panda-gin.com - organización, responsive, colores.
+ 
  > https://www.bodegasbianchi.com.ar/ - detalle del producto
+ 
  > https://canelafina.com.ar/ - sencillez y estética
