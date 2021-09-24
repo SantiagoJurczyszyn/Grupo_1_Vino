@@ -20,7 +20,7 @@ aprender y poder trabajar dentro del dinámico mundo de la programación.
     o	Sušnik, Sebastián:   
 
 * Tablero de Trello: 
-    https://trello.com/b/JNsQ1Zwv/grupo1vinoteca
+    https://trello.com/b/JNsQ1Zwv/grupo1viino
 
 * Referencias utilizadas:
  > panda-gin.com - organización, responsive, colores.
