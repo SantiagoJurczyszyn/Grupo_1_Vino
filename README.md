@@ -34,3 +34,16 @@ sitio a la cambiante demanda de sus clientes.
 > Enofilo - https://www.enofilo.com.ar/?v=d72a48a8ebd2 - ¿Qué nos gustó? - textos, contenido
  
 > Canela Fina -  https://canelafina.com.ar/ - ¿Qué nos gustó? - sencillez y estética
+
+Manual de Diseño
+
+	Paleta colores: Blanco y Negro
+	Fuentes: Logo VIINO, times new roman, 32: mobile
+	Titulo de producto: Times new roman, peso regular, 14- 28 px
+	Márgenes laterales: 18 px
+	Título secciones: work sans, H 14 px, Peso: Medium
+	Textos: ligh y extralight, work sans
+	Subtitulos (carruseles, novedades), work sans, medium, 14 px
+	Títulos y botones: interlineado 20%
+	Precios: nunito sans, extra light, prod 6 px, miniature 16 px
+
