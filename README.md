@@ -23,9 +23,9 @@ sitio a la cambiante demanda de sus clientes.
 
 * Referencias utilizadas:
 
-> Panda-Gin: panda-gin.com - que nos gustó? - organización, responsive, estilo, tipografia, colores
+> Panda-Gin: https://panda-gin.com - que nos gustó? - organización, responsive, estilo, tipografia, colores
 
-> Chanel - www.chanel.com/us/login/ - ¿Qué nos gustó? - formularios de registro y de login
+> Chanel - https://www.chanel.com/us/login/ - ¿Qué nos gustó? - formularios de registro y de login
  
 > BodegasBianchi: https://www.bodegasbianchi.com.ar/ - ¿Qué nos gustó? - Detalle del producto
 
