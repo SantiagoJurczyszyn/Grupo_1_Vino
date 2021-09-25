@@ -16,7 +16,7 @@ sitio a la cambiante demanda de sus clientes.
 
     o	Riso, Victoria: Lic. en análisis de sistemas en otra vida. Haciendo este curso para volver a programar. También tratando de vender vinos, parece! 
     
-    o	Sušnik, Sebastián:   
+    o	Sušnik, Sebastián: 28 años, de Buenos Aires, zona norte. Soy luthier y aficionado a la gastronomía, atento al detalle. Me gusta crear y experimentar siempre en una constante búsqueda de mejorar lo que hago.   
 
 * Tablero de Trello: 
     https://trello.com/b/JNsQ1Zwv/grupo1viino
