@@ -22,12 +22,15 @@ sitio a la cambiante demanda de sus clientes.
     https://trello.com/b/JNsQ1Zwv/grupo1viino
 
 * Referencias utilizadas:
- > panda-gin.com - organización, responsive, estilo, tipografia, colores
- 
- > https://www.bodegasbianchi.com.ar/ - detalle del producto
- 
- > https://canelafina.com.ar/ - sencillez y estética
 
- > https://www.chanel.com/us/login/ - formularios de registro y de login
+> Panda-Gin: panda-gin.com - que nos gustó? - organización, responsive, estilo, tipografia, colores
 
- > https://slatemilk.com/ - carrito de compras
+> Chanel - www.chanel.com/us/login/ - ¿Qué nos gustó? - formularios de registro y de login
+ 
+> BodegasBianchi: https://www.bodegasbianchi.com.ar/ - ¿Qué nos gustó? - Detalle del producto
+
+> Compay - https://www.compay.com.ar/ - ¿Qué nos gustó? -  shop
+
+> Enofilo - https://www.enofilo.com.ar/?v=d72a48a8ebd2 - ¿Qué nos gustó? - textos, contenido
+ 
+> Canela Fina -  https://canelafina.com.ar/ - ¿Qué nos gustó? - sencillez y estética
