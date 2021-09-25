@@ -35,6 +35,9 @@ sitio a la cambiante demanda de sus clientes.
  
 > Canela Fina -  https://canelafina.com.ar/ - ¿Qué nos gustó? - sencillez y estética
 
+Wireframe - Figma https://www.figma.com/file/MyiMH6dWHiVa0MA5PLEPll/Wireframe?node-id=198%3A739
+
+
 Manual de Diseño
 
 	Paleta colores: Blanco y Negro
