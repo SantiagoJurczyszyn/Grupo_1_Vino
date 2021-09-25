@@ -1,12 +1,17 @@
 # Grupo_1_Vino
 En este repositorio se trabajará el Proyecto Integrador del Grupo 1
 * Temática del Market Place: 
-El cliente nos ha pedido un sitio web donde pueda comercializar los productos relacionados a su vinoteca. En el mismo podrán encontrarse vinos de diversas 
+El cliente nos ha pedido un sitio web donde pueda comercializar los productos de su vinoteca especializada. En el mismo podrán encontrarse vinos de diversas 
 calidades y variedades para ajustarse a la demanda de cada uno de los clientes. El sitio web tendrá un dinamismo adecuado para poder
 realizar una actualización constante de ofertas, descuentos, promociones, bajas e incorporaciones de nuevos productos para que nuestro cliente pueda ir adaptando el 
 sitio a la cambiante demanda de sus clientes.
 
-* Público objetivo: Apuntamos a un público diverso. Pretendemos que nuestro vino sirva tanto a quien quiera compartirlo como también a quien prefiera consumirlo en soledad. Nuestra meta es brindar la mejor atención a nuestros clientes para que encuentre en el vino un fiel compañero. En principio, nos orientamos a clientes de una franja etaria ubicada entre los 40  y los 60 años, que además cuenten con un mínimo interés y conocimiento acerca del vino de calidad.
+
+En el mismo podrán encontrarse vinos previamente seleccionados por sus enólogos y novedades acerca del mundo de la vid. El sitio web tendrá un dinamismo adecuado para poder realizar una actualización constante de sus productos seleccionados, las novedades del mundo del vino y adaptarse a cada usuario para ofrecer una experiencia personalizada de compra de acuerdo a su paladar.
+
+
+
+* Público objetivo: Apuntamos a un público especializado, con un gran interés por el producto y con ganas de experimentar y nutrirse de nuevas experiencias. Nuestra meta es brindar una experiencia personalizada para que el usuario aprenda y se interese por los productos.
 
 * Integrantes del equipo:
 
