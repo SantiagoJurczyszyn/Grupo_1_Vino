@@ -4,7 +4,7 @@ En este repositorio se trabajará el Proyecto Integrador del Grupo 1
 El cliente nos ha pedido un sitio web donde pueda comercializar los productos de su vinoteca especializada. En el mismo podrán encontrarse vinos previamente seleccionados por los enólogos de VIINO y novedades del mundo de la vid. El sitio web tendrá un dinamismo adecuado para poder
 realizar una actualización constante, adaptándose así a cada usuarios para ofrecer una experiencia personalizada.
 
-* Público objetivo: Apuntamos a un público especializado, con un gran interés por el producto y con ganas de experimentar y nutrirse de nuevas experiencias. Nuestra meta es brindar una experiencia personalizada para que el usuario aprenda y se interese por los productos.
+* Público objetivo: Apuntamos a un público especializado, con un gran interés por el vino y con ganas de experimentar y nutrirse de nuevas experiencias. Nuestra meta es brindar una experiencia personalizada para que el usuario aprenda y se interese por los vinos que podrá encontrar en el sitio web.
 
 * Integrantes del equipo:
 
