@@ -35,6 +35,13 @@ realizar una actualización constante, adaptándose así a cada usuarios para of
 
 Wireframe - Figma https://www.figma.com/file/MyiMH6dWHiVa0MA5PLEPll/Wireframe?node-id=198%3A739
 
+Wireframe:
+https://www.figma.com/file/MyiMH6dWHiVa0MA5PLEPll/Wireframe?node-id=145%3A229
+Diseño:
+https://www.figma.com/file/ELfGQrjlwuEyCLU3EiwieH/Diseño?node-id=7%3A1482
+Prototipo:
+https://www.figma.com/proto/ELfGQrjlwuEyCLU3EiwieH/Diseño?page-id=7%3A1482&node-id=162%3A6490&viewport=304%2C48%2C0.51&scaling=min-zoom
+
 
 Manual de Diseño
 
@@ -42,7 +49,7 @@ Manual de Diseño
 
 	Fuentes: Logo VIINO, times new roman, 32: mobile
 
-	Titulo de producto: Times new roman, peso regular, 14- 28 px
+	Titulo de producto: Times new roman, peso regular, 16- 28 px
 
 	Márgenes laterales: 18 px
 
