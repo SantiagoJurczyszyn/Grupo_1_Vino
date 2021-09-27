@@ -1,5 +1,6 @@
 # Grupo_1_Vino
 En este repositorio se trabajará el Proyecto Integrador del Grupo 1
+
 * Temática del Market Place: 
 El cliente nos ha pedido un sitio web donde pueda comercializar los productos de su vinoteca especializada. En el mismo podrán encontrarse vinos previamente seleccionados por los enólogos de VIINO y novedades del mundo de la vid. El sitio web tendrá un dinamismo adecuado para poder
 realizar una actualización constante, adaptándose así a cada usuarios para ofrecer una experiencia personalizada.
@@ -15,9 +16,11 @@ realizar una actualización constante, adaptándose así a cada usuarios para of
     o	Riso, Victoria: Lic. en análisis de sistemas en otra vida. Haciendo este curso para volver a programar. También tratando de vender vinos, parece! 
     
     o	Sušnik, Sebastián: 28 años, de Buenos Aires, zona norte. Soy luthier y aficionado a la gastronomía, atento al detalle. Me gusta crear y experimentar siempre en una constante búsqueda de mejorar lo que hago.   
+    
 
 * Tablero de Trello: 
     https://trello.com/b/JNsQ1Zwv/grupo1viino
+    
 
 * Referencias utilizadas:
 
@@ -33,30 +36,9 @@ realizar una actualización constante, adaptándose así a cada usuarios para of
  
 > Canela Fina -  https://canelafina.com.ar/ - ¿Qué nos gustó? - sencillez y estética
 
-Wireframe - Figma - https://www.figma.com/file/MyiMH6dWHiVa0MA5PLEPll/Wireframe?node-id=0%3A1
 
-Diseño - https://www.figma.com/file/ELfGQrjlwuEyCLU3EiwieH/Diseño?node-id=7%3A1482
+* Wireframe - Figma - https://www.figma.com/file/MyiMH6dWHiVa0MA5PLEPll/Wireframe?node-id=0%3A1
 
-Prototipo - https://www.figma.com/proto/ELfGQrjlwuEyCLU3EiwieH/Diseño?page-id=7%3A1482&node-id=162%3A6490&viewport=304%2C48%2C0.51&scaling=min-zoom
+  Diseño - https://www.figma.com/file/ELfGQrjlwuEyCLU3EiwieH/Diseño?node-id=7%3A1482
 
-
-Manual de Diseño
-
-	Paleta colores: Blanco y Negro
-
-	Fuentes: Logo VIINO, times new roman, 32: mobile
-
-	Titulo de producto: Times new roman, peso regular, 16- 28 px
-
-	Márgenes laterales: 18 px
-
-	Título secciones: work sans, H 14 px, Peso: Medium
-
-	Textos: ligh y extralight, work sans
-
-	Subtitulos (carruseles, novedades), work sans, medium, 14 px
-
-	Títulos y botones: interlineado 20%
-
-	Precios: nunito sans, extra light, prod 6 px, miniature 16 px
-
+  Prototipo - https://www.figma.com/proto/ELfGQrjlwuEyCLU3EiwieH/Diseño?page-id=7%3A1482&node-id=162%3A6490&viewport=304%2C48%2C0.51&scaling=min-zoom
