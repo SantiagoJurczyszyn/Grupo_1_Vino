@@ -10,10 +10,13 @@ body {
     margin: 0px;
 }
 
-/* NAV BAR */
+/* HEADER */
 
 .main-header {
-    margin: 0px
+    margin: 0px;
+    position: sticky;
+    top: 0px;
+    z-index: 1000;
 }
 
 .main-header-top-bar {
@@ -30,7 +33,7 @@ a {
 .burger {
     height: 50px;
     text-align: center;
-    padding: 15px 14px;
+    padding: 16px 14px;
     position: absolute;
     cursor: pointer;
 }
@@ -38,7 +41,7 @@ a {
 .lupe {
     height: 50px;
     text-align: center;
-    padding: 15px 13px;
+    padding: 16px 13px;
     position: absolute;
     left: 46px;
     cursor: pointer;
@@ -46,16 +49,17 @@ a {
 
 .logo {
     font-family: 'Times New Roman', serif;
-    font-size: 43px;
+    font-size: 37px;
     color: white;
     position: absolute;
     margin-left: auto;
     margin-right: auto;
     left: 0;
     right: 0;
-    width: 122px;
+    width: 110px;
     text-align: center;
     cursor: pointer;
+    top: 3px;
 }
 
 .bag {
@@ -67,5 +71,80 @@ a {
     cursor: pointer;
 }
 
+nav{
+    display: none;   
+    text-decoration: none;
+    color: black
+}
+
 /* BODY */
+
+/* MAIN TITLE CONTAINER */
+
+.main-title-container {
+    display:flex;
+    margin: 30px;
+    padding: 0px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1px;
+}
+
+.back-arrow img {
+    padding: 2px;
+}
+
+.main-title {
+    font-size: 18px;
+    letter-spacing: .5em;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    width: 74px;
+}
+
+.main-title a {
+    text-align: center;
+}
+
+.product-order {
+    position: relative;
+    width: 72px;
+    height: 28px;
+    padding: 2px 0px;
+    text-align: center;
+    border: solid 1px black;
+}
+
+.product-order span {
+    font-size: 14px;
+    color: black;
+
+}
+
+.order-arrow {
+    position: relative;
+    bottom: 2px;
+}
+
+/* SHOP FILTERS */
+
+.shop-search-filters {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    margin: 18px;
+    list-style: none;
+    padding: 14px 20px;
+    border: solid 1px rgba(0, 0, 0, 10%)
+}
+
+.shop-search-filters li a {
+    height: 50px;
+    padding: 14px 0px;
+    color: black;
+    font-size: 14px;
+}
 
