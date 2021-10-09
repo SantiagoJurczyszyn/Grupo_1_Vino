@@ -83,7 +83,7 @@ nav{
 
 .main-title-container {
     display:flex;
-    margin: 18px;
+    margin: 28px 18px;
     padding: 0px;
     justify-content: space-between;
     align-items: center;
@@ -135,7 +135,7 @@ nav{
     display: flex;
     justify-content: space-between;
     align-items: stretch;
-    margin: 18px;
+    margin: 22px 18px 28px;
     list-style: none;
     padding: 14px 20px;
     border: solid 1px rgba(0, 0, 0, 10%)
