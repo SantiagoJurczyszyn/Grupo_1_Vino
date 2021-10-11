@@ -371,7 +371,7 @@ footer p {
 }
 
 
-@media (min-width: 460px) {
+@media (min-width: 521px) {
     .main-title-container {
         margin: 28px 5%;
     }
@@ -379,6 +379,7 @@ footer p {
     .shop-search-filters {
         margin: 22px 5% 28px;
     }
+
 
     .newsletter {
         margin: 60px 5% 60px;
@@ -407,6 +408,10 @@ footer p {
         margin: auto;
     }
 
+    .product {
+        margin: 10px 4px;
+    }
+
     .newsletter {
         margin: 60px auto 60px;
         width: 678px;
@@ -418,7 +423,7 @@ footer p {
     }
 }
 
-@media (min-width: 1280px) {
+@media (min-width: 900px) {
 
     .main-header-top-bar {
         width: 744px;
@@ -438,6 +443,10 @@ footer p {
     .shop {
         width: 778px;
         margin: auto;
+    }
+
+    .product {
+        margin: 10px 4px;
     }
 
     .newsletter {
