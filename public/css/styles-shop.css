@@ -363,11 +363,11 @@ footer p {
     display: flex;
     justify-content: space-evenly;
     margin-top: 20px;
+    margin-bottom: 80px;
 }
 
 .social-networks img {
     color: rgba(255, 255, 255, 60%);
-    margin-bottom: 80px;
 }
 
 
@@ -445,6 +445,22 @@ footer p {
         width: 744px;
     }
 
+    .footer {
+        height: 100vh;
+    }
+
+    .footer-content{
+        padding-bottom: initial;
+        height: 36%;
+        width: 1000px;
+        margin: auto;
+        padding: 0px 60px;
+    }
+    
+    footer h3 {
+        margin: 28px 0px 16px;
+    }
+
     .footer-title {
         margin-top: 12%;
         margin-bottom: 14%;
@@ -452,6 +468,6 @@ footer p {
 
     .social-networks {
         max-width: 744px;
-        margin: 20px auto;
+        margin: 16px auto 20px;
     }
 }
