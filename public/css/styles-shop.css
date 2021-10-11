@@ -85,7 +85,7 @@ nav{
 
 .main-title-container {
     display:flex;
-    margin: 28px 5.8%;
+    margin: 28px 6.8%;
     padding: 0px;
     justify-content: space-between;
     align-items: center;
@@ -369,4 +369,5 @@ footer p {
     color: rgba(255, 255, 255, 60%);
     margin-bottom: 80px;
 }
+
 
