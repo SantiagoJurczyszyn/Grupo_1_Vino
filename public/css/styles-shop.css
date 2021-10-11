@@ -378,6 +378,8 @@ footer p {
 
     .shop-search-filters {
         margin: 22px 5% 28px;
+        padding-left: 30px;
+        padding-right: 30px;
     }
 
 
@@ -401,6 +403,7 @@ footer p {
     .shop-search-filters {
         margin: 22px auto 28px;
         width: 678px;
+        justify-content: space-around;
     }
 
     .shop {
