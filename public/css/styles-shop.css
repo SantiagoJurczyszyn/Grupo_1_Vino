@@ -17,6 +17,7 @@ body {
     position: sticky;
     top: 0px;
     z-index: 100;
+    background-color: black;
 }
 
 .main-header-top-bar {
@@ -385,6 +386,12 @@ footer p {
 }
 
 @media (min-width: 684px) {
+
+    .main-header-top-bar {
+        width: 678px;
+        margin:auto;
+    }
+
     .main-title-container {
         margin: 28px auto;
         width: 678px;
@@ -406,7 +413,45 @@ footer p {
     }
 
     .footer-title {
-        margin-top: 20%;
-        margin-bottom: 28%;
+        margin-top: 16%;
+        margin-bottom: 18%;
+    }
+}
+
+@media (min-width: 1280px) {
+
+    .main-header-top-bar {
+        width: 744px;
+        margin:auto;
+    }
+
+    .main-title-container {
+        margin: 28px auto;
+        width: 744px;
+    }
+
+    .shop-search-filters {
+        margin: 22px auto 28px;
+        width: 744px;
+    }
+
+    .shop {
+        width: 778px;
+        margin: auto;
+    }
+
+    .newsletter {
+        margin: 60px auto 60px;
+        width: 744px;
+    }
+
+    .footer-title {
+        margin-top: 12%;
+        margin-bottom: 14%;
+    }
+
+    .social-networks {
+        max-width: 744px;
+        margin: 20px auto;
     }
 }
