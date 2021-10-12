@@ -4,6 +4,7 @@
   "description": "En este repositorio se trabajará el Proyecto Integrador del Grupo 1",
   "main": "servidor.js",
   "scripts": {
+    "start": "node app.js",
     "startDev": "nodemon app.js"
   },
   "repository": {
