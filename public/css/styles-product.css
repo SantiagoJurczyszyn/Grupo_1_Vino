@@ -154,8 +154,8 @@ svg:hover path {
 .carrousel {
     display: flex;
     overflow-x: auto;
-    scroll-snap-type: x proximity;
-    margin: 14px;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
     margin: 8px 6.8% 0px;
 }
 
@@ -164,7 +164,7 @@ svg:hover path {
 }
 
 .product {
-    scroll-snap-align: start;
+    scroll-snap-align: center;
     position: relative;
     border: solid rgba(0, 0, 0, 10%) 1px;
     margin: 10px 2%;
@@ -173,9 +173,10 @@ svg:hover path {
     text-align: center;
 }
 
-.product .start {
-    scroll-snap-align: start;
+.carrousel div:first-child {
+
 }
+
 
 .product-image {
     right: 13px;
