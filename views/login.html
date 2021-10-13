@@ -11,21 +11,34 @@
     rel="stylesheet" />
 </head>
 <body>
-    <header>
-        <div class="hamburguesa-busqueda">
-        <i class="fas fa-bars"></i>
-        <i class="fas fa-search"></i>
+    <header class="main-header">
+        <div class="main-header-top-bar">
+            <a class="burger"><img src="img/icon/burger.svg" alt="burger menu"></a>
+            <a class="lupe"><img src="img/icon/lupe.svg" alt=""></a>
+            <a href="/"class="logo">VIINO</a>
+            <a class="bag"><img src="img/icon/bag.svg" alt=""></a>
         </div>
-        <p class="logo">VIINO</p>
-        <i class="fas fa-shopping-bag"></i>
+        <nav>
+            <ul>
+                <li><a href="">NOSOTROS</a></li>
+                <li><a href="">FAVORITOS</a></li>
+                <li><a href="">SHOP</a></li>
+                <li><a href="">TINTOS</a></li>
+                <li><a href="">BLANCOS</a></li>
+                <li><a href="">BODEGAS</a></li>
+                <li><a href="">OTROS</a></li>
+                <li><a href="">NOVEDADES</a></li>
+                <li><a href="">SELECCION</a></li>
+            </ul>
+        </nav>
     </header>
     <main>
         <div class="foto">
-            <img src="imagenes/login.jpg" >
+            <img src="img/login.jpg" >
         </div>
         <div class="texto">
             <div class="flecha-titulo">
-                <i class="fas fa-arrow-left"></i>   
+                <img class="flecha" src="img/icon/arrow.svg" alt="">   
                 <h1 class="titulo">TU CUENTA</h1>
             </div><br>
             <div class="accion">
@@ -36,7 +49,7 @@
                     <p>REGISTRATE</p>
                 </div>
             </div> <br>   
-            <p>Iniciá sesión en VIINO con tu correo electrónico y contraseña.Si lo hiciste en otra oportuni</p><br>
+            <p>Iniciá sesión en VIINO con tu correo electrónico y contraseña</p><br>
             <p class="olvidaste">¿Olvidaste la contraseña?</p><br>
             <form action="resultadosLogin" method="POST">
                 <div class="campoEncuenta">
@@ -52,32 +65,28 @@
             </form>
         </div>
     </main><br><br><br>
-    <footer>
-        <p class="logoFooter">VIINO</p><br><br><br>
-        <section class="sectionFooter">
-            <div class="parteFooter">
-                <p class="tituloFooter">NUESTRO LOCAL</p><br>
-                <p class="infoFooter">Av Forest 4444, Colegiales, Ciudad Autonoma <br id="saltoFooter"> de Buenos Aires, Argentina.</p>
-            </div><br><br>
-            <div class="parteFooter">
-                <p class="tituloFooter" >CONTACTO</p><br>
-                <p class="infoFooter">+549114444444<br>
-                    info@viino.com.ar</p>
-            </div><br><br>
-            <div class="parteFooter">
-                <p class="tituloFooter">INFORMACION</p><br>
-                <p class="infoFooter">FAQs<br id="saltoFooter">
-                    Legales<br id="saltoFooter">
-                    Política de privacidad</p>
-            </div>
-        </section><br><br>
-        <div class="iconosRedes">
-            <i class="fab fa-facebook"></i>
-            <i class="fab fa-youtube"></i>
-            <i class="fab fa-instagram"></i>
-            <i class="fab fa-whatsapp"></i>
+    <footer class="footer" style="opacity: 1;">
+        <h2 class="footer-title">VIINO</h2>
+        <section class="footer-content">
+            <h3>NUESTRO LOCAL</h3>
+            <p>Av Forest 4444, Colegiales, Ciudad Autonoma de Buenos Aires, Argentina.</p>
+            
+            <h3>CONTACTO</h3>
+            <p>+549114444444</p>
+            <p>info@viino.com.ar</p>
+            
+            <h3>INFORMACION</h3>
+            <p>FAQs</p>
+            <p>Legales</p>
+            <p>Política de privacidad</p>
+        </section>
+        <div class="social-networks">
+            <img src="img/icon/facebook.svg" alt="Contacto facebook">
+            <img src="img/icon/youtube.svg" alt="Contacto youtube">
+            <img src="img/icon/instagram.svg" alt="Contacto instagram">
+            <img src="img/icon/whatsapp.svg" alt="Contacto whatsapp">
         </div>
-         
+
     </footer>
     
 </body>
