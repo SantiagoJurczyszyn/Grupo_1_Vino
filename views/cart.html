@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIINO Cart</title>
+    <link rel="stylesheet" href="/css/styles-cart.css">
+    <link rel="icon" href="img/icon/WINE.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200&family=Work+Sans:wght@100;200;300;400&display=swap" rel="stylesheet">    <title>VIINO</title>
+</head>
+<body>
+    <header class="main-header">
+        <div class="main-header-top-bar">
+            <a class="burger"><img src="img/icon/burger.svg" alt="burger menu"></a>
+            <a class="lupe"><img src="img/icon/lupe.svg" alt=""></a>
+            <a href="/"class="logo">VIINO</a>
+            <a class="bag"><img src="img/icon/bag.svg" alt=""></a>
+        </div>
+        <!-- ESTO NO VA NO ENTIENDO PORQUE NO SE VE-->
+        <!--
+        <nav>
+            <ul>
+                <li><a href="">NOSOTROS</a></li>
+                <li><a href="">FAVORITOS</a></li>
+                <li><a href="">SHOP</a></li>
+                <li><a href="">TINTOS</a></li>
+                <li><a href="">BLANCOS</a></li>
+                <li><a href="">BODEGAS</a></li>
+                <li><a href="">OTROS</a></li>
+                <li><a href="">NOVEDADES</a></li>
+                <li><a href="">SELECCION</a></li>
+            </ul>
+        </nav> -->
+    </header>
+
+    <main class="main">
+        <div class=main-title-container>
+            <a href="" class="back-arrow"><img src="img/icon/arrow.svg" alt=""></a>
+            <h1 class="main-title">TU COMPRA</h1>
+            <!-- dejo este a vacio para que el main-title-container quede como yo quiero
+              con TU COMPRA en el centro-->
+            <a> 
+            <!-- BORRAR TODO ESTO! <a href="" class="product-order">
+              -- saco este ordenar   pero dejo el <a> para que uno quede a la izquier 
+                  y el otro en el centro  
+              <span> ordenar <img src="img/icon/downarrow.svg" class="order-arrow" alt="extend-order"></span>
+              -->
+            </a>
+        </div>
+        <!-- BORRO ESTA LISTA -->
+        <!--
+        <ul class="shop-search-filters">
+            <li><a href="">TODOS</a></li>
+            <li><a href="">TINTOS</a></li>
+            <li><a href="">BLANCOS</a></li>
+            <li><a href="">OTROS</a></li>
+        </ul> -->
+        <form action="comprar" method="POST">
+        <section class="cart">
+            <!-- SACO ESTE 
+            <div class="product">
+                <img class="product-image" src="/img/product-img/Pielihueso-Tinto-de-Los-Sauces.png" alt="Vino Malbec Primero 2019">
+                <h3>TINTO DE LOS SAUCES 2019</h2>
+                <p class="price">$2500</p>
+                <button class="add-to-cart">AGREGAR</button>
+            </div> -->
+            <div class="product">
+                <img class="product-image" src="/img/cart-img/Pielihueso-Naranjo.jpg" alt="Vino Naranjo 2020 Pielihueso">
+                <div class="details">
+                    <h3>NARANJO 2020 PIELIHUESO</h3>
+                    <p class="price">$1700</p>
+                </div>
+                <div class="little-buttons">
+                <button class="add-to-cart">AGREGAR</button>
+                </div>
+            </div>
+                        
+            <div class="product">
+                <img class="product-image" src="/img/cart-img/A-Lisa.jpg" alt="Vino A Lisa 2019 Noemia">
+                <div class="details">
+                 <h3>A LISA 2019 NOEMIA</h3>
+                 <p class="price">$2500</p>
+                </div>
+                <div class = litle-buttons>
+                    <button class = "remove-x" type="button">X</button>
+                    <div class = "qtys"> 
+                        <button class = "minusplus" type="button">-</button>
+                        <label for="qty2"></label>
+                        <input type="number" name="qty2" class = "qty" value="1" min = "0" max = "50">
+                        <button class = "minusplus" type="button">+</button>
+                    </div>
+                 </div>
+            </div> 
+                        
+            <div class="product">
+                <img class="product-image" src="/img/cart-img/Vino-de-la-casa.jpg" alt="Vino Tinto de la Casa 2018 Riccitelli">
+                <div class="details">
+                    <h3>TINTO DE LA CASA 2018 RICCITELLI</h3>
+                    <p class="price">$2500</p>
+                </div>
+                <div class = litle-buttons>
+                    <button class = "remove-x" type="button">X</button>
+                    <div class = "qtys"> 
+                        <button class = "minusplus" type="button">-</button>
+                        <label for="qty3"></label>
+                        <input type="number" name="qty3" class = "qty" value="1" min = "0" max = "50">
+                        <button class = "minusplus" type="button">+</button>
+                      </div>
+                 </div>
+            </div>
+
+            </section>
+        <div class = "big-buttons">
+            <button type="button" class = boton-blanco>SEGUIR COMPRANDO</button>
+            <button type="reset"  class = boton-blanco>VACIAR CARRITO</button>
+            <button type="submit" class = boton-negro>SUBTOTAL $ 6700</button>
+        </div>
+        </form>
+        <!-- ESTO NO VA NO ENTIENDO -->
+        <!--  PUEDE SER QUE EL FOOTER QUEDE DEMASIADO ARRIBA
+        <div class="search-pagination">
+            <a href="" class="next-page"><img src="img/icon/next-page.svg" alt=""></a>
+            <ul class="pagination">
+                <li class="page one">1</li>
+                <li class="page 2">2</li>
+                <li class="page 3">3</li>
+                <li class="page 4">...</li>
+                <li class="page 5">8</li>
+            </ul>
+        </div>
+
+        <section class="newsletter">
+            <h2 class="newsletter-title">NOVEDADES</h2>
+            <p class="newsletter-text">Suscribite para recibir las novedades de VIINO</p>
+            <form method="post" action="/contact#contact_form" id="contact_form" accept-charset="UTF-8" class="contact-form">
+                <div class="newsletter-dialogue">
+                    <input class="newsletter-input" type="text" placeholder="Ingresá tu email..."><input class="newsletter-submit" name="subscribe" type="submit" value="&#8594">
+                </div>
+            </form>
+        </section> -->
+    </main>
+
+    <footer class="footer" style="opacity: 1;">
+        <h2 class="footer-title">VIINO</h2>
+        <section class="footer-content">
+            <h3>NUESTRO LOCAL</h3>
+            <p>Av Forest 4444, Colegiales, Ciudad Autonoma de Buenos Aires, Argentina.</p>
+            
+            <h3>CONTACTO</h3>
+            <p>+549114444444</p>
+            <p>info@viino.com.ar</p>
+            
+            <h3>INFORMACION</h3>
+            <p>FAQs</p>
+            <p>Legales</p>
+            <p>Política de privacidad</p>
+        </section>
+        <div class="social-networks">
+            <img src="img/icon/facebook.svg" alt="Contacto facebook">
+            <img src="img/icon/youtube.svg" alt="Contacto youtube">
+            <img src="img/icon/instagram.svg" alt="Contacto instagram">
+            <img src="img/icon/whatsapp.svg" alt="Contacto whatsapp">
+        </div>
+
+    </footer>
+</body>
+</html>
