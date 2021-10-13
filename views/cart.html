@@ -19,63 +19,36 @@
             <a href="/"class="logo">VIINO</a>
             <a class="bag"><img src="img/icon/bag.svg" alt=""></a>
         </div>
-        <!-- ESTO NO VA NO ENTIENDO PORQUE NO SE VE-->
-        <!--
-        <nav>
-            <ul>
-                <li><a href="">NOSOTROS</a></li>
-                <li><a href="">FAVORITOS</a></li>
-                <li><a href="">SHOP</a></li>
-                <li><a href="">TINTOS</a></li>
-                <li><a href="">BLANCOS</a></li>
-                <li><a href="">BODEGAS</a></li>
-                <li><a href="">OTROS</a></li>
-                <li><a href="">NOVEDADES</a></li>
-                <li><a href="">SELECCION</a></li>
-            </ul>
-        </nav> -->
     </header>
 
     <main class="main">
         <div class=main-title-container>
             <a href="" class="back-arrow"><img src="img/icon/arrow.svg" alt=""></a>
             <h1 class="main-title">TU COMPRA</h1>
-            <!-- dejo este a vacio para que el main-title-container quede como yo quiero
-              con TU COMPRA en el centro-->
-            <a> 
-            <!-- BORRAR TODO ESTO! <a href="" class="product-order">
-              -- saco este ordenar   pero dejo el <a> para que uno quede a la izquier 
-                  y el otro en el centro  
-              <span> ordenar <img src="img/icon/downarrow.svg" class="order-arrow" alt="extend-order"></span>
-              -->
-            </a>
+            
+            <!-- dejo este tag <a> vacio para que el main-title-container quede 
+                 con TU COMPRA quede centrado-->
+            <a> </a>
         </div>
-        <!-- BORRO ESTA LISTA -->
-        <!--
-        <ul class="shop-search-filters">
-            <li><a href="">TODOS</a></li>
-            <li><a href="">TINTOS</a></li>
-            <li><a href="">BLANCOS</a></li>
-            <li><a href="">OTROS</a></li>
-        </ul> -->
-        <form action="comprar" method="POST">
+        
+        <form action="" method="POST">
         <section class="cart">
-            <!-- SACO ESTE 
-            <div class="product">
-                <img class="product-image" src="/img/product-img/Pielihueso-Tinto-de-Los-Sauces.png" alt="Vino Malbec Primero 2019">
-                <h3>TINTO DE LOS SAUCES 2019</h2>
-                <p class="price">$2500</p>
-                <button class="add-to-cart">AGREGAR</button>
-            </div> -->
+            
             <div class="product">
                 <img class="product-image" src="/img/cart-img/Pielihueso-Naranjo.jpg" alt="Vino Naranjo 2020 Pielihueso">
                 <div class="details">
                     <h3>NARANJO 2020 PIELIHUESO</h3>
                     <p class="price">$1700</p>
                 </div>
-                <div class="little-buttons">
-                <button class="add-to-cart">AGREGAR</button>
-                </div>
+                <div class = little-buttons>
+                    <button class = "remove-x" type="button">X</button>
+                    <div class = "qty-box"> 
+                        <button class = "minusplus" type="button">-</button>
+                        <label for="qty1"></label>
+                        <input type="number" name="qty1" class = "qty" value="1" min = "0" max = "50">
+                        <button class = "minusplus" type="button">+</button>
+                    </div>
+                 </div>
             </div>
                         
             <div class="product">
@@ -84,9 +57,9 @@
                  <h3>A LISA 2019 NOEMIA</h3>
                  <p class="price">$2500</p>
                 </div>
-                <div class = litle-buttons>
+                <div class = little-buttons>
                     <button class = "remove-x" type="button">X</button>
-                    <div class = "qtys"> 
+                    <div class = "qty-box"> 
                         <button class = "minusplus" type="button">-</button>
                         <label for="qty2"></label>
                         <input type="number" name="qty2" class = "qty" value="1" min = "0" max = "50">
@@ -101,9 +74,9 @@
                     <h3>TINTO DE LA CASA 2018 RICCITELLI</h3>
                     <p class="price">$2500</p>
                 </div>
-                <div class = litle-buttons>
+                <div class = little-buttons>
                     <button class = "remove-x" type="button">X</button>
-                    <div class = "qtys"> 
+                    <div class = "qty-box"> 
                         <button class = "minusplus" type="button">-</button>
                         <label for="qty3"></label>
                         <input type="number" name="qty3" class = "qty" value="1" min = "0" max = "50">
@@ -114,33 +87,11 @@
 
             </section>
         <div class = "big-buttons">
-            <button type="button" class = boton-blanco>SEGUIR COMPRANDO</button>
-            <button type="reset"  class = boton-blanco>VACIAR CARRITO</button>
-            <button type="submit" class = boton-negro>SUBTOTAL $ 6700</button>
+            <button type="button" class = "white-button">SEGUIR COMPRANDO</button>
+            <button type="reset"  class = "white-button">VACIAR CARRITO</button>
+            <button type="submit" class = "black-button">SUBTOTAL $ 6700</button>
         </div>
         </form>
-        <!-- ESTO NO VA NO ENTIENDO -->
-        <!--  PUEDE SER QUE EL FOOTER QUEDE DEMASIADO ARRIBA
-        <div class="search-pagination">
-            <a href="" class="next-page"><img src="img/icon/next-page.svg" alt=""></a>
-            <ul class="pagination">
-                <li class="page one">1</li>
-                <li class="page 2">2</li>
-                <li class="page 3">3</li>
-                <li class="page 4">...</li>
-                <li class="page 5">8</li>
-            </ul>
-        </div>
-
-        <section class="newsletter">
-            <h2 class="newsletter-title">NOVEDADES</h2>
-            <p class="newsletter-text">Suscribite para recibir las novedades de VIINO</p>
-            <form method="post" action="/contact#contact_form" id="contact_form" accept-charset="UTF-8" class="contact-form">
-                <div class="newsletter-dialogue">
-                    <input class="newsletter-input" type="text" placeholder="Ingresá tu email..."><input class="newsletter-submit" name="subscribe" type="submit" value="&#8594">
-                </div>
-            </form>
-        </section> -->
     </main>
 
     <footer class="footer" style="opacity: 1;">

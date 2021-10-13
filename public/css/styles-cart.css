@@ -88,7 +88,6 @@ nav{
 .main-title-container {
     display:flex;
     margin: 28px 6.8%;
-    padding: 0px;
     justify-content: space-between;
     align-items: center;
     padding: 1px;
@@ -102,62 +101,11 @@ nav{
 .main-title {
     font-size: 16px;
     letter-spacing: .5em;
-   /* position: absolute;
-    margin-left: auto;
-    margin-right: auto;
-    left: 0;
-    right: 0;
-    width: 74px; */
 }
 
 .main-title a {
     text-align: center;
 }
-
-/* ESTO NO VA
-.product-order {
-    position: relative;
-    width: 72px;
-    height: 28px;
-    padding: 2px 0px;
-    text-align: center;
-    border: solid 1px black;
-} 
-
-.product-order span {
-    font-size: 14px;
-    font-weight: 300;
-    color: black;
-
-} 
-
-.order-arrow {
-    position: relative;
-    bottom: 2px;
-} */
-
-/* ESTO NO VA
-/* SHOP FILTERS */
-/*
-.shop-search-filters {
-    display: flex;
-    justify-content: space-between;
-    align-items: stretch;
-    margin: 22px 6.8% 28px;
-    list-style: none;
-    padding: 14px 20px;
-    border: solid 1px rgba(0, 0, 0, 10%)
-}
-
-
-.shop-search-filters li a {
-    height: 50px;
-    padding: 16px 0px;
-    color: black;
-    font-size: 14px;
-    font-weight: 300;
-}
-*/
 
 
 /* SHOPPING CART */ 
@@ -167,39 +115,26 @@ nav{
     display:flex;
     flex-direction: column;
     align-items: center;
-    /*flex-wrap: wrap;*/
     justify-content: space-around;
     margin: 14px;
 }
 
 /* PRODUCT */ 
 
-/* ESTO ES TODO DE SEBASTIAN*/
-/*.product {
-    position: relative;
-    border: solid rgba(0, 0, 0, 10%) 1px;
-    margin: 10px 2px;
-    width: 160px;
-    height: 308px;
-    text-align: center;
-} */
-
-/* PRUEBO CON MIS STYLISH*/
-
 .product {
 
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-   
-    max-width: 360px;
+    /* aunque saque max-width el ancho no se modifica
+       espero entender porque sucede eso,algun dia*/
+    max-width: 360px; 
+
 }
 
 .product-image {
     right: 13px;
     height: 180px;
-    /*display: inline-block;
-    position: relative;*/
     margin: 6px 15px;
 }
 
@@ -207,7 +142,7 @@ nav{
     font-family: 'Times New Roman', serif;
     font-weight: 200;
     font-size: 16px;
-    margin: 2px;
+    margin-top: 15px;
     margin-left: auto;
     margin-right: auto;
     max-width: 150px;
@@ -216,32 +151,14 @@ nav{
 }
 
 .price {
-    /*position:absolute;
-    bottom: 46px;
-    left: 50px;*/
     font-family: 'Nunito Sans', sans-serif;
     font-size: 18px;
 }
 
-.add-to-cart {
-   /* position: absolute;
-    left: 19px;*/
-    height: 35px;
-    width: 120px;
-    background-color: black;
-    color: white;
-    font-family: 'Work Sans', sans-serif;
-    font-size: 12px;
-    letter-spacing: .5em;
-    text-align: center;
-    border: none;
-    bottom: 8px;
-    padding-left: 5px;
-}
 
-/* THE LITLE BUTTONS*/
+/* THE LITTLE BUTTONS*/
 
-.litle-buttons {
+.little-buttons {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -251,31 +168,47 @@ nav{
 .remove-x {
     margin-top: 15px;
     border: none;
-    font-size: 15px;
+    font-size: 12px;
+}
+
+.qty-box{
+    border: 1px solid gray;
+    border-radius: 2px;
+    padding: 5px;
+    margin-bottom: 30px;
 }
 
 .minusplus {
-    /*margin-bottom: 15px;*/
     border: none;
     font-size: 20px;
 }
 
-.qtys{
-    border: 1px solid gray;
-    border-radius: 2px;
-    padding: 5px;
-    margin-bottom: 15px;
-}
 
 input.qty {
+    /* para que todos los numeros de la pagina tengan el mismo font*/
+    font-family: 'Nunito Sans', sans-serif; 
+    font-size: 16px;
+    font-weight: bold; /* sin esto queda color gris*/
     border: none;
     text-align: center;
-    font-size: 16px;
 }
+
+/* remove arrows/spinners from input type number*/
+/* Chrome, Safari, Edge, Opera */
+/* espero que solo prueben con estos!*/
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+
+/* para que no aparezca borde amarillo 
+   cuando se clickea ahi - when it gets focus (clicked on)
+   (la explicacion es mas clara en ingles)*/
 
 input.qty:focus {
     outline: none !important;
-    /*border:1px solid red;*/
     box-shadow: 0 0 10px #b3b6b9;
   }
 
@@ -288,32 +221,30 @@ input.qty:focus {
     align-items: center;
 }
 
-.boton-negro {
+.black-button {
     width: 100%;
     max-width: 360px; /* o el maximo valor de celular*/
-    /*padding: 15px 10px;*/
     font-weight:500;
     color: white;
     background-color: black;
     margin: 5px;
-    /* agrego de sebastian*/
-    height: 35px;
+    /* estilos copiados de sebastian*/
+    height: 40px;
     font-family: 'Work Sans', sans-serif;
-    font-size: 12px;
+    font-size: 14px;
     letter-spacing: .5em;
     text-align: center;
 }
 
-.boton-blanco {
+.white-button {
     width: 100%;
     max-width: 360px; /* o el maximo valor de celular*/
-    /*padding: 15px 10px;*/
     font-weight:500;
     color: black;
     background-color: white;
     border: 1px solid black;
     margin: 5px;
-    /* agrego de sebastian*/
+    /* estilos copiados de sebastian*/
     height: 35px;
     font-family: 'Work Sans', sans-serif;
     font-size: 12px;
@@ -321,102 +252,7 @@ input.qty:focus {
     text-align: center;
 }
 
-/* ESTO NO VA*/
-/* PAGINATION */
-/*
-.search-pagination {
-    position: relative;
-    width: 100%;
-}
 
-.pagination {
-    display: flex;
-    justify-content: space-between;
-    margin-left: auto;
-    margin-right: auto;
-    width: 120px;
-    list-style: none;
-    margin-top: 20px;
-    margin-bottom: 40px;
-}
-
-.page {
-    text-decoration: none;
-    width: 12px;
-    height: 25px;    
-    text-align: center;
-    color: black;
-    font-weight: 200;
-    cursor: pointer;
-}
-
-.page:hover {
-    font-weight: 900;
-    border-bottom: solid 2px black;
-}
-
-.next-page {
-    position: absolute;
-    right: 6%;
-}*/
-
-/* ESTO NO VA*/
-/* NEWSLETTER */
-/*
-.newsletter {
-    position:relative;
-    margin: 60px 6.8% 60px;
-}
-
-.newsletter-title {
-    font-size: 14px;
-    letter-spacing: .5em;
-    margin: 22px 0px;
-    font-weight: 400;
-}
-
-.newsletter-text {
-    font-size: 14px;
-    font-weight: 200;
-    margin: 18px 0px
-}
-
-.newsletter-dialogue {
-    display: flex;
-    justify-content: stretch;
-    -webkit-appearance: none;
-    border: solid black 1px;
-}
-
-.newsletter-dialogue input {
-    height: 50px;
-    background-color: white;
-}
-
-.newsletter-input {
-    border: none;
-    width: 100%;
-    padding-left: 22px;
-
-}
-
-.newsletter-input::placeholder {
-    font-family: 'Work Sans', sans-serif;
-    font-weight: 300;
-    font-size: 14px;
-    letter-spacing: .1em;
-}
-
-.newsletter-submit {
-    all: unset;
-    text-align: center;
-    width: 60px;
-    font-size: 18px;
-    font-family: cursive;
-    border: none;
-    border-left: solid rgba(0, 0, 0, 10%) 1px;
-}
-*/
 /* FOOTER */
 
 footer {
@@ -476,23 +312,28 @@ footer p {
 }
 
 
+
+@media (max-width: 361px) {
+
+/* para que no se deforme la qty-box
+   (debe haber soluciones mas elegantes pero, por ahora,
+   las desconozco )*/
+
+  .product h3 {
+        max-width: 140px;
+  }
+
+}
+
+/* @media copiadas de sebastian, para respetar tamaños 
+   con modificaciones */
+
 @media (min-width: 521px) {
 
     .main-title-container {
         margin: 28px 5%;
     }
 
-    /* ESTO NO VA
-    .shop-search-filters {
-        margin: 22px 5% 28px;
-        padding-left: 30px;
-        padding-right: 30px;
-    }
-
-
-    .newsletter {
-        margin: 60px 5% 60px;
-    } */
 }
 
 @media (min-width: 684px) {
@@ -506,12 +347,6 @@ footer p {
         margin: 28px auto;
         width: 678px;
     }
-/* ESTO NO VA 
-    .shop-search-filters {
-        margin: 22px auto 28px;
-        width: 678px;
-        justify-content: space-around;
-    } */
 
     .cart {
         width: 690px;
@@ -522,12 +357,7 @@ footer p {
         margin: 10px 4px;
     }
 
-    /* ESTO NO VA
-    .newsletter {
-        margin: 60px auto 60px;
-        width: 678px;
-    } */
-
+    
     .footer-title {
         margin-top: 16%;
         margin-bottom: 18%;
@@ -546,12 +376,6 @@ footer p {
         width: 744px;
     }
 
-    /* ESTO NO VA
-    .shop-search-filters {
-        margin: 22px auto 28px;
-        width: 744px;
-    } */
-
     .cart {
         width: 778px;
         margin: auto;
@@ -561,12 +385,7 @@ footer p {
         margin: 10px 4px;
     }
 
-    /* ESTO NO VA
-    .newsletter {
-        margin: 60px auto 60px;
-        width: 744px;
-    } */
-
+    
     .footer {
         height: 100vh;
     }
