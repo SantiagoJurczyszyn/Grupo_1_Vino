@@ -17,6 +17,7 @@ body {
     position: sticky;
     top: 0px;
     z-index: 100;
+    border-top: solid 1px black;
 }
 
 .main-header-top-bar {
@@ -83,7 +84,7 @@ nav{
 
 .main-title-container {
     display:flex;
-    margin: 28px 6.8%;
+    margin: 28px 6.8% 34px;
     padding: 0px;
     justify-content: space-between;
     align-items: center;
@@ -101,6 +102,7 @@ nav{
 
 .main-title {
     font-size: 18px;
+    font-weight: 500;
     letter-spacing: .5em;
     position: absolute;
     margin-left: auto;
@@ -141,6 +143,85 @@ svg:hover path {
 
 /* PRODUCT DETAIL */
 
+.product-detail {
+    margin-left: 6.8%;
+    margin-right: 6.8%;
+}
+
+.product-detail-image-container {
+    border: solid black 1px;
+    padding: 14px;
+}
+
+.product-detail-image {
+    width: -webkit-fill-available;
+}
+
+.detail-producer {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 26px;
+    margin: 16px 0px 18px;
+}
+
+.line {
+    display: block;
+    box-shadow:0px 0px 0px 1px black inset;
+    height: 1px;
+    width: 80px;
+}
+
+.product-detail-title {
+    font-family: 'times new roman', serif;
+    font-size: 28px;
+    font-weight: 200;
+    margin: 20px 0px 24px;
+
+}
+
+.product-detail-text {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 200;
+    margin: 10px 0px 6px;
+}
+
+.product-detail-quote {
+    display: block;
+    text-align: right;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.data-sheet {
+    margin-top: 34px;
+    margin-bottom: 64px;
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+.data-sheet-title {
+    font-size: 20px;
+    margin: 48px 0px 22px;
+    font-weight: 600;
+}
+
+.data-sheet h4 {
+    margin: 4px 0px;
+    font-weight: 600;
+}
+
+.data-sheet p {
+    margin: 0px 0px 14px;
+    font-weight: 200;
+}
+
+/* PURCHASE SECTION */
+
+.purchase-container {
+    display: none;
+}
+
 /* CARROUSEL */
 
 .carrousel-title {
@@ -155,7 +236,6 @@ svg:hover path {
     display: flex;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
     margin: 8px 6.8% 0px;
 }
 
@@ -174,7 +254,13 @@ svg:hover path {
 }
 
 .carrousel div:first-child {
+    scroll-snap-align: start;
+    margin-left: 0;
+}
 
+.carrousel div:last-child {
+    scroll-snap-align: end;
+    margin-right: 0%;
 }
 
 
@@ -183,7 +269,7 @@ svg:hover path {
     height: 180px;
     display: inline-block;
     position: relative;
-    margin: 6px 0px;
+    margin: 6px 0px 2px;
 }
 
 .product h3 {
@@ -198,10 +284,11 @@ svg:hover path {
 
 .price {
     position:absolute;
-    bottom: 46px;
+    bottom: 48px;
     left: 50px;
     font-family: 'Nunito Sans', sans-serif;
     font-size: 18px;
+    font-weight: 200;
 }
 
 .add-to-cart {
@@ -228,8 +315,9 @@ svg:hover path {
 }
 
 .newsletter-title {
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 500;
     font-size: 14px;
-    font-weight: 400;
     letter-spacing: .5em;
     margin: 22px 0px;
 }
@@ -237,7 +325,7 @@ svg:hover path {
 .newsletter-text {
     font-size: 14px;
     font-weight: 200;
-    margin: 18px 0px
+    margin: 18px 0px;
 }
 
 .newsletter-dialogue {
@@ -269,7 +357,7 @@ svg:hover path {
 .newsletter-submit {
     all: unset;
     text-align: center;
-    width: 60px;
+    width: 58px;
     font-size: 18px;
     font-family: cursive;
     border: none;
