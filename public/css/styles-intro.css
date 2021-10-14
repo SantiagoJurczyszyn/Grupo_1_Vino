@@ -8,6 +8,8 @@ body {
     font-family: 'Work Sans', sans-serif;
     font-size: 16px;
     margin: 0px;
+    background-color: rgb(230, 230, 230);
+    opacity: 0.7;
 }
 
 
@@ -19,7 +21,7 @@ body {
     top: 0px;
     z-index: 100;
     background-color: black;
-}
+    }
 
 .main-header-top-bar {
     background-color: black;
@@ -97,20 +99,50 @@ nav a {
 }
 
 
-
-
-
-
 /*MAIN*/
+
 main {
     display: flex;
     flex-wrap: wrap;    
     justify-content:center;
     position:relative;
-    
+
+}
+
+.age {
+    display: flex;
+    position: fixed;
+    border: 3px black solid;
+    box-sizing: border-box;
+    left:50%;
+    top:50%;
+    z-index: 1200;
+    background-color: white;
+    color: black;
+    text-decoration: none;
+    text-align: center;    
+    display: block;    
+    width: 80%;    
+    padding: 20px;
+    display: block;
+    transform: translate(-50%,-50%);
+    list-style: none;
+
 }
 
 
+.age p {
+    background-color: black;
+    color: white;
+    text-align: center;
+    display: block;
+    margin: 5px;
+    text-decoration: none;
+}
+
+.age p a {
+    color:white;
+}
 
 .image-home {
     width: 100%;
@@ -118,6 +150,11 @@ main {
  
 }
 
+.imagen {
+    width: 180px;
+    height: 180px;
+    text-align: center;
+}
 
 section {
     
@@ -128,18 +165,11 @@ section {
     padding: 10px 18px;
 }
 
-.first-section {width: 90vw;
+.nosotros {width: 90vw;
     padding:1px;
     margin: auto;      
     text-align: center;
     padding: 10px 18px;
-}
-
-#first-section-title{
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 32px;
-    font-weight: lighter;
-    text-align: center;
 }
 
 #subtitle {
@@ -172,6 +202,7 @@ section {
 }
 
 
+
 .section {
     margin:auto;  
     width: 90%;  
@@ -180,6 +211,12 @@ section {
 }
 
 
+#nosotros{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 32px;
+    font-weight: lighter;
+    text-align: center;
+}
 
 h2.section  {
     font-family: 'Work Sans', sans-serif;
@@ -188,55 +225,30 @@ h2.section  {
     text-align: left;
 }
 
+/* SHOP PRODUCTS */
 
-/* CARROUSEL */
-
-.carrousel-title {
-    font-size: 14px;
-    font-weight: 400;
-    letter-spacing: .25em;
-    margin: 0px 6.8% 0px;
-    margin-top: 44px;
-}
-
-.carrousel {
-    display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    margin: 8px 6.8% 0px;
-}
-
-.carrousel::-webkit-scrollbar {
-    display:none;
+.shop {
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 14px;
 }
 
 .product {
-    scroll-snap-align: center;
     position: relative;
     border: solid rgba(0, 0, 0, 10%) 1px;
-    margin: 10px 2%;
+    margin: 10px 2px;
     width: 160px;
     height: 308px;
     text-align: center;
 }
-
-.carrousel div:first-child {
-    scroll-snap-align: start;
-    margin-left: 0;
-}
-
-.carrousel div:last-child {
-    scroll-snap-align: end;
-    margin-right: 0%;
-}
-
 
 .product-image {
     right: 13px;
     height: 180px;
     display: inline-block;
     position: relative;
-    margin: 6px 0px 2px;
+    margin: 6px 0px;
 }
 
 .product h3 {
@@ -251,11 +263,10 @@ h2.section  {
 
 .price {
     position:absolute;
-    bottom: 48px;
+    bottom: 46px;
     left: 50px;
     font-family: 'Nunito Sans', sans-serif;
     font-size: 18px;
-    font-weight: 200;
 }
 
 .add-to-cart {
@@ -276,7 +287,7 @@ h2.section  {
 
 
 
-.pay-and-send {
+.square {
      
     margin: 10px 10px;
     border: solid 1px rgb(231, 231, 231);
@@ -286,18 +297,12 @@ h2.section  {
     align-items: center;
 }
 
-.pay-and-send h2 {
+.square h2 {
     text-align: center;
     
 }
 
-.payment {
-    width: 100%;
-    margin-top: 40px;
-    margin-left: auto;
-}
-
-.truck {
+#truck {
     display: block;
     margin-left:auto;
     margin-top: 30px;
@@ -309,18 +314,20 @@ h2.section  {
     justify-content: space-around;
 }
 
-#truck {
+#camion {
     font-size: 50px;
     width: auto;
 }
 
-
-.news {
-    margin:10px 18px;
-    padding: 20px 0px;
+.medios-de-pago {
+    width: 100%;
+    margin-top: 40px;
+    margin-left: auto;
 }
 
-#news {
+
+
+#novedades {
     font-family: 'Work Sans', sans-serif;
     font-size: 14px;
     text-align: left;
@@ -329,8 +336,12 @@ h2.section  {
    
 }
 
+.novedades {
+    margin:10px 18px;
+    padding: 20px 0px;
+}
 
-#subscribe {
+#suscribite {
     margin: 5px 0px;
     font-size: 12px;
     text-align: left;
@@ -338,7 +349,7 @@ h2.section  {
     display: block;
 }
 
-#mail-box {
+#caja-mail {
     border:solid 1px black;
 }
 
@@ -524,19 +535,48 @@ footer p {
     }
 }
 
+
+
+@media (min-width:769px) {
+   
+   
+   
+    .articulos {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+     margin: 1px;
+    }
+
+    article {
+        max-width: 49%;
+    }
+    
+    .sectionFooter {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .parteFooter {
+        width: 33%;
+        text-align: center;
+    }
+  
+    
+}
+
 @media (min-width:1200px) {
     
-    .down-bar {
+    .barra-inferior {
         display:flex;
         justify-content: space-around;
         background-color: white;
         
     }
     
-    .down-bar ul {
+    .barra-inferior ul {
         display: flex;
     }
-    .down-bar li {
+    .barra-inferior li {
      margin: 0 15px;   
     }
     
@@ -555,4 +595,3 @@ footer p {
      }
     
 }
-
