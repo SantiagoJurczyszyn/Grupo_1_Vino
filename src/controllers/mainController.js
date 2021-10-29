@@ -2,13 +2,17 @@ const path = require ("path");
 
 const mainController = 
 {
-    intro: (req,res) => {
-        res.render ("intro")
-    },
-
+   
     index: (req,res) => {
-        res.render("index")
+        res.render("./main/index")
+    },
+    
+    
+    cart: (req,res) => {
+        res.render("./main/cart")
     }
+
+
 }
 
 module.exports = mainController;

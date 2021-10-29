@@ -8,7 +8,11 @@ const userController =
 
     login: (req,res) => {
         res.render("./users/login")
-    }
+    },
+
+    perfil: (req,res) => {
+        res.send("Aquí podrás ver tu perfil")
+    },
 }
 
 module.exports = userController;
