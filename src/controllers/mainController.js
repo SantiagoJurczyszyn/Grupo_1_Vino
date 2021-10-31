@@ -6,7 +6,7 @@ const mainController =
         res.render("./main/index")
     },
     shop: (req,res) => {
-        res.render("./product/shop")
+        res.render("./main/shop")
         },
     cart: (req,res) => {
         res.render("./main/cart")
