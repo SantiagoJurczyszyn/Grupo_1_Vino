@@ -788,8 +788,8 @@ footer a {
 }
 
 textarea {
-    min-height: 200px;
-    padding: 18px;
+    min-height: 250px;
+    padding: 16px;
     font-family: 'Work Sans', sans-serif;
     font-weight: 300;
     font-size: 14px;
@@ -798,7 +798,7 @@ textarea {
 .area::placeholder {
     letter-spacing: .1em;
     position: absolute;
-    top: 18px
+    top: 16px
 }
 
 .forgot-password {
@@ -921,7 +921,7 @@ textarea {
 @media (min-width: 700px) {
 
     .main-header-top-bar {
-        max-width: 830px;
+        max-width: 92vw;
         margin: auto;
     }
 
@@ -950,8 +950,8 @@ textarea {
     }
 
     .footer-title {
-        margin-top: 190px;
-        margin-bottom: 230px;
+        margin-top: 16vh;
+        margin-bottom: 20vh;
         font-size: 72px;
     }
 
@@ -1055,7 +1055,7 @@ textarea {
 @media (min-width: 1200px) {
 
     .main-header-top-bar {
-        max-width: 980px;
+        max-width: 78vw;
         margin: auto;
         height: 60px;
     }
@@ -1085,6 +1085,7 @@ textarea {
 
     .bag {
         top: 6px;
+        right: 0px;
     }
 
     .logo {
