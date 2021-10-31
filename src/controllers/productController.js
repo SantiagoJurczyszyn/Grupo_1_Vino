@@ -2,11 +2,8 @@ const path = require ("path");
 
 const productController = 
 {
-    shop: (req,res) => {
-    res.render("./products/shop")
-},
     product: (req,res) => {
-        res.render ("./products/product")
+        res.render ("./product/product")
     },
     
     edit: (req,res) => {
@@ -16,7 +13,7 @@ const productController =
         res.send ("Aquí se mostrará la lista de los productos existentes");
     },
     create: (req,res) => {
-        res.send ("Acá podrás crear un producto")
+        res.render ("./product/create")
     }
     
 }

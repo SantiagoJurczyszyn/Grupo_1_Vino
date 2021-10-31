@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const mainRouter = require ("./routes/mainRouter");
-const productRouter = require ("./routes/productsRouter");
+const productRouter = require ("./routes/productRouter");
 const userRouter = require ("./routes/userRouter");
 const path = require('path')
 
@@ -11,7 +11,7 @@ app.set ("views", "./src/views")
 
 
 app.use ("/", mainRouter);
-app.use ("/products", productRouter);
+app.use ("/product", productRouter);
 app.use ("/users", userRouter);
 
 
