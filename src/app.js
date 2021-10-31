@@ -15,4 +15,4 @@ app.use ("/product", productRouter);
 app.use ("/user", userRouter);
 
 
-app.listen(process.env.PORT || 3030, () => console.log('Servidor corriendo en el puerto 3030'));
+app.listen(process.env.PORT || 3060, () => console.log('Servidor corriendo en el puerto 3030'));
