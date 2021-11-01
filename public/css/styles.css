@@ -78,7 +78,8 @@ input::placeholder {
     position: sticky;
     top: 0px;
     z-index: 100;
-    background-color: black;
+    background-color: black ;
+    height: 50px;
 }
 
 .main-header-top-bar {
@@ -139,10 +140,9 @@ input::placeholder {
     cursor: pointer;
 }
 
-nav{
+.main-header-bottom-bar{
     display: none;   
     text-decoration: none;
-    color: black
 }
 
 
@@ -788,7 +788,9 @@ footer a {
 }
 
 textarea {
-    min-height: 250px;
+    min-height: 200px;
+    min-width: 100%;
+    max-width: 100%;
     padding: 16px;
     font-family: 'Work Sans', sans-serif;
     font-weight: 300;
@@ -966,6 +968,31 @@ textarea {
 
 @media (min-width: 940px) {
 
+    .main-header-bottom-bar {
+        display: block;
+        position: sticky;
+        top: 60px;
+        background-color: rgba(0, 0, 0, 50%);
+        height: 20px;
+    }
+
+    .main-header-bottom-bar ul{
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .main-header-bottom-bar ul li {
+        font-family: 'Work Sans', sans-serif;
+        font-size: 14px;
+        letter-spacing: .3em;
+        align-self: stretch;
+        text-align: center;
+        text-decoration: none;
+    }
+    .main-header-bottom-bar ul li a {
+        color:white;
+    }
+
     main {
         margin: 0 auto;
     }
@@ -1057,10 +1084,18 @@ textarea {
 
 @media (min-width: 1200px) {
 
+    .main-header {
+        height: 60px;
+    }
+
     .main-header-top-bar {
         max-width: 78vw;
         margin: auto;
         height: 60px;
+    }
+
+    .main-header-bottom-bar {
+        top: 60px;
     }
 
     .lupe img {
