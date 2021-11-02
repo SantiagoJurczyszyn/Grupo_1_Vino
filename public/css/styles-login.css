@@ -71,10 +71,9 @@ a {
     cursor: pointer;
 }
 
-nav{
+.main-header-bottom-bar{
     display: none;   
     text-decoration: none;
-    color: black
 }
 
 
@@ -228,6 +227,37 @@ footer p {
 }
 
 @media (min-width: 900px) {
+        .main-header-bottom-bar {
+            display: block;
+            position: sticky;
+            top: 60px;
+            background-color: grey;
+            height: 20px;
+            opacity: 1.5;
+        }
+    
+        .main-header-bottom-bar:hover {
+            opacity: 1;
+            transition: 450ms;
+        }
+    
+        .main-header-bottom-bar ul{
+            display: flex;
+            justify-content: space-evenly;
+        }
+    
+        .main-header-bottom-bar ul li {
+            font-family: 'Work Sans', sans-serif;
+            font-size: 14px;
+            letter-spacing: .3em;
+            align-self: stretch;
+            text-align: center;
+            text-decoration: none;
+        }
+        .main-header-bottom-bar ul li a {
+            color:white;
+        }
+    
     .footer {
         height: 100vh;
     }

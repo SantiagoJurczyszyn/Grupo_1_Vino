@@ -1,44 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register</title>
-    <link rel="stylesheet" href="/css/styles-register.css">
-    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@200;300;400&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-    rel="stylesheet" />
-</head>
+<%- include('../partials/head',{subtitle:'register',styleSheetName:'styles-register'}) %>
 <body>
-    <header class="main-header">
-        <div class="main-header-top-bar">
-            <a class="burger"><img src="img/icon/burger.svg" alt="burger menu"></a>
-            <a class="lupe"><img src="img/icon/lupe.svg" alt=""></a>
-            <a href="/"class="logo">VIINO</a>
-            <a class="bag"><img src="img/icon/bag.svg" alt=""></a>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="">NOSOTROS</a></li>
-                <li><a href="">FAVORITOS</a></li>
-                <li><a href="">SHOP</a></li>
-                <li><a href="">TINTOS</a></li>
-                <li><a href="">BLANCOS</a></li>
-                <li><a href="">BODEGAS</a></li>
-                <li><a href="">OTROS</a></li>
-                <li><a href="">NOVEDADES</a></li>
-                <li><a href="">SELECCION</a></li>
-            </ul>
-        </nav>
-    </header>
+    <%- include('../partials/headerUser')%>
     <main>
         <div class="foto">
-            <img src="img/register.jpg" >
+            <img src="/img/register.jpg" >
         </div>
         <div class="texto">
             <div class="flecha-titulo">
-                <img class="flecha" src="img/icon/arrow.svg" alt="">   
+                <img class="flecha" src="/img/icon/arrow.svg" alt="">   
                 <h1 class="titulo">TU CUENTA</h1>
             </div><br>
             <div class="accion">
@@ -88,10 +59,10 @@
             <p>Política de privacidad</p>
         </section>
         <div class="social-networks">
-            <img src="img/icon/facebook.svg" alt="Contacto facebook">
-            <img src="img/icon/youtube.svg" alt="Contacto youtube">
-            <img src="img/icon/instagram.svg" alt="Contacto instagram">
-            <img src="img/icon/whatsapp.svg" alt="Contacto whatsapp">
+            <img src="/img/icon/facebook.svg" alt="Contacto facebook">
+            <img src="/img/icon/youtube.svg" alt="Contacto youtube">
+            <img src="/img/icon/instagram.svg" alt="Contacto instagram">
+            <img src="/img/icon/whatsapp.svg" alt="Contacto whatsapp">
         </div>
 
     </footer>

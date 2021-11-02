@@ -1,42 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/styles.css">
-    <link rel="icon" href="/img/icon/wine.ico">
-    <title>VIINO</title>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@100;200;300;400;500;600;700;800&family=Work+Sans:wght@100;200;400;500;600;700;800&display=swap" rel="stylesheet">    
-
-</head>
+<%- include('../partials/head',{subtitle:'product',styleSheetName:'styles'}) %>
 
 <body>
-    <header class="main-header">
-        <div class="main-header-top-bar">
-            <a class="burger"><img src="img/icon/burger.svg" alt="burger menu"></a>
-            <a class="lupe"><img src="img/icon/lupe.svg" alt=""></a>
-            <a href="/"class="logo">VIINO</a>
-            <a class="user" href="/user/login"><img src="img/icon/user.svg" alt=""></a>
-            <a class="bag" href="/cart"><img src="img/icon/bag.svg" alt=""></a>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="">NOSOTROS</a></li>
-                <li><a href="">FAVORITOS</a></li>
-                <li><a href="">SHOP</a></li>
-                <li><a href="">TINTOS</a></li>
-                <li><a href="">BLANCOS</a></li>
-                <li><a href="">BODEGAS</a></li>
-                <li><a href="">OTROS</a></li>
-                <li><a href="">NOVEDADES</a></li>
-                <li><a href="">SELECCION</a></li>
-            </ul>
-        </nav>
-    </header>
+    <%- include('../partials/header')%>
     <main class="main">
 
         <div class="main-title-container">
