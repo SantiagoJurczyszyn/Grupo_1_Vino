@@ -37,7 +37,7 @@
     },
     {
         "id": 3,
-        "name": "Les Astronautes",
+        "name": "Les Astronautes Criolla 2020",
         "producer": "Les Astronautes",
         "harvestYear": 2020,
         "varietal": "Criolla Chica",
@@ -271,7 +271,7 @@
     },
     {
         "id": 16,
-        "name": "Ver Sacrum La Dama del Abrigo Rojo Nebbiolo 2017",
+        "name": "Ver Sacrum La Dama del Abrigo Rojo Nebbiolo",
         "producer": "Ver Sacrum",
         "harvestYear": 2017,
         "varietal": "Nebbiolo",
@@ -368,7 +368,7 @@
         "type": "Rosado",
         "price": 950,
         "description": "Pinot Gris. El resultado es un vino de gran frescura e intensidad aromática, basado en elaboración por prensado y por sangrado de esta variedad.",
-        "image": "Piedra-Negra-Vuela-Rosado-Pinot-Gris.pgn",
+        "image": "Piedra-Negra-Vuela-Rosado-Pinot-Gris.png",
         "location": "Los Chacayes, Tupungato, Mendoza",
         "altitude": 1100,
         "winemakers": "Thibault Lepoutre",
@@ -469,7 +469,7 @@
     },
     {
         "id": 27,
-        "name": "Buscado Vivo o Muerto La Verdad San Pablo 2017",
+        "name": "Buscado Vivo o Muerto La Verdad San Pablo",
         "producer": "Vivo o Muerto",
         "harvestYear": 2017,
         "varietal": "Chardonnay",
@@ -557,5 +557,5 @@
         "soil": "Aluvional, con carbonato de calcio",
         "avb": 13,
         "breeding": "12 meses en barrica roble francés de 500 litros"
-    }
+   }
 ]
