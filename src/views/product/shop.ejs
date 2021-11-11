@@ -25,15 +25,13 @@
             <% productsAMostrar.forEach((prod) => { %>    
 
                 <article class="product">
-                   
-                   <a href="/product/<%= prod.id %>"><img class="product-image" src="/img/product-img/<%= prod.image %>" alt="<%= prod.name %>"></a>
-                     <h3 class="product-title"><%= prod.name %></h2>
-                     <p class="price">$ <%= prod.price %></p>
-                     <button class="add-to-cart">AGREGAR</button>
-                   
+                    <a href="/product/<%= prod.id %>"><img class="product-image" src="/img/product-img/<%= prod.image %>" alt="<%= prod.name %>"></a>
+                    <h3 class="product-title"><%= prod.name %></h2>
+                    <p class="price">$ <%= prod.price %></p>
+                    <button class="add-to-cart">AGREGAR</button>
                 </article>
-               
-               <% }) %>
+            
+            <% }) %>
         </section>
                     <div class="search-pagination">
                 <a href="" class="next-page"><img src="img/icon/next-page.svg" alt=""></a>

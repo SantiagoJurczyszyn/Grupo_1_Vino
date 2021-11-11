@@ -440,7 +440,7 @@ svg:hover path {
 .product-detail-image-container {
     border: solid black 1px;
     padding: 10px;
-    max-width: 350px;
+    max-width: 450px;
     margin: -8px auto 6%;
 }
 
