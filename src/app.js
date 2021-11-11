@@ -8,13 +8,13 @@ const path = require('path')
 /*Para enviar peticiones por POST es necesario tener un formulario
 desde el que se enviaran los datos. Hay que configurar el entorno de 
 nuestra aplicación para que sea capaz de capturar esa información
-con estas dos lineas*/
+con estas dos lineas PUSE ESTO COMO RECORDATORIO BORRARLO DESPUES*/
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
   
-/*Los métodos PUT y DELETE no son soportados por los formularios de HTML
-Hay que configurar app.js para poder sobreescribir el método original e 
-implementar los métodos PUT o DELETE*/
+/*los formularios de HTML no soportan los métodos PUT y DELETE 
+Hay que configurar app.js para poder sobreescribir el método original e implementarlos 
+PUSE ESTO COMO RECORDATORIO BORRARLO DESPUES*/
 const methodOverride = require('method-override');
 app.use(methodOverride('_method'));
   
@@ -25,6 +25,7 @@ app.set ("views", "./src/views")
 
 
 app.use ("/", mainRouter);
+// NO OLVIDAR! Cambiar a products como piden en el Sprint!
 app.use ("/product", productRouter);
 app.use ("/user", userRouter);
 
