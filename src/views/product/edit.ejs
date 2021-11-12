@@ -19,11 +19,10 @@
                 <!-- AGREGO LA IMAGEN POR ACA (PROVISORIO)-->
                 <br>
                 <figure class="product-detail-image-container">
-                    <!--<img class="product-detail-image" src="/img/product-img/<%= product.image %>" alt="<%= product.name %>">
-                    copie del video deplayground y agregue de aca los campos que me parecio qu faltaban para que queden como los 
-                    otros inputs PERO ASI NO FUNCIONA!-->
-                    <input class="product-detail-image" type="file" name="imageProd" id="imageProd" placeholder="Imagen del producto..." value="/img/product-img/<%= product.image %>" alt="<%= product.name %>">
-                </figure>
+                    <img class="product-detail-image" src="/img/product-img/<%= product.image %>" alt="<%= product.name %>">
+                </figure>    
+                    
+                <input class="product-detail-image" type="file" name="imageProd" id="imageProd" >
     
                 <!-- AGREGO ACA el campo TYPE PARA NO PERDERLO. Mas adelante veremos donde va!-->
                 <input class="input" type="text" name="type" id="type" placeholder="Tipo de producto..." value="<%= product.type %>" required>
