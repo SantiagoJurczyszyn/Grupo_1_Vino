@@ -13,10 +13,20 @@
             <br>
             <p class="form-text">Modificá los datos del producto <%= product.id %> completando el formulario:</p>
              <!-- este action va al productRuoter -->
-             <!--<form method="POST" action="/product/edit/<%= product.id %>?_method=PUT"  enctype="multipart/form-data"> --> 
-               <!-- SACO  enctype="multipart/form-data"  PARA EMPEZAR SIN MULTER  / arriba deje la linea completa comentada -->
-             <form method="POST" action="/product/edit/<%= product.id %>?_method=PUT">  
+             
+             <form method="POST" action="/product/<%= product.id %>?_method=PUT" enctype="multipart/form-data">     
                 <p class="form-subtext">DATOS PRINCIPALES</p>
+                <!-- AGREGO LA IMAGEN POR ACA (PROVISORIO)-->
+                <br>
+                <figure class="product-detail-image-container">
+                    <!--<img class="product-detail-image" src="/img/product-img/<%= product.image %>" alt="<%= product.name %>">
+                    copie del video deplayground y agregue de aca los campos que me parecio qu faltaban para que queden como los 
+                    otros inputs PERO ASI NO FUNCIONA!-->
+                    <input class="product-detail-image" type="file" name="imageProd" id="imageProd" placeholder="Imagen del producto..." value="/img/product-img/<%= product.image %>" alt="<%= product.name %>">
+                </figure>
+    
+                <!-- AGREGO ACA el campo TYPE PARA NO PERDERLO. Mas adelante veremos donde va!-->
+                <input class="input" type="text" name="type" id="type" placeholder="Tipo de producto..." value="<%= product.type %>" required>
                 <input class="input" type="text" name="name" id="name" placeholder="Nombre del vino/producto..." value="<%= product.name %>" required>
                 <input class="input" type="text" name="producer" id="producer" placeholder="Bodega producto" value="<%= product.producer %>">
                 <input class="input" type="number" name="harvestYear" id="harvestYear" placeholder="Año de la cosecha..." value="<%= product.harvestYear %>">

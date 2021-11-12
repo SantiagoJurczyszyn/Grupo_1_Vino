@@ -73,10 +73,7 @@ const productController = {
       price: Number(req.body.price),
       image: req.file ? req.file.filename : products[productIndex].image
     };
-    console.log(req.body);
-    console.log(products[productIndex]);
-    console.log(updatedProduct);
-
+   
     // Reemplazamos el objeto en el array
     products[productIndex] = updatedProduct;
 
@@ -84,7 +81,8 @@ const productController = {
     fs.writeFileSync(productsFilePath, JSON.stringify(products, null, ' '));
 
     // Volvemos a la pagina de productos
-    res.redirect('/shop');
+    // MODIFICAR MAS ADELANTE SI CAMBIA LA RUTA! 
+    res.redirect('/product');
   },
 
   create: (req, res) => {
