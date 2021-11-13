@@ -61,6 +61,7 @@ const productController = {
       harvestYear: Number(req.body.harvestYear),
       varietal: req.body.varietal,
       type: req.body.type,
+      subtype: req.body.subtype,
       price: Number(req.body.price),
       description: req.body.description,
       location: req.body.location,
@@ -73,7 +74,7 @@ const productController = {
       price: Number(req.body.price),
       image: req.file ? req.file.filename : products[productIndex].image
     };
-   
+    
     // Reemplazamos el objeto en el array
     products[productIndex] = updatedProduct;
 
@@ -81,7 +82,8 @@ const productController = {
     fs.writeFileSync(productsFilePath, JSON.stringify(products, null, ' '));
 
     // Volvemos a la pagina de productos
-    // MODIFICAR MAS ADELANTE SI CAMBIA LA RUTA! 
+    // ANTES IBA A res.redirect('/shop');
+    //
     res.redirect('/product');
   },
 
