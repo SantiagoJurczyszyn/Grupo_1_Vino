@@ -12,9 +12,9 @@
         <div class="form-container">
             <br>
             <p class="form-text">Modificá los datos del producto <%= product.id %> completando el formulario:</p>
-             <!-- este action va al productRuoter -->
-             
-             <form method="POST" action="/product/<%= product.id %>?_method=PUT" enctype="multipart/form-data">     
+            <!-- este action va al productRuoter -->
+            
+            <form method="POST" action="/product/<%= product.id %>?_method=PUT" enctype="multipart/form-data">     
                 <p class="form-subtext">DATOS PRINCIPALES</p>
                 <!-- AGREGO LA IMAGEN POR ACA (PROVISORIO)-->
                 <br>
@@ -24,7 +24,7 @@
                     
                 <input class="product-detail-image" type="file" name="imageProd" id="imageProd" >
                 <br> <br>
-               
+
                 <!-- NO SE VEN LOS CIRCULITOS - ESPERO RESOLVERLO ALGUN DIA CERCANO - 
                     TAMPOCO SE COMO RECUPERAR EL VALOR ALMACENADO EN EL JASON
                 <label class="form-subtext" >Tipo de producto</label>
