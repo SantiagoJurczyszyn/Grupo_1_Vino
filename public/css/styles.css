@@ -461,6 +461,8 @@ svg:hover path {
 /* PRODUCT DETAIL */
 
 .product-detail-image-container {
+    display: flex;
+    justify-content: center;
     border: solid black 1px;
     padding: 10px;
     max-width: 450px;
@@ -508,10 +510,11 @@ svg:hover path {
     margin-bottom: 30px;
 }
 
+
 /* PRODUCT DATASHEET */
 
 .data-sheet {
-    margin: 60px 0px 80px;
+    margin: 60px 6.8% 80px;
     border: solid rgba(0, 0, 0, 10%) 1px;
 }
 
@@ -591,6 +594,29 @@ svg:hover path {
 }
 
 
+/* EDIT DELETE PRODUCT */
+
+.edit-delete-buttons {
+    display: flex;
+    justify-content: space-between;
+    height: 50px;
+    margin-top: 30px;
+}
+
+.edit-delete-buttons > * {
+    width: 98%;
+    align-self: stretch;
+    margin: auto;
+    display: flex;
+}
+
+.grey-button {
+    height: 50px;
+    width: 98%;
+    margin: auto;
+}
+
+
 /* CARROUSEL */
 
 .carrousel-title {
@@ -600,6 +626,7 @@ svg:hover path {
     letter-spacing: .3em;
     margin-top: 60px;
     margin-bottom: 20px;
+    text-transform: uppercase;
 }
 
 .carrousel-product {
@@ -962,6 +989,8 @@ textarea {
         display: initial;
     }
 
+
+
     .footer {
         height: 100vh;
     }
@@ -1053,6 +1082,52 @@ textarea {
         margin-left: auto;
     }
 
+    .product-detail {
+        position: relative;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 4%;
+        max-width: 1100px;
+        margin: 0px 6.8%;
+    }
+
+    .favourite {
+        position: absolute;
+        top: 150px;
+        right: 7%;
+    }
+
+    .product-detail-image {
+        height: 100%;
+    }
+
+    .product-detail-image-container {
+        max-width: inherit;
+        height: 480px;
+        width: 450px;
+    }
+
+    .product-info {
+        position: relative;
+        width: 100%;
+    }
+
+    .purchase-container {
+        position: absolute;
+        bottom: 60px;
+        width: 100%;
+    }
+
+    .black-button {
+        height: 60px;
+    }
+
+    .edit-delete-buttons {
+        position: absolute;
+        bottom: 0px;
+        width: 100%;
+    }
+
     .login-signup-buttons {
         max-width: 800px;
         margin-left: auto;
@@ -1126,6 +1201,7 @@ textarea {
 
     .main-header-bottom-bar {
         top: 60px;
+        height: 40px;
     }
 
     .lupe img {
@@ -1179,8 +1255,25 @@ textarea {
     }
 
     .main-title-container {
-        margin-top: 50px;
-        margin-bottom: 60px;
+        position: relative;
+        top: 50px;
+        margin-bottom: 120px;
+    }
+
+    .product-detail {
+        margin: 0 auto;
+    }
+
+    .favourite {
+        position: relative;
+        top: 108px;
+        right: -150px;
+    }
+
+    .data-sheet {
+        max-width: 800px;
+        text-align: center;
+        margin: 80px auto;
     }
 
     .product {
