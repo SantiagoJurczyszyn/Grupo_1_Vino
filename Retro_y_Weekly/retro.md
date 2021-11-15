@@ -65,3 +65,50 @@ manifiesto que los cuatros integrantes del grupo se encuentran altamente comprom
 
 5. Dejar de hacer. 
  
+Sprint 3 - 
+
+1. Comenzar a hacer. 
+
+> Tener los conocimientos requeridos para el sprint antes de su fecha de lanzamiento.
+
+2. Hacer más.
+
+> Intercambio ACTIVO entre participantes con margen de tiempo favorece un avance ordenado y óptimo del proyecto.
+
+> Comunicar nuestros pareceres en tiempo y forma en un marco de respeto y empatía.
+
+> Evacuar las dudas mutuamente.
+
+> Reuniones periódicas.
+
+> Consultar a profesores y documentación online para resolver problemas de código.
+
+3. Continuar haciendo.
+
+> Coordinar los push de commits para no pisarnos.
+
+> Puesta en común antes de la entrega. 
+
+> Comunicar nuestros pareceres en tiempo y forma en un marco de respeto y empatía.
+
+> Márgenes de tiempo para correcciones.
+
+> Seguir trabajando con el mismo entusiasmo para cumplir con las consignas de cada sprint.
+
+> Proactividad de cada integrante y generosidad en la realización de las tareas. 
+
+> División de tareas de acuerdo al trabajo actual. 
+
+> Reuniones periódicas.
+
+> Mantener actualizados los conocimientos. 
+
+> Respetar el trabajo de cada uno en su individualidad y dar críticar constructivas.
+
+4. Hacer menos. 
+
+> 
+
+> Dejar pasar mucho tiempo entre reunión y reunión.
+
+5. Dejar de hacer. 

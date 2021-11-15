@@ -5,7 +5,7 @@
         "last_name": "Crespo",
         "email": "elenacrespo@gmail.com",
         "password": "Elena52",
-        "category": "user",
+        "category": "admin",
         "image": "elena.jpg"
     },
     {
@@ -14,7 +14,7 @@
         "last_name": "Crippa",
         "email": "martincrippa@gmail.com",
         "password": "Martin46",
-        "category": "user",
+        "category": "admin",
         "image": "martin.jpg"
     },
     {
