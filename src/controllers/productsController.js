@@ -7,25 +7,32 @@ const products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
 const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 const productsController = {
-  // Shop
+
+
+  /*** SHOP ***/
+
+  // Root - List the products
   list: (req, res) => {
-    const productsAMostrar = products;
-    res.render("./products/shop", {
-      productsAMostrar
-    });
+    const productsAMostrar = products; // Recibe el listado de productos
+    res.render("./products/shop", { productsAMostrar }); // Lista todos los productos
   },
 
+
+  /*** CREAR UN PRODUCTO ***/
+
+  // CREATE - Form to create
   create: (req, res) => {
-    if (req.method == "GET") {
+    if (req.method == "GET") {         // Si el metodo es GET muestra el formulario
     res.render("./products/create");
-    } else {
+    } else {                           // Si el método es POST crea un producto
     const newProduct = {
       id: products[products.length - 1].id + 1,
-      //usar todas las props que vienen en el body
+      // Reutilizamos todas las props que vienen en el body con el spread operator
       ...req.body,
       image: req.file ? req.file.filename : "",
     };
 
+    // Se agrega el nuevo producto al array de productos y se reescribe el JSON
     products.push(newProduct);
     fs.writeFileSync(productsFilePath, JSON.stringify(products, null, " "));
 
@@ -34,7 +41,9 @@ const productsController = {
   }
 },
 
-  // Detail - Detail from one product
+  /*** MUESTRA EL DETALLE DE UN PRODUCTO ***/
+
+  // DETAIL - Detail from one product
   product: (req, res) => {
     // Se recibe un objeto tipo producto
     const requiredId = req.params.id;
@@ -51,7 +60,9 @@ const productsController = {
     });
   },
 
-  // Update - Form to edit
+    /*** MUESTRA EL FORMULARIO DE EDICION ***/
+
+  // EDIT - Form to edit
   edit: (req, res) => {
     // Solo falta autocompletar los inputs y el action y method del form
     const requiredId = req.params.id;
@@ -66,10 +77,14 @@ const productsController = {
     });
   },
 
+
+    /*** EDITA Y REESCRIBE EL PRODUCTO ***/
+
+  // UPDATE - Update new product
   update: (req, res) => {
     // Leemos el id que viene por url
     const productId = req.params.id;
-    // buscamos la posicion del producto que queremos editar
+    // Buscamos la posicion del producto que queremos editar
     const productIndex = products.findIndex((p) => p.id == productId);
 
     // Generamos el producto actualizado
@@ -98,40 +113,29 @@ const productsController = {
     // Reemplazamos el objeto en el array
     products[productIndex] = updatedProduct;
 
-    // Escribimos en el JSON para persistir
+    // Escribimos en el JSON el array con el producto actualizado
     fs.writeFileSync(productsFilePath, JSON.stringify(products, null, " "));
 
-    // Volvemos a la pagina de productos
-    // ANTES IBA A res.redirect('/shop');
-    //
+    // Volvemos al listado de productos
     res.redirect("/products");
   },
 
- 
 
-  // Delete - Delete one product from DB
+      /*** BORRA UN PRODUCTO ***/
+
+  // DESTROY - Delete one product from DB
   destroy: (req, res) => {
     // Leer el id
-    // Buscando la posicion del prod a eliminar
-    // Usar método para recortar el array sin ese producto
+    const productId = req.params.id;
+    // Buscar la posicion actual del producto a eliminar
+    const productIndex = products.findIndex((p) => p.id == productId);
+    // Recortar el array sin ese producto
+    products.splice(productIndex, 1);// Elimina un elemento indicandole en qué índice arranca (0 por defecto) e indicandole cuantos elementos borrar.. sino especifico extensión mata todo
+
     // Guardar el json nuevo
-
-    const productIndex = products.findIndex((product) => {
-      return product.id == req.params.id; //busca el índice del elemento cuyo id coincida con el recibido por params.
-    });
-
-    // opción 2 : usar el método filter --> conservo todos menos los que tienen el id que quiero borrar. Acá se crear un nuevo array, necesito reguardarlo.
-
-    // opción 3: forEach y solo incluyo los elementos que tengan un id distinto
-
-    // opción 4: const newArray1  = array.slice (0,index); tomo porciones antes y dps del index querido y las uno...
-    // const newArray2  = array.slice (index + 1, array.length);
-    // const result = newArray1.concat(newArray2); o const result = [...newArray1, ...newArray2]
-
-    products.splice(productIndex, 1); // elimina un elemento indicandole en qué índice arranca (0 por defecto) e indicandole cuantos elementos borrar.. sino especifico extensión mata todo
-
     fs.writeFileSync(productsFilePath, JSON.stringify(products, null, " "));
 
+    // Redirecciona al listado de productos
     res.redirect("/");
   },
 };
