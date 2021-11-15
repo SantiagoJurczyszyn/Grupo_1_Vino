@@ -600,6 +600,7 @@ svg:hover path {
     letter-spacing: .3em;
     margin-top: 60px;
     margin-bottom: 20px;
+    text-transform: uppercase;
 }
 
 .carrousel-product {
@@ -796,7 +797,7 @@ footer a {
 
 .form-subtext {
     font-size: 18px;
-    font-weight: 300;
+    font-weight: 400;
     border-left: solid 1px black;
     padding-left: 12px;
 }

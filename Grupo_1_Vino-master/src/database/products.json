@@ -286,22 +286,22 @@
  },
  {
   "id": 16,
-  "name": "Ver Sacrum La Dama del Abrigo Rojo Nebbiolo",
+  "name": "La Dama del Abrigo Rojo Nebbiolo",
   "producer": "Ver Sacrum",
   "harvestYear": 2017,
   "varietal": "Nebbiolo",
   "type": "Tinto",
-  "subtype": "Tinto",
   "price": 9900,
   "description": "La Dama del Abrigo Rojo, un Nebbiolo, uva emblemática del Piemonte italiano, de viñedos pedregosos en Los Chacayes, es un vino floral y mineral, con la fineza y potencia típica de la variedad, pero con una mayor concentración y amplitud que aporta el clima mendocino.",
   "image": "Ver-Sacrum-La-Dama-del-Abrigo-Rojo.png",
   "location": "El Cepillo, San Carlos, Mendoza",
-  "altitude": 990,
+  "altitude": "990",
   "winemakers": "Eduardo Soler",
   "varietalComp": "Nebbiolo 100%",
   "soil": "Aluvial sobre una textura arenosa",
   "avb": 13.8,
-  "breeding": "18 meses en barricas usadas"
+  "breeding": "18 meses en barricas usadas",
+  "subype": "Tinto"
  },
  {
   "id": 17,

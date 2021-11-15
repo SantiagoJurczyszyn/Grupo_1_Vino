@@ -38,14 +38,6 @@
                     </div>
                 </div>
                 <button class="black-button">AGREGAR A MI COMPRA</button>
-
-
-                <button  class="black-button"><a href="/products/<%= product.id%>/edit" class="action-button edit">EDITAR PRODUCTO</button>
-
-                <form action="/products/<%= product.id%>/?_method=DELETE" method="POST">
-               <button type="submit" class="black-button">ELIMINAR PRODUCTO</button>
-            </form>
-
             </div>
             <div class="data-sheet">
                 <h3 class="data-sheet-title">FICHA TÉCNICA</h3>
@@ -70,7 +62,7 @@
         </section>
 
         <section class="carrousel-recomendation">
-            <h2 class="carrousel-title">MÁS DE PIELIHUESO...</h2>
+            <h2 class="carrousel-title">MÁS DE <%= product.producer %>...</h2>
             <div class="carrousel">
                 <article class="carrousel-product">
                     <a href="/product"><img class="product-image" src="/img/product-img/Ver-Sacrum-La-Dama-del-Abrigo-Rojo.png" alt="Vino Malbec Primero 2019"></a>

@@ -4,12 +4,15 @@ const router = express.Router();
 const multer = require ("multer");
 const path = require('path')
 
-const productsController = require ("../controllers/productsController.js");
+// const shopFilters = require('../middlewares/shopFilters')
+
+const productController = require ("../controllers/productController.js");
 
 // copio del pdf todo lo que Multer. Va aca, segun el video de playground 
 var storage = multer.diskStorage({
     destination: function (req, file, cb) {
-     cb(null, path.join(__dirname, '../../public/img/product-img'))
+        // no se si este path esta bien!
+    cb(null, path.join(__dirname, '../../public/img/product-img'))
     },
     filename: function (req, file, cb) {
         // file.fieldname + '-' + Date.now() + path.extname(file.originalname)
@@ -19,24 +22,25 @@ var storage = multer.diskStorage({
     })
     var upload = multer({ storage: storage })
 
-router.get("/", productsController.list);
+router.get("/", productController.list);
 
 /*** CREATE PRODUCT FORM ***/
-router.get ("/create", productsController.create);
-/*** CREATE PRODUCT ***/
-router.post ("/",upload.single("imageProd"), productsController.create);
+router.get ("/create", productController.create);
 
 /*** GET ONE PRODUCT (DETAIL) ***/
-router.get('/:id', productsController.product);
+router.get('/:id', productController.product);
+
+/*** CREATE PRODUCT ***/
+router.post ("/", productController.create);
 
 /*** EDIT PRODUCT FORM ***/
-router.get('/:id/edit', productsController.edit);
+router.get('/:id/edit', productController.edit);
 
 /*** EDIT PRODUCT ***/
-router.put('/:id', upload.single('imageProd'), productsController.update);
+router.put('/:id', upload.single('imageProd'), productController.update);
 
 /*** DELETE PRODUCT ***/
-router.delete ('/:id', productsController.destroy);
+router.delete ('/:id')
 
 
 module.exports= router;
