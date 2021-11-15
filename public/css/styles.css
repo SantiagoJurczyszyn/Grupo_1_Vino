@@ -1030,9 +1030,11 @@ textarea {
         position: sticky;
         top: 60px;
         background-color: rgba(0, 0, 0, 50%);
-        height: 20px;
+        height: 30px;
         opacity: .2;
     }
+
+
 
     .main-header-bottom-bar:hover {
         opacity: 1;
@@ -1040,6 +1042,7 @@ textarea {
     }
 
     .main-header-bottom-bar ul{
+        height: 100%;
         display: flex;
         justify-content: space-evenly;
     }
@@ -1048,7 +1051,7 @@ textarea {
         font-family: 'Work Sans', sans-serif;
         font-size: 14px;
         letter-spacing: .3em;
-        align-self: stretch;
+        align-self: center;
         text-align: center;
         text-decoration: none;
     }
