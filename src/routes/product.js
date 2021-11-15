@@ -4,13 +4,15 @@ const router = express.Router();
 const multer = require ("multer");
 const path = require('path')
 
+// const shopFilters = require('../middlewares/shopFilters')
+
 const productController = require ("../controllers/productController.js");
 
 // copio del pdf todo lo que Multer. Va aca, segun el video de playground 
 var storage = multer.diskStorage({
     destination: function (req, file, cb) {
         // no se si este path esta bien!
-     cb(null, path.join(__dirname, '../../public/img/product-img'))
+    cb(null, path.join(__dirname, '../../public/img/product-img'))
     },
     filename: function (req, file, cb) {
         // file.fieldname + '-' + Date.now() + path.extname(file.originalname)

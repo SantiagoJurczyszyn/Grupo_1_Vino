@@ -10,9 +10,8 @@ const productController = {
 
   // Shop
   list: (req, res) => {
-    const productsAMostrar = products;
-    res.render("./product/shop" , { productsAMostrar })
-    },
+      res.render("./product/shop" , { products });
+  },
 
   // Detail - Detail from one product
   product: (req, res) => {

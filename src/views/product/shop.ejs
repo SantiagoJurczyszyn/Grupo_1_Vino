@@ -14,15 +14,15 @@
             </a>
         </div>
         <ul class="shop-search-filters">
-            <li><a href=""><p class="filter ">TODOS</p></a></li>
+            <li><a href=""><p class="filter active">TODOS</p></a></li>
             <li><a href=""><p class="filter ">TINTOS</p></a></li>
-            <li><a href=""><p class="filter active">BLANCOS</p></a></li>
-            <li><a href=""><p class="filter">OTROS</p></a></li>
+            <li><a href=""><p class="filter ">BLANCOS</p></a></li>
+            <li><a href=""><p class="filter ">OTROS</p></a></li>
         </ul>
         <section class="shop">
             <!-- El forEach va a crear un articulo por CADA objeto del array -->
             <!-- En cada iteracion el objeto "prod" tiene un producto completo -->
-            <% productsAMostrar.forEach((prod) => { %>    
+            <% products.forEach((prod) => { %>    
 
                 <article class="product">
                     <a href="/product/<%= prod.id %>"><img class="product-image" src="/img/product-img/<%= prod.image %>" alt="<%= prod.name %>"></a>
