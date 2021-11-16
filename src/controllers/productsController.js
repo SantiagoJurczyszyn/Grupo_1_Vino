@@ -128,21 +128,23 @@ const productsController = {
     const productId = req.params.id;
     // Buscar la posicion actual del producto a eliminar
     const productIndex = products.findIndex((p) => p.id == productId);
+    const productToDelete = products[productIndex]
 
     // Recortar el array sin ese producto
 
     
     products.splice(productIndex, 1);// Elimina un elemento indicandole en qué índice arranca (0 por defecto) e indicandole cuantos elementos borrar.. sino especifico extensión mata todo
 
+    console.log(productsImagePath);
+    console.log(productToDelete);
+    
+    fs.rmSync(path.resolve(productsImagePath,productToDelete.image))
+
     // Guardar el json nuevo
     fs.writeFileSync(productsFilePath, JSON.stringify(products, null, " "));
 
     
-    /*fs.rmSync(path.resolve(productsImagePath,productIndex.image))
 
-    fs.removeFileSync("../../public/img/product-img/productIndex.image");
-
-   */
     // Redirecciona al listado de productos
     res.redirect("/");
   },
