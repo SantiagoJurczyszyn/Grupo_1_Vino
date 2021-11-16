@@ -86,6 +86,14 @@ const productsController = {
     const productId = req.params.id;
     // Buscamos la posicion del producto que queremos editar
     const productIndex = products.findIndex((p) => p.id == productId);
+    const productToUpdate = products[productIndex];
+
+ 
+    if (req.file) {
+    fs.rmSync(path.resolve(productsImagePath,productToUpdate.image))
+    }
+ 
+
 
     // Generamos el producto actualizado
     const updatedProduct = {
@@ -106,9 +114,11 @@ const productsController = {
       avb: Number(req.body.avb),
       breeding: req.body.breeding,
       price: Number(req.body.price),
-      image: req.file ? req.file.filename : products[productIndex].image,
+      image: req.file ? req.file.filename : products[productIndex].image, 
     };
 
+   
+   
     // Reemplazamos el objeto en el array
     products[productIndex] = updatedProduct;
 
@@ -117,6 +127,7 @@ const productsController = {
 
     // Volvemos al listado de productos
     res.redirect("/products");
+  
   },
 
 
@@ -135,8 +146,7 @@ const productsController = {
     
     products.splice(productIndex, 1);// Elimina un elemento indicandole en qué índice arranca (0 por defecto) e indicandole cuantos elementos borrar.. sino especifico extensión mata todo
 
-    console.log(productsImagePath);
-    console.log(productToDelete);
+   
     
     fs.rmSync(path.resolve(productsImagePath,productToDelete.image))
 
