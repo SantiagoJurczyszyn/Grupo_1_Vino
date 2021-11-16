@@ -38,25 +38,6 @@
   "breeding": "2 meses en huevo de cemento sin epoxi"
  },
  {
-  "id": 3,
-  "name": "Les Astronautes Criolla 2020",
-  "producer": "Les Astronautes",
-  "harvestYear": 2020,
-  "varietal": "Criolla Chica",
-  "type": "Tinto",
-  "subtype": "Tinto",
-  "price": 1600,
-  "description": "Esta Criolla, de viñedos viejos en Chacayes, suelos profundos de sedimentos depositados por un arroyo, y elaborada con maceración carbónica, es un vino ligero y agradable, con una nariz de pura fruta y una muy buena acidez, para tomar de a litros",
-  "image": "Les-Astronautes-Criolla.png",
-  "location": "Los Chacayes, Tunuyán, Mendoza",
-  "altitude": 1050,
-  "winemakers": "Emma & Fredy",
-  "varietalComp": "Cereza 80% · Criolla Chica 20%",
-  "soil": "Suelos profundos de sedimentos finos",
-  "avb": 13.6,
-  "breeding": "Sin crianza"
- },
- {
   "id": 4,
   "name": "Les Astronautes Pino Pinot Brut",
   "producer": "Les Astronautes",
@@ -568,5 +549,24 @@
   "soil": "Aluvional, con carbonato de calcio",
   "avb": 13,
   "breeding": "12 meses en barrica roble francés de 500 litros"
+ },
+ {
+  "id": 32,
+  "productName": "Pedro",
+  "producer": "Pedro",
+  "year": "1232",
+  "varietal": "Pedro",
+  "type": "red",
+  "subtype": "sparkling",
+  "price": "20000123",
+  "description": "asdad",
+  "location": "Córdoba",
+  "altitude": "12312",
+  "winemakers": "adasd",
+  "varietalComp": "asdasd",
+  "soil": "asdasd",
+  "avb": "123",
+  "breeding": "asdad",
+  "image": "viino-1637018488107.png"
  }
 ]

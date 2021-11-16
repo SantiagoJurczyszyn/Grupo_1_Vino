@@ -5,7 +5,7 @@ const upload = require('../middlewares/upload');
 
 const productsController = require ("../controllers/productsController.js");
 
-
+// SHOP
 router.get("/", productsController.list);
 
 /*** CREATE PRODUCT FORM ***/

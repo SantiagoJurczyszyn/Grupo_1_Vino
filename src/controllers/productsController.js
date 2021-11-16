@@ -1,10 +1,10 @@
 const path = require("path");
 const fs = require("fs");
-
+const productsImagePath = path.join (__dirname, "../../public/img/product-img")
 const productsFilePath = path.join(__dirname, "../database/products.json");
 const products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
 /**estas tres lineas de arriba las copie igualver lo que tengo qe corregir en este progrma */
-const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+
 
 const productsController = {
 
@@ -90,13 +90,12 @@ const productsController = {
     // Generamos el producto actualizado
     const updatedProduct = {
       ...products[productIndex],
-      ...req.body,
+      ...req.body, 
       name: req.body.name,
       producer: req.body.producer,
       harvestYear: Number(req.body.harvestYear),
       varietal: req.body.varietal,
       type: req.body.type,
-      subtype: req.body.subtype,
       price: Number(req.body.price),
       description: req.body.description,
       location: req.body.location,
@@ -129,12 +128,21 @@ const productsController = {
     const productId = req.params.id;
     // Buscar la posicion actual del producto a eliminar
     const productIndex = products.findIndex((p) => p.id == productId);
+
     // Recortar el array sin ese producto
+
+    
     products.splice(productIndex, 1);// Elimina un elemento indicandole en qué índice arranca (0 por defecto) e indicandole cuantos elementos borrar.. sino especifico extensión mata todo
 
     // Guardar el json nuevo
     fs.writeFileSync(productsFilePath, JSON.stringify(products, null, " "));
 
+    
+    /*fs.rmSync(path.resolve(productsImagePath,productIndex.image))
+
+    fs.removeFileSync("../../public/img/product-img/productIndex.image");
+
+   */
     // Redirecciona al listado de productos
     res.redirect("/");
   },
