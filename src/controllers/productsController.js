@@ -1,6 +1,6 @@
 const path = require("path");
 const fs = require("fs");
-const productsImagePath = path.join (__dirname, "../../public/img/product-img")
+const productsImagePath = path.join(__dirname, "../../public/img/product-img")
 const productsFilePath = path.join(__dirname, "../database/products.json");
 const products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
 /**estas tres lineas de arriba las copie igualver lo que tengo qe corregir en este progrma */
@@ -23,44 +23,60 @@ const productsController = {
   // CREATE - Form to create
   create: (req, res) => {
     if (req.method == "GET") {         // Si el metodo es GET muestra el formulario
-    res.render("./products/create");
+      res.render("./products/create");
     } else {                           // Si el método es POST crea un producto
-    const newProduct = {
-      id: products[products.length - 1].id + 1,
-      // Reutilizamos todas las props que vienen en el body con el spread operator
-      ...req.body,
-      image: req.file ? req.file.filename : "",
-    };
+      const newProduct = {
+        id: products[products.length - 1].id + 1,
+        // Reutilizamos todas las props que vienen en el body con el spread operator
+        ...req.body,
+        image: req.file ? req.file.filename : "",
+      };
 
-    // Se agrega el nuevo producto al array de productos y se reescribe el JSON
-    products.push(newProduct);
-    fs.writeFileSync(productsFilePath, JSON.stringify(products, null, " "));
+      // Se agrega el nuevo producto al array de productos y se reescribe el JSON
+      products.push(newProduct);
+      fs.writeFileSync(productsFilePath, JSON.stringify(products, null, " "));
 
-    res.redirect("/");
+      res.redirect("/");
 
-  }
-},
+    }
+  },
 
   /*** MUESTRA EL DETALLE DE UN PRODUCTO ***/
 
   // DETAIL - Detail from one product
-  product: (req, res) => {
+  detail: (req, res) => {
     // Se recibe un objeto tipo producto
     const requiredId = req.params.id;
 
     // Buscar el producto en el array
     const requiredProduct = products.find((prod) => {
       // guarda como resultado el primer elemento que coincida con el param
-      const condition = prod.id == requiredId;
-      return condition;
+      return prod.id == requiredId;
     });
 
-    res.render("./products/products", {
-      product: requiredProduct,
+    // Filtrar los productos para los carrousel
+
+    // Para el carrousel de la misma bodega             // Retorna los productos de el mismo productor
+    const productsSameProducer = products.filter((prod) => {return prod.producer === requiredProduct.producer});
+    // Creamos funcion para eliminar el producto actual del array
+    function removeProduct(arr, prod) {
+      var i = arr.indexOf(prod);
+      if (i !== -1) {
+        arr.splice( i, 1)
+      }
+    };
+    // Ejecutamos la funcion para sugerir todos los productos de la bodega menos el actual
+    removeProduct(productsSameProducer, requiredProduct);
+
+    // Para el segundo carrousel
+    const productsRecomend = products.slice(11,19);
+
+    res.render("./products/productDetail", {
+      product: requiredProduct, productsSameProducer, productsRecomend
     });
   },
 
-    /*** MUESTRA EL FORMULARIO DE EDICION ***/
+  /*** MUESTRA EL FORMULARIO DE EDICION ***/
 
   // EDIT - Form to edit
   edit: (req, res) => {
@@ -78,7 +94,7 @@ const productsController = {
   },
 
 
-    /*** EDITA Y REESCRIBE EL PRODUCTO ***/
+  /*** EDITA Y REESCRIBE EL PRODUCTO ***/
 
   // UPDATE - Update new product
   update: (req, res) => {
@@ -88,17 +104,11 @@ const productsController = {
     const productIndex = products.findIndex((p) => p.id == productId);
     const productToUpdate = products[productIndex];
 
- 
-    if (req.file) {
-    fs.rmSync(path.resolve(productsImagePath,productToUpdate.image))
-    }
- 
-
 
     // Generamos el producto actualizado
     const updatedProduct = {
       ...products[productIndex],
-      ...req.body, 
+      ...req.body,
       name: req.body.name,
       producer: req.body.producer,
       harvestYear: Number(req.body.harvestYear),
@@ -114,24 +124,27 @@ const productsController = {
       avb: Number(req.body.avb),
       breeding: req.body.breeding,
       price: Number(req.body.price),
-      image: req.file ? req.file.filename : products[productIndex].image, 
+      image: req.file ? req.file.filename : products[productIndex].image,
     };
 
-   
-   
     // Reemplazamos el objeto en el array
     products[productIndex] = updatedProduct;
 
     // Escribimos en el JSON el array con el producto actualizado
     fs.writeFileSync(productsFilePath, JSON.stringify(products, null, " "));
 
+    // Si viene una imagen en la request, eliminamos la imgaen anterior de la carpeta /Public
+    if (req.file) {
+      fs.rmSync(path.resolve(productsImagePath, productToUpdate.image))
+    }
+
     // Volvemos al listado de productos
     res.redirect("/products");
-  
+
   },
 
 
-      /*** BORRA UN PRODUCTO ***/
+  /*** BORRA UN PRODUCTO ***/
 
   // DESTROY - Delete one product from DB
   destroy: (req, res) => {
@@ -143,17 +156,16 @@ const productsController = {
 
     // Recortar el array sin ese producto
 
-    
+
     products.splice(productIndex, 1);// Elimina un elemento indicandole en qué índice arranca (0 por defecto) e indicandole cuantos elementos borrar.. sino especifico extensión mata todo
 
-   
-    
-    fs.rmSync(path.resolve(productsImagePath,productToDelete.image))
+    // Eliminamos la imgaen de la carpeta /Public
+    fs.rmSync(path.resolve(productsImagePath, productToDelete.image))
 
     // Guardar el json nuevo
     fs.writeFileSync(productsFilePath, JSON.stringify(products, null, " "));
 
-    
+
 
     // Redirecciona al listado de productos
     res.redirect("/");

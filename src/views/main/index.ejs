@@ -17,47 +17,47 @@
                 <p class="about-us-quote">- Juanito Perez</p>
             </section>
 
-        <section class="carrousel-recomendation">
-            <h2 class="carrousel-title">LOS MAS VENDIDOS...</h2>
-            <div class="carrousel">
-                <% productsMasVendidos.forEach((prod) => { %> 
-                 <article class="carrousel-product">
-                    <a href="/products/<%= prod.id %>"><img class="product-image" src="/img/product-img/<%= prod.image %>" alt="<%= prod.name %>"></a>
-                    <h3 class="product-title"><%= prod.name %></h2>
-                    <p class="price">$ <%= prod.price %></p>
-                    <button class="add-to-cart">AGREGAR</button>
-                 </article>
-                <% }) %>
-            </div>
-        </section>
-
-        <section class="carrousel-recomendation">
-            <h2 class="carrousel-title">LOS MAS PREMIADOS...</h2>
-            <div class="carrousel">
-                <% productsMasPremiados.forEach((prod) => { %> 
-                    <article class="carrousel-product">
-                       <a href="/products/<%= prod.id %>"><img class="product-image" src="/img/product-img/<%= prod.image %>" alt="<%= prod.name %>"></a>
-                       <h3 class="product-title"><%= prod.name %></h2>
-                       <p class="price">$ <%= prod.price %></p>
-                       <button class="add-to-cart">AGREGAR</button>
-                    </article>
-                   <% }) %>
-            </div>
-        </section>
-
-        <section class="carrousel-recomendation">
-            <h2 class="carrousel-title">RECOMENDADOS PARA VOS...</h2>
-            <div class="carrousel">
-                <% productsRecomend.forEach((prod) => { %> 
-                    <article class="carrousel-product">
-                       <a href="/products/<%= prod.id %>"><img class="product-image" src="/img/product-img/<%= prod.image %>" alt="<%= prod.name %>"></a>
-                       <h3 class="product-title"><%= prod.name %></h2>
-                       <p class="price">$ <%= prod.price %></p>
-                       <button class="add-to-cart">AGREGAR</button>
-                    </article>
-                   <% }) %>
-            </div>
-        </section>
+            <section class="carrousel-recomendation">
+                <h2 class="carrousel-title">LOS MAS VENDIDOS...</h2>
+                <div class="carrousel">
+                    <% productsMasVendidos.forEach((prod) => { %> 
+                        <article class="carrousel-product">
+                            <a href="/products/<%= prod.id %>"><img class="product-image" src="/img/product-img/<%= prod.image %>" alt="<%= prod.name %>"></a>
+                            <h3 class="product-title"><%= prod.shortname + ' ' + prod.year %></h2>
+                            <p class="price">$ <%= prod.price %></p>
+                            <button class="add-to-cart">AGREGAR</button>
+                        </article>
+                    <% }) %>
+                </div>
+            </section>
+    
+            <section class="carrousel-recomendation">
+                <h2 class="carrousel-title">LOS MAS VALORADOS...</h2>
+                <div class="carrousel">
+                    <% productsMasPremiados.forEach((prod) => { %> 
+                        <article class="carrousel-product">
+                            <a href="/products/<%= prod.id %>"><img class="product-image" src="/img/product-img/<%= prod.image %>" alt="<%= prod.name %>"></a>
+                            <h3 class="product-title"><%= prod.shortname + ' ' + prod.year %></h2>
+                            <p class="price">$ <%= prod.price %></p>
+                            <button class="add-to-cart">AGREGAR</button>
+                        </article>
+                    <% }) %>
+                </div>
+            </section>
+    
+            <section class="carrousel-recomendation">
+                <h2 class="carrousel-title">RECOMENDADOS PARA VOS...</h2>
+                <div class="carrousel">
+                    <% productsRecomend.forEach((prod) => { %> 
+                        <article class="carrousel-product">
+                            <a href="/products/<%= prod.id %>"><img class="product-image" src="/img/product-img/<%= prod.image %>" alt="<%= prod.name %>"></a>
+                            <h3 class="product-title"><%= prod.shortname + ' ' + prod.year %></h2>
+                            <p class="price">$ <%= prod.price %></p>
+                            <button class="add-to-cart">AGREGAR</button>
+                        </article>
+                    <% }) %>
+                </div>
+            </section>
 
         <section class="payment-and-deliver">
             <article class="payment">

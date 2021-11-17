@@ -5,7 +5,7 @@ const upload = require('../middlewares/upload');
 
 const productsController = require ("../controllers/productsController.js");
 
-// SHOP
+/*** SHOP ***/
 router.get("/", productsController.list);
 
 /*** CREATE PRODUCT FORM ***/
@@ -14,11 +14,10 @@ router.get ("/create", productsController.create);
 router.post ("/",upload.single("imageProd"), productsController.create);
 
 /*** GET ONE PRODUCT (DETAIL) ***/
-router.get('/:id', productsController.product);
+router.get('/:id', productsController.detail);
 
 /*** EDIT PRODUCT FORM ***/
 router.get('/:id/edit', productsController.edit);
-
 /*** EDIT PRODUCT ***/
 router.put('/:id', upload.single('imageProd'), productsController.update);
 
