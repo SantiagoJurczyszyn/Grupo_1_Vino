@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const mainRouter = require ("./routes/main");
 const productsRouter = require ("./routes/products");
-const userRouter = require ("./routes/user");
+const usersRouter = require ("./routes/users");
 const path = require('path')
 const cookieParser = require('cookie-parser');
 
@@ -27,7 +27,7 @@ app.set('views', path.join(__dirname, '/views'));
 
 app.use ("/", mainRouter);
 app.use ("/products", productsRouter);
-app.use ("/user", userRouter);
+app.use ("/users", usersRouter);
 
 // ************ error handler ************
 //app.use((req, res, next) => next(createError(404)));

@@ -6,7 +6,7 @@
         "email": "elenacrespo@gmail.com",
         "password": "Elena52",
         "category": "admin",
-        "image": "elena.jpg"
+        "image": "generic.png"
     },
     {
         "id": 2,
@@ -15,7 +15,7 @@
         "email": "martincrippa@gmail.com",
         "password": "Martin46",
         "category": "admin",
-        "image": "martin.jpg"
+        "image":  "generic.png"
     },
     {
         "id": 3,
@@ -24,7 +24,7 @@
         "email": "juliafrossi@gmail.com",
         "password": "Julia65",
         "category": "user",
-        "image": "julia.jpg"
+        "image":  "generic.png"
     },
     {
         "id": 4,
@@ -33,7 +33,7 @@
         "email": "santiagolanducci@gmail.com",
         "password": "Santiago23",
         "category": "user",
-        "image": "santiago.jpg"
+        "image":  "generic.png"
     },
     {
         "id": 5,
@@ -42,7 +42,7 @@
         "email": "mirtalanatti@gmail.com",
         "password": "Mirta78",
         "category": "user",
-        "image": "mirta.jpg"
+        "image":  "generic.png"
     },
     {
         "id": 6,
@@ -51,7 +51,7 @@
         "email": "josefinapeirone@gmail.com",
         "password": "Josefina42",
         "category": "user",
-        "image": "josefina.jpg"
+        "image":  "generic.png"
     },
     {
         "id": 7,
@@ -60,7 +60,7 @@
         "email": "pabloferri@gmail.com",
         "password": "Pablo48",
         "category": "user",
-        "image": "pablo.jpg"
+        "image":  "generic.png"
     },
     {
         "id": 8,
@@ -69,7 +69,7 @@
         "email": "hernanscandizzo@gmail.com",
         "password": "Hernan32",
         "category": "user",
-        "image": "hernan.jpg"
+        "image": "generic.png"
     },
     {
         "id": 9,
@@ -78,7 +78,7 @@
         "email": "fernandocabrera@gmail.com",
         "password": "Fernando52",
         "category": "user",
-        "image": "fernando.jpg"
+        "image":  "generic.png"
     },
     {
         "id": 10,
@@ -87,7 +87,7 @@
         "email": "eugeniacamponucci@gmail.com",
         "password": "Eugenia20",
         "category": "user",
-        "image": "eugenia.jpg"
+        "image":  "generic.png"
     },
     {
         "id": 11,
@@ -96,7 +96,7 @@
         "email": "sergioserra@gmail.com",
         "password": "ThA19X1",
         "category": "user",
-        "image": "sergio.jpg"
+        "image":  "generic.png"
     },
     {
         "id": 12,
@@ -105,7 +105,7 @@
         "email": "carolinapisac@gmail.com",
         "password": "Carolina62",
         "category": "user",
-        "image": "carolina.jpg"
+        "image":  "generic.png"
     },
     {
         "id": 13,
@@ -114,7 +114,7 @@
         "email": "ramiroperez@gmail.com",
         "password": "Ramiro30",
         "category": "user",
-        "image": "ramiro.jpg"
+        "image":  "generic.png"
     },
     {
         "id": 14,
@@ -123,7 +123,7 @@
         "email": "maitefernandez@gmail.com",
         "password": "Maite26",
         "category": "user",
-        "image": "maite.jpg"
+        "image":  "generic.png"
     },
     {
         "id": 15,
@@ -132,6 +132,6 @@
         "email": "sofiageninatti@gmail.com",
         "password": "Sofia53",
         "category": "user",
-        "image": "sofia.jpg"
+        "image":  "generic.png"
     }
 ]
