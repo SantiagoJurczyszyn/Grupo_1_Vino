@@ -9,7 +9,7 @@ const usersController =
 {
     register: (req,res) => {
         if (req.method == "GET") {         // Si el metodo es GET muestra el formulario de registro de usuario
-            res.render("./users/register");
+            res.render("../views/users/register");
           } else {                           // Si el método es POST crea un usuario nuevo
             const newUser = {
               id: users[users.length - 1].id + 1,
@@ -31,7 +31,7 @@ const usersController =
 
     login: (req,res) => {
         if (req.method == "GET") {         // Si el metodo es GET muestra el formulario de login
-            res.render("./users/login");
+            res.render("../views/users/login");
           } else {                           // Si el método es por POST lo logea
 
              // Antes de crear la cookie pregunto si se seleccionó la opción con un if
@@ -48,7 +48,7 @@ const usersController =
         
         let userId = req.params.id;
 
-        res.render("perfil", userId)
+        res.render("../views/users/perfil", userId)
         
     }
 }
