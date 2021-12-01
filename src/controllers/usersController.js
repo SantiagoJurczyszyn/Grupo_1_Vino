@@ -4,26 +4,44 @@ const usersImagePath = path.join(__dirname, "../../public/img/users-img");
 const usersFilePath = path.join(__dirname, "../database/users.json");
 const users = JSON.parse(fs.readFileSync(usersFilePath, "utf-8"));
 const {validationResult} = require ("express-validator");
-
+const bcryptjs=require('bcryptjs')
 const usersController = 
 {
     register: (req,res) => {
-        if (req.method == "GET") {         // Si el metodo es GET muestra el formulario de registro de usuario
-            res.render("../views/users/register");
-          } else {                           // Si el método es POST crea un usuario nuevo
+        
+            const validation=validationResult(req)
+            if (req.method == "GET") {         // Si el metodo es GET muestra el formulario de registro de usuario
+                  return res.render("../views/users/register");
+            } 
+          
+            else if // Si el usuario quiere registarse, pero ya lo hizo, se le informa que no debe registrarse nuevamente
+            (users.find(usuario=>usuario.email==req.body.email)) {
+            return res.render("users/register",{recordatorio:"Ya se había registrado previamente, inicia sesión con la contraseña ingresada oportunamente"})
+            } 
+          
+            else if //Si el usuario quiere registarse, pero no cumple con los requisitos de registración, los mismos son informados
+            (!validation.isEmpty()) {
+            const errors=validation.mapped()
+            const oldData=req.body
+            return res.render("users/register",{errors,oldData})
+            }  
+          
+            else {                           // Si completa correctamente el formulario, el usuario es ingresado a la basa de datos
             const newUser = {
-              id: users[users.length - 1].id + 1,
-              // Reutilizamos todas las props que vienen en el body con el spread operator
-              ...req.body,
-              image: req.file ? req.file.filename : "generic.png ", //si no viene una imagen cargo una genérica
+            id: users[users.length - 1].id + 1,
+            // Reutilizamos todas las props que vienen en el body con el spread operator
+            ...req.body,
+            password:bcryptjs.hashSync(req.body.password,10),
+            category:"user",
+            image: req.file ? req.file.filename : "generic.png ", //si no viene una imagen cargo una genérica
             };
-      
+    
             // Se agrega el nuevo usuario al array de productos y se reescribe el JSON
             users.push(newUser);
             fs.writeFileSync(usersFilePath, JSON.stringify(users, null, " "));
-      
-            res.redirect("/");
-         }
+            
+            res.redirect("/users/login"); //se redirige el usuario a la vista de login
+          }
 
     },
 

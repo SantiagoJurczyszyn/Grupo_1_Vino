@@ -112,7 +112,7 @@ img {
     align-items: center;
 }
 .flecha {
-    width: 50px;
+    width: 43px;
     position: absolute;
     left: 15px;
 }
@@ -127,13 +127,18 @@ img {
     display: flex;
     justify-content:space-between;
     font-weight:500 ;
-    border: 1px solid black;    
+    ;    
 
 }
 .iniciarSesion {
     padding: 10px;
     flex-grow: 0.5;
     text-align: center;
+    border: 1px solid black
+}
+
+.iniciarSesion a{
+    color: black;
 }
 .registrarse {
     background-color: black;
@@ -156,6 +161,12 @@ label {
     width: 100%;
     padding: 15px 10px;
     margin-top: 5px;
+}
+
+.texto-error {
+    color: red;
+    margin-top: 2px;
+    font-weight: bolder;
 }
 
 button {
