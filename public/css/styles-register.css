@@ -85,7 +85,7 @@ a {
 }
 
 main {
-    padding: 30px;
+    padding: 46px 30px 30px 30px;
     font-size: 14px;    
     margin: auto;
     display: flex;
@@ -95,8 +95,7 @@ main {
 .foto {
     display:none;
     position: relative; 
-    width: 535px;
-    margin-top: 35px;
+    width: 680px;
 }
 img {
     width: 100%;
@@ -145,7 +144,9 @@ img {
     color: white;
     padding: 10px;
     flex-grow: 0.5;
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .completar {
     font-weight: 300;
