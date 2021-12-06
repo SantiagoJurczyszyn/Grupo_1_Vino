@@ -3,7 +3,16 @@
         <a class="burger"><img src="/img/icon/burger.svg" alt="burger menu"></a>
         <a class="lupe"><img src="/img/icon/lupe.svg" alt=""></a>
         <a href="/"class="logo">VIINO</a>
-        <a class="user" href="../users/login"><img src="/img/icon/user.svg" alt=""></a>
+        <!--si el usuario esta logueado el icono de usuario sirve para logout
+            VER COMO HACER PARA QUE APAREZCA EL NOMBRE DE USUARIO (eso lo se hacer!)
+            Y UN MENU DESCOLGANTE CON LA PALABRA LOGOUT (esto no me salio!)
+        -->
+        <% if (locals.userIsLogged) {%>
+            <!--<a class="logOut" href="/users/logout">LogOut</a> -->
+            <a class="user" href="/users/logout"><img src="/img/icon/user.svg" alt=""></a>
+        <% }else {%>
+            <a class="user" href="/users/login"><img src="/img/icon/user.svg" alt=""></a>
+        <% } %>
         <a class="bag" href="/cart"><img src="/img/icon/bag.svg" alt=""></a>
     </div>  
     

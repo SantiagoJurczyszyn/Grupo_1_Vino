@@ -5,6 +5,9 @@ const usersFilePath = path.join(__dirname, "../database/users.json");
 const users = JSON.parse(fs.readFileSync(usersFilePath, "utf-8"));
 const {validationResult} = require ("express-validator");
 const bcryptjs=require('bcryptjs')
+// lo hice como explican en en el video de login completo - usan este model 
+const User = require ("../model/User.js");
+
 const usersController = 
 {
     register: (req,res) => {
@@ -46,8 +49,8 @@ const usersController =
     },
 
 
-
-    login: (req,res) => {
+    /* ESTE LOGIN LO DEBE HABER ESCRITO FACU. VER SI HAY QUE DEJARLO Y SACAR LE MIO!"*/
+    /*login: (req,res) => {
         if (req.method == "GET") {         // Si el metodo es GET muestra el formulario de login
             res.render("../views/users/login");
           } else {                           // Si el método es por POST lo logea
@@ -60,6 +63,64 @@ const usersController =
             res.redirect("/"); //redirijo al home
          }
 
+    },*/
+
+    login: (req,res) => {
+        res.render("./users/login");
+    },
+
+    // esto se agrega para el login!
+    // User.findByField esta en un pgm llamado model/User.js
+
+    loginProcess: (req,res) => {
+        let userToLogin = User.findByField("email", req.body.email);
+        // si encuentra el email es True. Si no, devuelve Undefined que interpreta como False
+        if (userToLogin) {
+             // compara clave ingresada con la clave encriptada que esta en el JSON
+             let isPasswordOk =  bcryptjs.compareSync(req.body.password, userToLogin.password);
+
+             if (isPasswordOk) {
+                    // si las credenciales son validas redirijo al shop 
+                    // (modificar si tienen que ir a otro lugar)
+                    // borra password aunque estara encriptada
+                    delete userToLogin.password;
+                    // guardo el usuario loggeado
+                    req.session.userLoggedIn = userToLogin;
+
+                    if (req.body.keepSessionOpen) {
+                     // se mantiene abierta por 7 dias
+                        res.cookie('userEmail', req.body.email, {maxAge: (60 * 1000) * 60 * 24 * 7})  ;
+                    }
+
+                    return res.redirect("/products");
+                      
+             } 
+             return res.render("./users/login", {
+                errors: {
+                    login: {
+                        msg: 'La contraseña ingresada no es correcta' 
+                    }
+                    
+                }
+                //, devolver lo que ingreso el usuario. oldData = req.body. ver dond e definir oldData
+            });
+        }
+        return res.render("./users/login", {
+            errors: {
+                login: {
+                    msg: 'Por favor, revisá el email ingresado. No lo encontramos registrado!' 
+                }
+                
+            }
+            //, devolver lo que ingreso el usuario. oldData = req.body. ver dond e definir oldData
+        });
+    },
+    
+    // por ahora se llega clickeando el icono de usuario (si el usuario esta logueado)
+    logout: (req,res) => {
+        res.clearCookie('userEmail');
+        req.session.destroy();
+        return res.redirect("/");
     },
 
     perfil: (req,res) => { //recibe un id por parametro y muestra ese perfil pero SOLO si está logueado

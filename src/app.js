@@ -1,10 +1,20 @@
 const express = require('express');
+
+// necesario para usar sesion
+const session = require('express-session');
+
 const app = express();
+
 const mainRouter = require ("./routes/main");
 const productsRouter = require ("./routes/products");
 const usersRouter = require ("./routes/users");
+
+// Middleware de app para mantener sesion abierta 
+const userLoggedAppMiddleware = require('./middlewares/userLoggedAppMiddleware');
+
 const path = require('path')
 const cookieParser = require('cookie-parser');
+const bcryptjs = require('bcryptjs');
 
 /*Para enviar peticiones por POST es necesario tener un formulario
 desde el que se enviaran los datos. Hay que configurar el entorno de 
@@ -18,6 +28,18 @@ Hay que configurar app.js para poder sobreescribir el método original e impleme
 PUSE ESTO COMO RECORDATORIO BORRARLO DESPUES*/
 const methodOverride = require('method-override');
 app.use(methodOverride('_method'));
+
+// inicializo session (resave y saveUninitialized se agregan para que no de error)
+// asi lo explican en el video (alguna vez entenderemos mas!)
+app.use(session({
+  secret: 'secret VIINO',
+  resave: false,
+  saveUninitialized: false,
+}));
+
+app.use(cookieParser());
+// tiene que ir despues de app.use(session)
+app.use(userLoggedAppMiddleware);
 
 
 app.use(express.static(path.join(__dirname, '../public')));

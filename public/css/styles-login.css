@@ -164,6 +164,13 @@ button {
     background-color: black;
     border:none
 }
+
+.texto-error {
+    color: red;
+    margin-top: 2px;
+    font-weight: bolder;
+}
+
 .olvidaste {
     font-weight: 300;
     text-align: left;
