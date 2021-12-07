@@ -140,8 +140,13 @@ img {
 .registrarse {
     padding: 10px;
     flex-grow: 0.5;
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
 }
+
+
 
 .campoEncuenta {
     margin-bottom: 15px;
