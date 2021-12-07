@@ -5,6 +5,7 @@
         "last_name": "Crespo",
         "email": "elenacrespo@gmail.com",
         "password": "$2b$10$wcWUGstl.Ek.zeQRbYrr.umEtFgFjV67o3PHlyKnY/79iEZi3gUMW",
+        "password_plaintext": "Elena52",
         "category": "admin",
         "image": "elena.jpg"
     },
@@ -14,6 +15,7 @@
         "last_name": "Crippa",
         "email": "martincrippa@gmail.com",
         "password": "$2b$10$GDcbAL9gy1XEn49lqcnneOfZsoKIcN9jKtZ1k3FcdoVEII0va93pG",
+        "password_plaintext": "Martin46",
         "category": "admin",
         "image": "martin.jpg"
     },
@@ -23,6 +25,7 @@
         "last_name": "Frossi",
         "email": "juliafrossi@gmail.com",
         "password": "$2b$10$NEQO/Gmy3mZVxm2an4L8KuWsr4wgwk33EFbRBHm0qqGM0KKyfim3a",
+        "password_plaintext": "Julia65",
         "category": "user",
         "image": "julia.jpg"
     },
@@ -32,6 +35,7 @@
         "last_name": "Landucci",
         "email": "santiagolanducci@gmail.com",
         "password": "$2b$10$CK1BXy8LoP3..LwW5xuuEewaMpMeQ7G8p.gtG2r2RTJrQDfgKpNWm",
+        "password_plaintext": "Santiago23",
         "category": "user",
         "image": "santiago.jpg"
     },
@@ -41,6 +45,7 @@
         "last_name": "Lanatti",
         "email": "mirtalanatti@gmail.com",
         "password": "$2b$10$1veeAatuznB2rSooFLzzY.l0gXqe1Qyb8fXhiW4ZmsuRHSJbpsU52",
+        "password_plaintext": "Mirta78",
         "category": "user",
         "image": "mirta.jpg"
     },
@@ -50,6 +55,7 @@
         "last_name": "Peirone",
         "email": "josefinapeirone@gmail.com",
         "password": "$2b$10$FMQJJD769JfznjDgtqgQI.ag8bP2.2FXQFl4Hw7zZJIMG5fsNPqLu",
+        "password_plaintext": "Josefina42",
         "category": "user",
         "image": "josefina.jpg"
     },
@@ -59,6 +65,7 @@
         "last_name": "Ferri",
         "email": "pabloferri@gmail.com",
         "password": "$2b$10$h2O7h8PAclw4Z1QJ1zPPiuO2MBiSLTc/l5gowehdw5IW5pi0DmY9W",
+        "password_plaintext": "Pablo48",
         "category": "user",
         "image": "pablo.jpg"
     },
@@ -68,6 +75,7 @@
         "last_name": "Scandizzo",
         "email": "hernanscandizzo@gmail.com",
         "password": "$2b$10$8b9vEX4IMKrnTYl7LXlt6OuhqX7EVRgI0SNpAyHITNsatVMBRrx76",
+        "password_plaintext": "Hernan32",
         "category": "user",
         "image": "hernan.jpg"
     },
@@ -77,6 +85,7 @@
         "last_name": "Cabrera",
         "email": "fernandocabrera@gmail.com",
         "password": "$2b$10$T2aPiDf.8dA57fs6nnCECeuXE0ivd8CqdPIjOLljo.f/QZ8Pn/JJC",
+        "password_plaintext": "Fernando52",
         "category": "user",
         "image": "fernando.jpg"
     },
@@ -86,6 +95,7 @@
         "last_name": "Camponucci",
         "email": "eugeniacamponucci@gmail.com",
         "password": "$2b$10$1n/wwkGpXMiR/I97/ws3oe676xUjKvMN9AICD8y6QFqLVH44XlZhK",
+        "password_plaintext": "Eugenia20",
         "category": "user",
         "image": "eugenia.jpg"
     },
@@ -95,6 +105,7 @@
         "last_name": "Serra",
         "email": "sergioserra@gmail.com",
         "password": "$2b$10$9UYUedTMH6vPJ851QxAwPu6m.6/R3P9UETX37HPVX8dfE5mD8u1u2",
+        "password_plaintext": "ThA19X1",
         "category": "user",
         "image": "sergio.jpg"
     },
@@ -104,6 +115,7 @@
         "last_name": "Pisac",
         "email": "carolinapisac@gmail.com",
         "password": "$2b$10$/DTyYRQnXOHP8iFXG9vKVexaUxbwfDUW4Z47W6vIMy30SByknDIoS",
+        "password_plaintext": "Carolina62",
         "category": "user",
         "image": "carolina.jpg"
     },
@@ -113,6 +125,7 @@
         "last_name": "Perez",
         "email": "ramiroperez@gmail.com",
         "password": "$2b$10$QGHBcLWi5aEEbDSWORZBguawtDPilGvqxdz0HC1FsGWlGWF01qda6",
+        "password_plaintext": "Ramiro30",
         "category": "user",
         "image": "ramiro.jpg"
     },
@@ -122,6 +135,7 @@
         "last_name": "Fernández",
         "email": "maitefernandez@gmail.com",
         "password": "$2b$10$WNJ4jPMF2kjsfegEQw9BMeyyg0S5pnn23UzjHxh2rb2uDkyBIuccK",
+        "password_plaintext": "Maite26",
         "category": "user",
         "image": "maite.jpg"
     },
@@ -131,6 +145,7 @@
         "last_name": "Geninatti",
         "email": "sofiageninatti@gmail.com",
         "password": "$2b$10$FQdVZZITLuD7CHC6jIyixOMWevy2RUheQr/SSaTzY1JJ/.VnP.5hq",
+        "password_plaintext": "Sofia53",
         "category": "user",
         "image": "sofia.jpg"
     }

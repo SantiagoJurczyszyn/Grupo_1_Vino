@@ -8,4 +8,4 @@ function userLoggedInMiddleware (req, res, next)
  next();
 }
 
-module.exports = userLoggedInMiddleware
+module.exports = userLoggedInMiddleware;

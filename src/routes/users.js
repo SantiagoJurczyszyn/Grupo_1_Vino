@@ -14,7 +14,7 @@ router.get("/register", userLoggedInMiddleware, usersController.register);
 */
 // ESTE ES EL QUE HIZO FACU,.QUEDA ASI , AL MENOS POR AHORA
 router.get("/register", usersController.register);
-router.post("/", uploadImageUser.single('imageUser'),validateRegister,usersController.register)
+router.post("/", userLoggedInMiddleware, uploadImageUser.single('imageUser'),validateRegister,usersController.register)
 
 // formulario de login
 // guestMiddleware: si el usuario esta loggeado no lo deja ir a loggin otra vez. Lo manda a shop
