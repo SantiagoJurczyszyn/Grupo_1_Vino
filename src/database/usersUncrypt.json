@@ -4,9 +4,8 @@
         "first_name": "Elena",
         "last_name": "Crespo",
         "email": "elenacrespo@gmail.com",
-        "password": "$2b$10$wcWUGstl.Ek.zeQRbYrr.umEtFgFjV67o3PHlyKnY/79iEZi3gUMW",
-        "password_plaintext": "Elena52",
-        "category": "admin",
+        "password": "Elena52",
+        "category": "user",
         "image": "elena.jpg"
     },
     {
@@ -14,9 +13,8 @@
         "first_name": "Martín",
         "last_name": "Crippa",
         "email": "martincrippa@gmail.com",
-        "password": "$2b$10$GDcbAL9gy1XEn49lqcnneOfZsoKIcN9jKtZ1k3FcdoVEII0va93pG",
-        "password_plaintext": "Martin46",
-        "category": "admin",
+        "password": "Martin46",
+        "category": "user",
         "image": "martin.jpg"
     },
     {
@@ -24,8 +22,7 @@
         "first_name": "Julia",
         "last_name": "Frossi",
         "email": "juliafrossi@gmail.com",
-        "password": "$2b$10$NEQO/Gmy3mZVxm2an4L8KuWsr4wgwk33EFbRBHm0qqGM0KKyfim3a",
-        "password_plaintext": "Julia65",
+        "password": "Julia65",
         "category": "user",
         "image": "julia.jpg"
     },
@@ -34,8 +31,7 @@
         "first_name": "Santiago",
         "last_name": "Landucci",
         "email": "santiagolanducci@gmail.com",
-        "password": "$2b$10$CK1BXy8LoP3..LwW5xuuEewaMpMeQ7G8p.gtG2r2RTJrQDfgKpNWm",
-        "password_plaintext": "Santiago23",
+        "password": "Santiago23",
         "category": "user",
         "image": "santiago.jpg"
     },
@@ -44,8 +40,7 @@
         "first_name": "Mirta",
         "last_name": "Lanatti",
         "email": "mirtalanatti@gmail.com",
-        "password": "$2b$10$1veeAatuznB2rSooFLzzY.l0gXqe1Qyb8fXhiW4ZmsuRHSJbpsU52",
-        "password_plaintext": "Mirta78",
+        "password": "Mirta78",
         "category": "user",
         "image": "mirta.jpg"
     },
@@ -54,8 +49,7 @@
         "first_name": "Josefina",
         "last_name": "Peirone",
         "email": "josefinapeirone@gmail.com",
-        "password": "$2b$10$FMQJJD769JfznjDgtqgQI.ag8bP2.2FXQFl4Hw7zZJIMG5fsNPqLu",
-        "password_plaintext": "Josefina42",
+        "password": "Josefina42",
         "category": "user",
         "image": "josefina.jpg"
     },
@@ -64,8 +58,7 @@
         "first_name": "Pablo",
         "last_name": "Ferri",
         "email": "pabloferri@gmail.com",
-        "password": "$2b$10$h2O7h8PAclw4Z1QJ1zPPiuO2MBiSLTc/l5gowehdw5IW5pi0DmY9W",
-        "password_plaintext": "Pablo48",
+        "password": "Pablo48",
         "category": "user",
         "image": "pablo.jpg"
     },
@@ -74,8 +67,7 @@
         "first_name": "Hernan",
         "last_name": "Scandizzo",
         "email": "hernanscandizzo@gmail.com",
-        "password": "$2b$10$8b9vEX4IMKrnTYl7LXlt6OuhqX7EVRgI0SNpAyHITNsatVMBRrx76",
-        "password_plaintext": "Hernan32",
+        "password": "Hernan32",
         "category": "user",
         "image": "hernan.jpg"
     },
@@ -84,8 +76,7 @@
         "first_name": "Fernando",
         "last_name": "Cabrera",
         "email": "fernandocabrera@gmail.com",
-        "password": "$2b$10$T2aPiDf.8dA57fs6nnCECeuXE0ivd8CqdPIjOLljo.f/QZ8Pn/JJC",
-        "password_plaintext": "Fernando52",
+        "password": "Fernando52",
         "category": "user",
         "image": "fernando.jpg"
     },
@@ -94,8 +85,7 @@
         "first_name": "Eugenia",
         "last_name": "Camponucci",
         "email": "eugeniacamponucci@gmail.com",
-        "password": "$2b$10$1n/wwkGpXMiR/I97/ws3oe676xUjKvMN9AICD8y6QFqLVH44XlZhK",
-        "password_plaintext": "Eugenia20",
+        "password": "Eugenia20",
         "category": "user",
         "image": "eugenia.jpg"
     },
@@ -104,8 +94,7 @@
         "first_name": "Sergio",
         "last_name": "Serra",
         "email": "sergioserra@gmail.com",
-        "password": "$2b$10$9UYUedTMH6vPJ851QxAwPu6m.6/R3P9UETX37HPVX8dfE5mD8u1u2",
-        "password_plaintext": "ThA19X1",
+        "password": "ThA19X1",
         "category": "user",
         "image": "sergio.jpg"
     },
@@ -114,8 +103,7 @@
         "first_name": "Carolina",
         "last_name": "Pisac",
         "email": "carolinapisac@gmail.com",
-        "password": "$2b$10$/DTyYRQnXOHP8iFXG9vKVexaUxbwfDUW4Z47W6vIMy30SByknDIoS",
-        "password_plaintext": "Carolina62",
+        "password": "Carolina62",
         "category": "user",
         "image": "carolina.jpg"
     },
@@ -124,8 +112,7 @@
         "first_name": "Ramiro",
         "last_name": "Perez",
         "email": "ramiroperez@gmail.com",
-        "password": "$2b$10$QGHBcLWi5aEEbDSWORZBguawtDPilGvqxdz0HC1FsGWlGWF01qda6",
-        "password_plaintext": "Ramiro30",
+        "password": "Ramiro30",
         "category": "user",
         "image": "ramiro.jpg"
     },
@@ -134,8 +121,7 @@
         "first_name": "Maite",
         "last_name": "Fernández",
         "email": "maitefernandez@gmail.com",
-        "password": "$2b$10$WNJ4jPMF2kjsfegEQw9BMeyyg0S5pnn23UzjHxh2rb2uDkyBIuccK",
-        "password_plaintext": "Maite26",
+        "password": "Maite26",
         "category": "user",
         "image": "maite.jpg"
     },
@@ -144,8 +130,7 @@
         "first_name": "Sofía",
         "last_name": "Geninatti",
         "email": "sofiageninatti@gmail.com",
-        "password": "$2b$10$FQdVZZITLuD7CHC6jIyixOMWevy2RUheQr/SSaTzY1JJ/.VnP.5hq",
-        "password_plaintext": "Sofia53",
+        "password": "Sofia53",
         "category": "user",
         "image": "sofia.jpg"
     }

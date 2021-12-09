@@ -17,14 +17,12 @@
                     <p>INICIA SESIÓN</p>
                 </div>
                 <div class="registrarse">
-                    <div class="hijo-registrate">
-                        <p>REGISTRATE</p>
-                    </div>
+                    <p>REGISTRATE</p>
                 </div>
             </div> <br>   
             <p>Iniciá sesión en VIINO con tu correo electrónico y contraseña</p><br>
             
-            <form action="login" method="POST"> <!-- </form> <<<-- ESTE FORM ESTA DE MAS-->
+            <form action="resultadosLogin" method="POST">
                 <div class="campoEncuenta">
                     <label for="email">Correo electrónico:</label>
                     <input class="barra" type="email" name="email" id="email" placeholder="Correo electrónico">
@@ -33,17 +31,9 @@
                     <label for="password">Contraseña:</label>
                     <input class="barra" type="password" name="password" id="password" placeholder="Contraseña">
                 </div>
-                <!-- AGREGO ESTE IF CON MENSAJE DE ERROR
-                       despues tendremos que definir qué mensajes enviar, dónde hacerlo y qué estilo darle!-->
-                <div class="texto-error">
-                    <% if (locals.errors && errors.login) {%>
-                        <%= errors.login.msg %>
-                    <% } %>
-                </div>
                 <p class="olvidaste">¿Olvidaste la contraseña?</p><br>
-                <!--  <p><i class="far fa-square"></i><strong> Mantener sesión abierta</strong> </p><br>-->
-                <p><input type='checkbox' name='keepSessionOpen'><strong> Mantener sesión abierta</strong> </p><br>
-                <button type="submit" >INGRESAR</button>  <!-- SAQUE ESTE value="enviar" NO SE PARA QUE SIRVE-->
+                <p><i class="far fa-square"></i><strong> Mantener sesión abierta</strong> </p><br>
+                <button type="submit" value="enviar">INGRESAR</button>
             </form>
         </div>
     </main><br><br><br>

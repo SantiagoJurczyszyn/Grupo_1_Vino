@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<%- include('../partials/head',{subtitle:"editando: " + product.name,styleSheetName:'styles'}) %>
+<%- include('../partials/head',{subtitle:"editando: " + product.name }) %>
 
 <body>
     <%- include('../partials/header')%>
@@ -15,11 +15,11 @@
             <!-- este action va al productRuoter -->
             
             <form method="POST" action="/products/<%= product.id %>?_method=PUT" enctype="multipart/form-data" class="form">     
-                <p class="form-subtext">DATOS PRINCIPALES</p>
+                <p class="form-title">DATOS PRINCIPALES</p>
                 <!-- AGREGO LA IMAGEN POR ACA (PROVISORIO)-->
                 <br>
                 <figure class="product-detail-image-container">
-                    <img class="product-detail-image" src="/img/product-img/<%= product.image %>" alt="<%= product.name %>">
+                    <img class="product-detail-image" src="/img/product-img/<%= product.image %>" alt="Imagen del vino <%= product.name %>">
                 </figure>    
                 <label for="imageProd">
                     <h3 class="label">Elegí una nueva imagen de producto:</h3>
@@ -67,7 +67,7 @@
                     <h3 class="label">Descripción:</h3>
                     <textarea class="input area" name="description" id="description" cols="30" rows="10" placeholder="Descripción..." ><%= product.description %></textarea>
                 </label>
-                <p class="form-subtext">FICHA TÉCNICA</p>
+                <p class="form-title">FICHA TÉCNICA</p>
                 <label>
                     <h3 class="label">Locación del viñedo:</h3>
                     <input class="input" type="text" name="location" id="location" placeholder="Locación del viñedo..." value="<%= product.location %>">
@@ -97,7 +97,7 @@
                     <h3 class="label">Crianza:</h3>
                     <input class="input" type="text" name="breeding" id="breeding" placeholder="Crianza..." value="<%= product.breeding %>">
                 </label>
-                <button class="black-button" type="submit">MODIFICAR PRODUCTO</button>
+                <button class="black-button separation" type="submit">MODIFICAR PRODUCTO</button>
             </form>
         </div>
     </main>

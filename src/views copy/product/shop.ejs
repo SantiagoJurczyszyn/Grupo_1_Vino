@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<%- include('../partials/head',{subtitle:'Shop'}) %>
+<%- include('../partials/head',{subtitle:'shop',styleSheetName:'styles'}) %>
 
 <body>
     <%- include('../partials/header')%>
@@ -14,22 +14,19 @@
             </a>
         </div>
         <ul class="shop-search-filters">
-            <li><a href=""><p class="filter ">TODOS</p></a></li>
-            <li><a href=""><p class="filter ">TINTOS</p></a></li>
-            <li><a href=""><p class="filter active">BLANCOS</p></a></li>
-            <li><a href=""><p class="filter">OTROS</p></a></li>
+            <li><a href="">TODOS</a></li>
+            <li><a href="">TINTOS</a></li>
+            <li><a href="">BLANCOS</a></li>
+            <li><a href="">OTROS</a></li>
         </ul>
-        <form action="/products/create" class="create">
-            <button  class="grey-button">CREAR PRODUCTO</a></button>
-        </form>
         <section class="shop">
             <!-- El forEach va a crear un articulo por CADA objeto del array -->
             <!-- En cada iteracion el objeto "prod" tiene un producto completo -->
             <% productsAMostrar.forEach((prod) => { %>    
 
                 <article class="product">
-                    <a href="/products/<%= prod.id %>"><img class="product-image" src="/img/product-img/<%= prod.image %>" alt="<%= prod.name %>"></a>
-                    <h3 class="product-title"><%= prod.shortname + ' ' + prod.year %></h2>
+                    <a href="/product/<%= prod.id %>"><img class="product-image" src="/img/product-img/<%= prod.image %>" alt="<%= prod.name %>"></a>
+                    <h3 class="product-title"><%= prod.name %></h2>
                     <p class="price">$ <%= prod.price %></p>
                     <button class="add-to-cart">AGREGAR</button>
                 </article>
