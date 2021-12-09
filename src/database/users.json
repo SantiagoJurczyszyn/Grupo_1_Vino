@@ -133,5 +133,50 @@
   "password": "$2a$10$Qac2ty8yatARbqIrqtAXsub5Pq.5p/mVnVeGjQoMBpNwdgrT3LIaC",
   "image": "user-1639004505024.png",
   "category": "user"
+ },
+ {
+  "id": 16,
+  "first_name": "Sebastián",
+  "last_name": "Sušnik",
+  "email": "sebasusnik@gmail.com",
+  "password": "$2a$10$g/MjylO0R07j8HUWYjlS5eljzd6UJmA8b1lSY73hzMIa6Vb/9jxcS",
+  "image": "user-1639010265197.jpeg",
+  "category": "user"
+ },
+ {
+  "id": 17,
+  "first_name": "Pedro",
+  "last_name": "Perez",
+  "email": "pedroperez@gmail.com",
+  "password": "$2a$10$pJlbo2ZAoXpqG7.LFrJ/Fu/2MfEKyKgZqeTOSdV1iH/gWipfrDA1K",
+  "image": "user-1639010813359.png",
+  "category": "user"
+ },
+ {
+  "id": 18,
+  "first_name": "Asdf",
+  "last_name": "ASDF",
+  "email": "asdf@aasdf.com",
+  "password": "$2a$10$Sg9.j5uHbVG0/dLUOgehauIJH3hXEsyYZx3fDlp6Jmr5vT9udmQpW",
+  "image": "generic.png ",
+  "category": "user"
+ },
+ {
+  "id": 19,
+  "first_name": "Pedroasd",
+  "last_name": "Asdf",
+  "email": "pedro@gmail.com",
+  "password": "$2a$10$R1W1CWseyh2u1z.lnF2hueWvlMkghf1loVSWOMBJoYWd9tRJquFAq",
+  "image": "generic.png",
+  "category": "user"
+ },
+ {
+  "id": 20,
+  "first_name": "Asdf",
+  "last_name": "Asdf",
+  "email": "juan@gmail.com",
+  "password": "$2a$10$EpEUl6nDP8QR61sXX.ZbLegA3xyQh141QgEEc3cPrb1DZ7wSy74z.",
+  "image": "generic.png",
+  "category": "user"
  }
 ]

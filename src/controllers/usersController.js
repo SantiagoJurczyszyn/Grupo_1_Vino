@@ -38,7 +38,7 @@ const userController =
 		let userToCreate = {
 			...req.body, // Reutilizamos todas las props que vienen en el body con el spread operator
 			password: bcryptjs.hashSync(req.body.password, 10),
-            image: req.file ? req.file.filename : "generic.png ", //si no viene una imagen cargo una genérica
+            image: req.file ? req.file.filename : "generic.png", //si no viene una imagen cargo una genérica
 			category: "user",
 		}
 
@@ -91,7 +91,7 @@ const userController =
 	},
 
 	logout: (req, res) => {
-		res.clearCookie('main/index');
+		res.clearCookie('userEmail');
 		req.session.destroy();
 		return res.redirect('/');
 	}

@@ -19,7 +19,7 @@ const valideteRegister=[
         .isStrongPassword({ minLength: 6, minLowercase: 1, minUppercase: 1, minNumbers: 0, minSymbols: 0}).withMessage("La contraseña debe incluir al menos una letra mayúscula").bail()
         .isStrongPassword({ minLength: 6, minLowercase: 1, minUppercase: 1, minNumbers: 1, minSymbols: 0}).withMessage("La contraseña debe incluir al menos un caracter que sea numérico").bail()
 /*         .isStrongPassword({ minLength: 6, minLowercase: 1, minUppercase: 1, minNumbers: 1, minSymbols: 1}).withMessage("La contraseña tiene que incluir al menos un caracter que sea un símbolo") */,
-    validator.check('imageUser')
+/*    validator.check('imageUser')
         .custom((value, { req }) => {
             let file = req.file;
             let acceptedExtensions = ['.jpg', '.png', '.gif', '.jpeg'];
@@ -34,7 +34,7 @@ const valideteRegister=[
             }
 
             return true;
-        })
+        }) */
     ]
 
 module.exports=valideteRegister
