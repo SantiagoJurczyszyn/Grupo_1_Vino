@@ -1,34 +1,34 @@
 const express = require ("express");
 const router = express.Router();
-
 // Controller
 const productsController = require ("../controllers/productsController.js");
 
-// Middlewares
-const uploadFile = require('../middlewares/uploadProd')
+// Middleware
+
+const upload = require('../middlewares/upload');
 
 
-/*** PRODUCT ROUTES ***/
 
-// Shop
+/*** SHOP ***/
 router.get("/", productsController.list);
 
-// Create Product Form
+/*** CREATE PRODUCT FORM ***/
 router.get ("/create", productsController.create);
 
-// Create Product Process
-router.post ("/", uploadFile.single("imageProd"), productsController.create);
 
-// Product Detail
+/*** CREATE PRODUCT ***/
+router.post ("/",upload.single("imageProd"), productsController.create);
+
+/*** GET ONE PRODUCT (DETAIL) ***/
 router.get('/:id', productsController.detail);
 
-// Edit Product Form
+/*** EDIT PRODUCT FORM ***/
 router.get('/:id/edit', productsController.edit);
 
-// Update Product
-router.put('/:id', uploadFile.single('imageProd'), productsController.update);
+/*** UPDATE PRODUCT ***/
+router.put('/:id', upload.single('imageProd'), productsController.update);
 
-// Delete Product
+/*** DELETE PRODUCT ***/
 router.delete ('/:id', productsController.destroy);
 
 

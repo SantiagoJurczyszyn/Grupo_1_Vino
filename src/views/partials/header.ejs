@@ -2,13 +2,13 @@
     <div class="main-header-top-bar">
         <a class="burger"><img src="/img/icon/burger.svg" alt="burger menu"></a>
         <a class="lupe"><img src="/img/icon/lupe.svg" alt=""></a>
-        <a href="/"class="logo">VIINO</a>
-        <a class="user" href="/user/login"><img src="/img/icon/user.svg" alt="">
-            <% if (locals.isLogged) { %>
-                <p class="user-name"><%= locals.userLogged.first_name %></p>
+        <a href="/"class="logo">VIINO</a>       
+        <a class="user" href="/users/login"><img src="/img/icon/user.svg" alt="">                      
+            <% if (locals.userIsLogged) { %>
+                <p class="user-name"><%= locals.userLoggedIn.first_name %></p>
             <% } %>
-        </a>
-        <a class="bag" href="/cart"><img src="/img/icon/bag.svg" alt=""></a>
+        </a>              
+            <a class="bag" href="/cart"><img src="/img/icon/bag.svg" alt=""></a>
     </div>  
     
     <nav class="main-header-bottom-bar">

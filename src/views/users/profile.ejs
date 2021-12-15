@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%- include('../partials/head',{subtitle:'cart'}) %>
+    <%- include('../partials/head',{subtitle:'cart',styleSheetName:'styles'}) %>
 
 <body>
     <%- include('../partials/header')%>
@@ -13,12 +13,12 @@
 
         <section class="form-container">
             <figure class="product-detail-image-container">
-                <img class="product-detail-image" src="/img/users-img/<%= locals.userLogged.image %>" alt="Imagen de perfil">
+                <img class="product-detail-image" src="/img/users-img/<%= locals.userLoggedIn.image %>" alt="Imagen de perfil">
             </figure>
             <p class="form-text">Este es tu perfil de usuario</p>
 
 
-            <form action="/user/logout" method="GET">
+            <form action="/users/logout" method="GET">
                 <button class= "black-button"type="submit" value="enviar">CERRAR SESIÓN</button>
             </form>
         </section>

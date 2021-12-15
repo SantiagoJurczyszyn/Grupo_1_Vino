@@ -4,179 +4,143 @@
   "first_name": "Elena",
   "last_name": "Crespo",
   "email": "elenacrespo@gmail.com",
-  "password": "$2a$10$cqifimE28JtgmdRdKFMLH.qSykc.447gPoc/RunwND0WXVF1hYYte",
-  "image": "user-1639004022556.png",
-  "category": "user"
+  "password": "$2b$10$wcWUGstl.Ek.zeQRbYrr.umEtFgFjV67o3PHlyKnY/79iEZi3gUMW",
+  "category": "admin",
+  "image": "generic.png"
  },
  {
   "id": 2,
   "first_name": "Martín",
   "last_name": "Crippa",
   "email": "martincrippa@gmail.com",
-  "password": "$2a$10$Wd4ikZVV7xpr/Bnod.i3K.YBVEbQ6qR66noIAzv6OLeZpD.CbRDFa",
-  "image": "user-1639004069952.png",
-  "category": "user"
+  "password": "$2b$10$GDcbAL9gy1XEn49lqcnneOfZsoKIcN9jKtZ1k3FcdoVEII0va93pG",
+  "category": "admin",
+  "image": "generic.png"
  },
  {
   "id": 3,
   "first_name": "Julia",
   "last_name": "Frossi",
   "email": "juliafrossi@gmail.com",
-  "password": "$2a$10$t2WmDJvVPpr7CQ5B8ynbv.cZoDGwNUuux0UcdtUtzuKVRnJRKHWvy",
-  "image": "user-1639004117097.png",
-  "category": "user"
+  "password": "$2b$10$NEQO/Gmy3mZVxm2an4L8KuWsr4wgwk33EFbRBHm0qqGM0KKyfim3a",
+  "category": "user",
+  "image": "generic.png"
  },
  {
   "id": 4,
   "first_name": "Santiago",
   "last_name": "Landucci",
   "email": "santiagolanducci@gmail.com",
-  "password": "$2a$10$IPWKHyBUAoMQJ6DYYGByAu6wNt8NSIMEtz9ZrBQhfAGry2kTTIyk6",
-  "image": "user-1639004154577.png",
-  "category": "user"
+  "password": "$2b$10$CK1BXy8LoP3..LwW5xuuEewaMpMeQ7G8p.gtG2r2RTJrQDfgKpNWm",
+  "category": "user",
+  "image": "generic.png"
  },
  {
   "id": 5,
   "first_name": "Mirta",
   "last_name": "Lanatti",
   "email": "mirtalanatti@gmail.com",
-  "password": "$2a$10$A9UosTYQW.052vJnkvaga.KRhEan.j6FNRMoe9wBQc1eSGtyehPDa",
-  "image": "user-1639004189108.png",
-  "category": "user"
+  "password": "$2b$10$1veeAatuznB2rSooFLzzY.l0gXqe1Qyb8fXhiW4ZmsuRHSJbpsU52",
+  "category": "user",
+  "image": "generic.png"
  },
  {
   "id": 6,
   "first_name": "Josefina",
   "last_name": "Peirone",
   "email": "josefinapeirone@gmail.com",
-  "password": "$2a$10$PAedOI0QCYauNuvDE4.TNO/RWMF1WGAfBc98WUfbBtLCehJShtTRq",
-  "image": "user-1639004224324.png",
-  "category": "user"
+  "password": "$2b$10$FMQJJD769JfznjDgtqgQI.ag8bP2.2FXQFl4Hw7zZJIMG5fsNPqLu",
+  "category": "user",
+  "image": "generic.png"
  },
  {
   "id": 7,
   "first_name": "Pablo",
   "last_name": "Ferri",
   "email": "pabloferri@gmail.com",
-  "password": "$2a$10$5/Wac5CqHV2zhDub7TiCRuSvz2k6v53kANWxzSgyDaPGELN0k4YmK",
-  "image": "user-1639004249089.png",
-  "category": "user"
+  "password": "$2b$10$h2O7h8PAclw4Z1QJ1zPPiuO2MBiSLTc/l5gowehdw5IW5pi0DmY9W",
+  "category": "user",
+  "image": "generic.png"
  },
  {
   "id": 8,
   "first_name": "Hernan",
   "last_name": "Scandizzo",
   "email": "hernanscandizzo@gmail.com",
-  "password": "$2a$10$Nz.l.e04HZf6q8EP0ZVbWejZuliOc4FGYyiN4ki7fvCLkkIqrE3Tm",
-  "image": "user-1639004283087.png",
-  "category": "user"
+  "password": "$2b$10$8b9vEX4IMKrnTYl7LXlt6OuhqX7EVRgI0SNpAyHITNsatVMBRrx76",
+  "category": "user",
+  "image": "generic.png"
  },
  {
   "id": 9,
   "first_name": "Fernando",
   "last_name": "Cabrera",
   "email": "fernandocabrera@gmail.com",
-  "password": "$2a$10$xCuc.B6MVyWpzFYQMd/6o.6pSczyhIyF0tqHvhdcfFn1cyZZwXAMy",
-  "image": "user-1639004314166.png",
-  "category": "user"
+  "password": "$2b$10$T2aPiDf.8dA57fs6nnCECeuXE0ivd8CqdPIjOLljo.f/QZ8Pn/JJC",
+  "category": "user",
+  "image": "generic.png"
  },
  {
   "id": 10,
   "first_name": "Eugenia",
   "last_name": "Camponucci",
   "email": "eugeniacamponucci@gmail.com",
-  "password": "$2a$10$tmv6GhQmty6UoAZOGp.6JODHrOlQ6yrvPDb26bi4yccgjkwwLmtHS",
-  "image": "user-1639004352355.png",
-  "category": "user"
+  "password": "$2b$10$1n/wwkGpXMiR/I97/ws3oe676xUjKvMN9AICD8y6QFqLVH44XlZhK",
+  "category": "user",
+  "image": "generic.png"
  },
  {
   "id": 11,
   "first_name": "Sergio",
   "last_name": "Serra",
   "email": "sergioserra@gmail.com",
-  "password": "$2a$10$RUXrpgEQJaXhpkVfB9FAW.D0DZe9wAf/ZNq/N1.ATSDbBI/FxIoUK",
-  "image": "user-1639004390442.png",
-  "category": "user"
+  "password": "$2b$10$9UYUedTMH6vPJ851QxAwPu6m.6/R3P9UETX37HPVX8dfE5mD8u1u2",
+  "category": "user",
+  "image": "generic.png"
  },
  {
   "id": 12,
   "first_name": "Carolina",
   "last_name": "Pisac",
   "email": "carolinapisac@gmail.com",
-  "password": "$2a$10$MwBVS/Gf0Ia.l5RxfB.Sr.aE0MSHkzA5d0CddDK67h033CYFYIywK",
-  "image": "user-1639004418847.png",
-  "category": "user"
+  "password": "$2b$10$/DTyYRQnXOHP8iFXG9vKVexaUxbwfDUW4Z47W6vIMy30SByknDIoS",
+  "category": "user",
+  "image": "generic.png"
  },
  {
   "id": 13,
   "first_name": "Ramiro",
   "last_name": "Perez",
   "email": "ramiroperez@gmail.com",
-  "password": "$2a$10$nFihbFyW7Lr8YEHl8/Ol1uY6fuROhDYUqtebNBYG818Zni9f0D6MG",
-  "image": "user-1639004446505.png",
-  "category": "user"
+  "password": "$2b$10$QGHBcLWi5aEEbDSWORZBguawtDPilGvqxdz0HC1FsGWlGWF01qda6",
+  "category": "user",
+  "image": "generic.png"
  },
  {
   "id": 14,
   "first_name": "Maite",
-  "last_name": "Fernandez",
+  "last_name": "Fernández",
   "email": "maitefernandez@gmail.com",
-  "password": "$2a$10$nIRNG5KLPiZkfPhbTcvAUuvA1kgqg.uysAC/jVX7.eb1IgcaSsJIu",
-  "image": "user-1639004475853.png",
-  "category": "user"
+  "password": "$2b$10$WNJ4jPMF2kjsfegEQw9BMeyyg0S5pnn23UzjHxh2rb2uDkyBIuccK",
+  "category": "user",
+  "image": "generic.png"
  },
  {
   "id": 15,
-  "first_name": "Sofia",
+  "first_name": "Sofía",
   "last_name": "Geninatti",
   "email": "sofiageninatti@gmail.com",
-  "password": "$2a$10$Qac2ty8yatARbqIrqtAXsub5Pq.5p/mVnVeGjQoMBpNwdgrT3LIaC",
-  "image": "user-1639004505024.png",
-  "category": "user"
+  "password": "$2b$10$FQdVZZITLuD7CHC6jIyixOMWevy2RUheQr/SSaTzY1JJ/.VnP.5hq",
+  "category": "user",
+  "image": "generic.png"
  },
  {
   "id": 16,
-  "first_name": "Sebastián",
-  "last_name": "Sušnik",
-  "email": "sebasusnik@gmail.com",
-  "password": "$2a$10$g/MjylO0R07j8HUWYjlS5eljzd6UJmA8b1lSY73hzMIa6Vb/9jxcS",
-  "image": "user-1639010265197.jpeg",
-  "category": "user"
- },
- {
-  "id": 17,
-  "first_name": "Pedro",
-  "last_name": "Perez",
-  "email": "pedroperez@gmail.com",
-  "password": "$2a$10$pJlbo2ZAoXpqG7.LFrJ/Fu/2MfEKyKgZqeTOSdV1iH/gWipfrDA1K",
-  "image": "user-1639010813359.png",
-  "category": "user"
- },
- {
-  "id": 18,
-  "first_name": "Asdf",
-  "last_name": "ASDF",
-  "email": "asdf@aasdf.com",
-  "password": "$2a$10$Sg9.j5uHbVG0/dLUOgehauIJH3hXEsyYZx3fDlp6Jmr5vT9udmQpW",
-  "image": "generic.png ",
-  "category": "user"
- },
- {
-  "id": 19,
-  "first_name": "Pedroasd",
-  "last_name": "Asdf",
-  "email": "pedro@gmail.com",
-  "password": "$2a$10$R1W1CWseyh2u1z.lnF2hueWvlMkghf1loVSWOMBJoYWd9tRJquFAq",
-  "image": "generic.png",
-  "category": "user"
- },
- {
-  "id": 20,
-  "first_name": "Asdf",
-  "last_name": "Asdf",
-  "email": "juan@gmail.com",
-  "password": "$2a$10$EpEUl6nDP8QR61sXX.ZbLegA3xyQh141QgEEc3cPrb1DZ7wSy74z.",
-  "image": "generic.png",
-  "category": "user"
+  "first_name": "Santiago",
+  "last_name": "Jurczyszyn",
+  "email": "santiago.jurchesin@gmail.com",
+  "password": "$2a$10$pXmbt7qvp.8mnXZ0rj5SdOdhgUOtKkCrflWjuDtxerWeERFySBZ6S",
+  "category": "user",
+  "image": "generic.png "
  }
 ]
