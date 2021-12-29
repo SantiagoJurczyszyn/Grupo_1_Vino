@@ -6,7 +6,7 @@ const users = JSON.parse(fs.readFileSync(usersFilePath, "utf-8"));
 const {validationResult} = require ("express-validator");
 const bcryptjs=require('bcryptjs')
 // lo hice como explican en en el video de login completo - usan este model 
-const User = require ("../models/User.js");
+const User = require ("../middlewares/User.js");
 
 const usersController = 
 {
@@ -51,8 +51,6 @@ const usersController =
         res.render("./users/login");
     },
 
-    // esto se agrega para el login!
-    // User.findByField esta en un pgm llamado model/User.js
 
     loginProcess: (req,res) => {
         let userToLogin = User.findByField("email", req.body.email);
