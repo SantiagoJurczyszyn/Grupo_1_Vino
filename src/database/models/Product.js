@@ -1,5 +1,5 @@
 module.exports = function (sequelize, dataTypes) {
-  let alias = "Products";
+  let alias = "Product";
 
   let cols = {
     id: {
@@ -68,51 +68,51 @@ module.exports = function (sequelize, dataTypes) {
     timestamps: false,
   };
 
-  let Products = sequelize.define(alias, cols, config);
+  let Product = sequelize.define(alias, cols, config);
 
-  Products.associate = function (models) {
-    Products.belongsToMany(models.Users, {
-      as: "products_users",
+  Product.associate = function (models) {
+    Product.belongsToMany(models.User, {
+      as: "product_user",
       through: "product_user ",
       foreignKey: "product_id",
       otherKey: "user_id",
       timestamps: false
     }),
-      Products.belongsToMany(models.Winemakers, {
-        as: "products_winemakers",
+      Product.belongsToMany(models.Winemaker, {
+        as: "product_winemaker",
         through: "winemaker_product",
         foreignKey: "product_id",
         otherKey: "winemaker_id",
         timestamps: false,
       }),
 
-      Products.belongsTo(models.Producers, {
-        as: "prod_producers",
+      Product.belongsTo(models.Producer, {
+        as: "product_producer",
         foreignKey: "producer_id",
         timestamps: false,
       }),
-      Products.belongsTo(models.Type, {
-        as: "prod_type",
+      Product.belongsTo(models.Type, {
+        as: "product_type",
         foreignKey: "type_id",
         timestamps: false,
       }),
-      Products.belongsTo(models.Varietal, {
-        as: "prod_varietal",
+      Product.belongsTo(models.Varietal, {
+        as: "product_varietal",
         foreignKey: "varietal_id",
         timestamps: false,
       }),
 
-      Products.belongsTo(models.Image, {
-        as: "prod_im",
+      Product.belongsTo(models.Image, {
+        as: "product_image",
         foreignKey: "product_id",
         timestamps: false,
       }),
-      Products.hasMany(models.Cart, {
-        as: "prod_cart",
+      Product.hasMany(models.Cart, {
+        as: "product_cart",
         foreignKey: "product_id",
         timestamps: false,
       });
   };
 
-  return Products;
+  return Product;
 };

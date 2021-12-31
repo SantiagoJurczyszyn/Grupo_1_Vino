@@ -1,5 +1,5 @@
 module.exports = function (sequelize, dataTypes) {
-    let alias = "Winemakers";
+    let alias = "Winemaker";
 
     let cols = {
         id: {
@@ -15,16 +15,16 @@ module.exports = function (sequelize, dataTypes) {
 };
 
     let config = {
-        tableName: "winemaker",
+        tableName: "winemakers",
         timestamps: false
     }
     
     
-    let Winemakers = sequelize.define (alias, cols, config);
+    let Winemaker = sequelize.define (alias, cols, config);
 
-    Winemakers.associate = function (models) {
-        Winemakers.belongsToMany (models.Products, { 
-                as: "winemakers_products",
+    Winemaker.associate = function (models) {
+        Winemaker.belongsToMany (models.Product, { 
+                as: "winemaker_product",
                 through: "winemaker_product",
                 foreignKey: "winemaker_id",
                 otherKey: "product_id",
@@ -32,5 +32,5 @@ module.exports = function (sequelize, dataTypes) {
         })
     };
 
-    return Winemakers;
+    return Winemaker;
 }

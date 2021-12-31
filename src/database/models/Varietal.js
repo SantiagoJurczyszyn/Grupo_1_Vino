@@ -15,7 +15,7 @@ module.exports = function (sequelize, dataTypes) {
 };
 
     let config = {
-        tableName: "varietal",
+        tableName: "varietals",
         timestamps: false
     }
     
@@ -23,12 +23,12 @@ module.exports = function (sequelize, dataTypes) {
     let Varietal = sequelize.define (alias, cols, config);
 
     Varietal.associate = function (models) {
-        Varietal.hasMany (models.Products, { 
+        Varietal.hasMany (models.Product, { 
                 as: "varietal",
                 foreignKey: "varietal_id",
                 timestamps: false
         })
     };
 
-    return Type;
+    return Varietal;
 }

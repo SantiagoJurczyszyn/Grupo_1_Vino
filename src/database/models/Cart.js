@@ -23,7 +23,7 @@ module.exports = function (sequelize, dataTypes) {
 };
 
     let config = {
-        tableName: "cart",
+        tableName: "carts",
         timestamps: false
     }
     
@@ -31,13 +31,13 @@ module.exports = function (sequelize, dataTypes) {
     let Cart = sequelize.define (alias, cols, config);
 
     Cart.associate = function (models) {
-        Cart.belongsTo (models.Products, { 
-                as: "producers",
-                foreignKey: "producer_id",
+        Cart.belongsTo (models.Product, { 
+                as: "cart_product",
+                foreignKey: "product_id",
                 timestamps: false
         }),
-        Cart.belongsTo (models.Users, {
-            as: "cart_users",
+        Cart.belongsTo (models.User, {
+            as: "cart_user",
             foreignKey: "user_id",
             timestamps: false
         })

@@ -15,7 +15,7 @@ module.exports = function (sequelize, dataTypes) {
 };
 
     let config = {
-        tableName: "type",
+        tableName: "types",
         timestamps: false
     }
     
@@ -23,7 +23,7 @@ module.exports = function (sequelize, dataTypes) {
     let Type = sequelize.define (alias, cols, config);
 
     Type.associate = function (models) {
-        Type.hasMany (models.Products, { 
+        Type.hasMany (models.Product, { 
                 as: "type",
                 foreignKey: "type_id",
                 timestamps: false

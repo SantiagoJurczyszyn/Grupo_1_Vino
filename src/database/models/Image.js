@@ -20,7 +20,7 @@ module.exports = function (sequelize, dataTypes) {
 };
 
     let config = {
-        tableName: "image",
+        tableName: "images",
         timestamps: false
     }
     
@@ -28,7 +28,7 @@ module.exports = function (sequelize, dataTypes) {
     let Image = sequelize.define (alias, cols, config);
 
     Image.associate = function (models) {
-        Image.hasMany (models.Products, { 
+        Image.hasMany (models.Product, { 
                 as: "image",
                 foreignKey: "product_id"
         })

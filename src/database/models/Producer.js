@@ -1,5 +1,5 @@
 module.exports = function (sequelize, dataTypes) {
-    let alias = "Producers";
+    let alias = "Producer";
 
     let cols = {
         id: {
@@ -15,20 +15,20 @@ module.exports = function (sequelize, dataTypes) {
 };
 
     let config = {
-        tableName: "producer",
+        tableName: "producers",
         timestamps: false
     }
     
     
-    let Producers = sequelize.define (alias, cols, config);
+    let Producer = sequelize.define (alias, cols, config);
 
-    Producers.associate = function (models) {
-        Producers.hasMany (models.Products, { 
-                as: "producers",
+    Producer.associate = function (models) {
+        Producer.hasMany (models.Product, { 
+                as: "producer",
                 foreignKey: "producer_id",
                 timestamps: false
         })
     };
 
-    return Producers;
+    return Producer;
 }
