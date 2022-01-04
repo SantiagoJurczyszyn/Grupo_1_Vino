@@ -50,7 +50,7 @@ module.exports = function (sequelize, dataTypes) {
     abv: {
       type: dataTypes.DECIMAL(3, 1),
     },
-    breading: {
+    breeding: {
       type: dataTypes.TEXT,
     },
     varietal_id: {

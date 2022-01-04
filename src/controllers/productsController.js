@@ -41,7 +41,7 @@ const productsController = {
         altitude:req.body.altitude,
         soil:req.body.soil,
         abv:req.body.abv,
-        breading:req.body.breading,
+        breeding:req.body.breeding,
         varietal_id:req.body.varietal_id,
         varietal_comp:req.body.varietal_comp
       })

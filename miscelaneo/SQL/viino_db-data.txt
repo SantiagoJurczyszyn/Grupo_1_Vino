@@ -156,7 +156,7 @@ UNLOCK TABLES;
 LOCK TABLES `products` WRITE;
 DELETE FROM `products`;
 INSERT INTO `products` 
-   ( id, name, short_name, producer_id, year, type_id, price, description, location, altitude, soil, abv, breading, varietal_id, varietal_comp)
+   ( id, name, short_name, producer_id, year, type_id, price, description, location, altitude, soil, abv, breeding, varietal_id, varietal_comp)
 VALUES
  (1, 'Cara Sur Criolla', 'Criolla', 3, 2020, 6, 2500, 'Cara Sur es un pequeño proyecto de Pancho Bugallo y Sebastian Zuccardi en Barreal, en el valle de Calingasta en el cual trabajan con variedades criollas de viñedos viejos que están recuperando. La Criolla es un corte de 4 parcelas de Finca Maggio en Paraje Hilario, viñas de más de 80 años, un vino fácil de tomar, con un perfil frutado y terroso', 'Barreal, Valle de Calingasta, San Juan', 1550, 'Cuarzo, poco canto rodado y mucho material con ángulos', 13.9, '6 a 7 meses en huevos de cemento', 3, 'Criolla Chica 100%'),
   (2, 'Proyecto Las Compuertas Criolla Parral', 'Las Compuertas Criolla', 6, 2019, 6, 1500, 'La Criolla Chica, de un parral plantado en 1943, es fermentado en huevos de cemento con levaduras nativas para conservar la expresión del varietal y su lugar de origen, un vino como se hacía antes, bebible, jugoso, simple, con expresión frutada y floral', 'Las Compuertas, Luján de Cuyo, Mendoza', 1050, 'Franco-pedregoso', 13.7, '2 meses en huevo de cemento sin epoxi', 3, 'Criolla Chica 100%'),

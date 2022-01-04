@@ -88,7 +88,7 @@ CREATE TABLE `products` (
   `altitude` int(4) NOT NULL,
   `soil` varchar(100) NOT NULL,
   `abv` decimal(3,1) NOT NULL,
-  `breading` text NOT NULL,
+  `breeding` text NOT NULL,
   `varietal_id` int(6) NOT NULL,
   `varietal_comp` varchar(100) NOT NULL,
   PRIMARY KEY (`id`),
