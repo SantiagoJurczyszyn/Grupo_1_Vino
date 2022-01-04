@@ -79,8 +79,8 @@ module.exports = function (sequelize, dataTypes) {
       timestamps: false
     }),
       Product.belongsToMany(models.Winemaker, {
-        as: "product_winemaker",
-        through: "winemaker_product",
+        as: "product_Winemaker",
+        through: "product_winemaker",
         foreignKey: "product_id",
         otherKey: "winemaker_id",
         timestamps: false,

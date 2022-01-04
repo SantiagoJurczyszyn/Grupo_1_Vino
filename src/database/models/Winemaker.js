@@ -24,7 +24,7 @@ module.exports = function (sequelize, dataTypes) {
 
     Winemaker.associate = function (models) {
         Winemaker.belongsToMany (models.Product, { 
-                as: "winemaker_product",
+                as: "winemaker_Product",
                 through: "winemaker_product",
                 foreignKey: "winemaker_id",
                 otherKey: "product_id",

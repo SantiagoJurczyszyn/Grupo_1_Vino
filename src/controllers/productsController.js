@@ -3,6 +3,8 @@ const fs = require("fs");
 const productsImagePath = path.join(__dirname, "../../public/img/product-img")
 const productsFilePath = path.join(__dirname, "../database/products.json");
 const products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
+const db = require("../database/models/index.js");
+
 /**estas tres lineas de arriba las copie igualver lo que tengo qe corregir en este progrma */
 
 
