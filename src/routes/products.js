@@ -8,7 +8,6 @@ const productsController = require ("../controllers/productsController.js");
 const upload = require('../middlewares/upload');
 
 
-
 /*** SHOP ***/
 router.get("/", productsController.list);
 

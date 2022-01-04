@@ -28,10 +28,11 @@ module.exports = function (sequelize, dataTypes) {
     let Image = sequelize.define (alias, cols, config);
 
     Image.associate = function (models) {
-        Image.hasMany (models.Product, { 
-                as: "image",
-                foreignKey: "product_id"
-        })
+        Image.belongsTo (models.Product, { 
+            as: "cart_product",
+            foreignKey: "product_id",
+            timestamps: false
+    })
     };
 
     return Image;

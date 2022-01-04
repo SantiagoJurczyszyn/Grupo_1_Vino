@@ -14,6 +14,7 @@ const productsController = {
   /*** SHOP ***/
 
   // Root - List the products
+  
   list: (req, res) => {
     const productsAMostrar = products; // Recibe el listado de productos
     res.render("./products/shop", { productsAMostrar }); // Lista todos los productos
@@ -27,19 +28,28 @@ const productsController = {
     if (req.method == "GET") {         // Si el metodo es GET muestra el formulario
       res.render("./products/create");
     } else {                           // Si el método es POST crea un producto
-      const newProduct = {
-        id: products[products.length - 1].id + 1,
-        // Reutilizamos todas las props que vienen en el body con el spread operator
-        ...req.body,
-        image: req.file ? req.file.filename : "",
-      };
-
-      // Se agrega el nuevo producto al array de productos y se reescribe el JSON
-      products.push(newProduct);
-      fs.writeFileSync(productsFilePath, JSON.stringify(products, null, " "));
-
-      res.redirect("/");
-
+      console.log(req.body)
+      db.Product.create({
+        name:req.body.name,
+        short_name:req.body.short_name,
+        producer_id:req.body.producer_id,
+        year:req.body.year,
+        type_id:req.body.type_id,
+        price:req.body.price,
+        description:req.body.description,
+        location:req.body.location,
+        altitude:req.body.altitude,
+        soil:req.body.soil,
+        abv:req.body.abv,
+        breading:req.body.breading,
+        varietal_id:req.body.varietal_id,
+        varietal_comp:req.body.varietal_comp
+      })
+      .then(resultado=>{
+        res.redirect("/");
+      })
+      .catch(error=>console.log(error))
+      
     }
   },
 

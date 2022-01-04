@@ -102,7 +102,7 @@ module.exports = function (sequelize, dataTypes) {
         timestamps: false,
       }),
 
-      Product.belongsTo(models.Image, {
+      Product.hasMany(models.Image, {
         as: "product_image",
         foreignKey: "product_id",
         timestamps: false,
