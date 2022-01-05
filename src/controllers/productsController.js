@@ -14,7 +14,7 @@ const productsController = {
   /*** SHOP ***/
 
   // Root - List the products
-  
+
   list: (req, res) => {
     const productsAMostrar = products; // Recibe el listado de productos
     res.render("./products/shop", { productsAMostrar }); // Lista todos los productos
@@ -26,31 +26,34 @@ const productsController = {
   // CREATE - Form to create
   create: (req, res) => {
     if (req.method == "GET") {         // Si el metodo es GET muestra el formulario
-      res.render("./products/create");
-    } else {                           // Si el método es POST crea un producto
-      console.log(req.body)
-      db.Product.create({
-        name:req.body.name,
-        short_name:req.body.short_name,
-        producer_id:req.body.producer_id,
-        year:req.body.year,
-        type_id:req.body.type_id,
-        price:req.body.price,
-        description:req.body.description,
-        location:req.body.location,
-        altitude:req.body.altitude,
-        soil:req.body.soil,
-        abv:req.body.abv,
-        breeding:req.body.breeding,
-        varietal_id:req.body.varietal_id,
-        varietal_comp:req.body.varietal_comp
+      const producerPromise=db.Producer.findAll()
+      const varietalPromise=db.Varietal.findAll()
+      const typePromise=db.Type.findAll()
+      const winemakerPromise=db.Winemaker.findAll()
+      Promise.all([producerPromise,varietalPromise,typePromise,winemakerPromise])
+      .then(resultados=>{
+        producers=resultados[0]
+        varietals=resultados[1]
+        types=resultados[2]
+        winemakers=resultados[3]
+        res.render("./products/create",{producers,varietals,types,winemakers});
       })
-      .then(resultado=>{
-        res.redirect("/");
-      })
-      .catch(error=>console.log(error))
       
-    }
+      
+    } else {                           // Si el método es POST crea un producto
+      console.log("------producto cargado-------")
+      console.log(req.body.winemaker_id[1])
+      console.log("-------------")
+      /* db.Product.create(req.body)
+      .then(productoCreado=>{
+        const product_id=productoCreado.id
+        db.Image.create({
+        file_name:req.file.filename,
+        product_id:product_id
+        })
+        res.redirect("/");
+        }) */
+      }
   },
 
   /*** MUESTRA EL DETALLE DE UN PRODUCTO ***/

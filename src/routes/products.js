@@ -9,6 +9,7 @@ const upload = require('../middlewares/upload');
 
 
 /*** SHOP ***/
+
 router.get("/", productsController.list);
 
 /*** CREATE PRODUCT FORM ***/

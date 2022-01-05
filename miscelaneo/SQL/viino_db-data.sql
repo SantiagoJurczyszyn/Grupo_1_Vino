@@ -1,7 +1,7 @@
 /* Script de datos de Viino_db*/
 
 USE viino_db;
-
+show table
 /*ejemplo 
 INSERT INTO MyTable
   ( Column1, Column2, Column3 )
@@ -16,7 +16,7 @@ VALUES
 -- Datos para la tabla `producers`
 --
 
-LOCK TABLES `producers` WRITE;
+lock table `producers` write;
 DELETE FROM `producers`;
 INSERT INTO `producers` 
    (id, name )
@@ -48,7 +48,7 @@ UNLOCK TABLES;
 -- Datos para la tabla `types`
 --
 
-LOCK TABLES `types` WRITE;
+lock table `types` write;
 DELETE FROM `types`;
 INSERT INTO `types` 
    (id, name )
@@ -66,7 +66,7 @@ UNLOCK TABLES;
 -- Datos para la tabla `varietals`
 --
 
-LOCK TABLES `varietals` WRITE;
+LOCK TABLE `varietals` WRITE;
 DELETE FROM `varietals`;
 INSERT INTO `varietals` 
    (id, name )
@@ -88,31 +88,37 @@ UNLOCK TABLES;
 -- Datos para la tabla `winemakers`
 --
 
-LOCK TABLES `winemakers` WRITE;
+LOCK TABLE `winemakers` WRITE;
 DELETE FROM `winemakers`;
 INSERT INTO `winemakers` 
    (id, name )
 VALUES
-(1, 'Alejandro Sejanovich'),
-(2, 'Alejandro Sejanovich - Jeff Mausbach'),
-(3, 'Alejandro Vigil'),
-(4, 'Eduardo Soler'),
-(5, 'Emma & Fredy'),
-(6, 'German Masera'),
-(7, 'Hans Vinding-Diers'),
-(8, 'Hector Durigutti - Pablo Durigutti'),
-(9, 'Juan Pablo Murgia'),
-(10, 'JuanFa Suarez'),
-(11, 'Matias Riccitelli'),
-(12, 'Pancho Lavaque & Hugh Ryman'),
-(13, 'Piero Incisa della Rocchetta'),
-(14, 'Rodrigo Arizu'),
-(15, 'Sebastian Bisole'),
-(16, 'Sebastian Bisole - Alejandro Bartolome'),
-(17, 'Sebastian Zuccardi'),
-(18, 'Sebastian Zuccardi - Laura Principiano'),
-(19, 'Sebastian Zuccardi - Pancho Bugallo'),
-(20, 'Thibault Lepoutre');
+(1,'Alejandro Bartolomé'),
+(2,'Alejandro Sejanovich'),
+(3,'Alejandro Vigil'),
+(4,'Diers'),
+(5,'Eduardo Soler'),
+(6,'Emma'),
+(7,'Fredy'),
+(8,'Germán Masera'),
+(9,'Hans Vinding'),
+(10,'Hector Durigutti'),
+(11,'Hugh Ryman'),
+(12,'Jeff Mausbach'),
+(13,'Juan Pablo Murgia'),
+(14,'JuanFa Suarez'),
+(15,'JuanFa Suárez'),
+(16,'Laura Principiano'),
+(17,'Matías Riccitelli'),
+(18,'Pablo Durigutti'),
+(19,'Pancho Bugallo'),
+(20,'Pancho Lavaque'),
+(21,'Piero Incisa della Rocchetta'),
+(22,'Rodrigo Arizu'),
+(23,'Sebastián Bisole'),
+(24,'Sebastián Zuccardi'),
+(25,'Thibault Lepoutre');
+
 
 UNLOCK TABLES;
 
@@ -125,7 +131,7 @@ UNLOCK TABLES;
 
 /* Elena Crespo y  Martín Crippa son admin - el resto son users*/
 
-LOCK TABLES `users` WRITE;
+LOCK TABLE `users` WRITE;
 DELETE FROM `users`;
 INSERT INTO `users` 
    (id, first_name, last_name, email, password, category, image)
@@ -153,7 +159,7 @@ UNLOCK TABLES;
 -- Datos para la tabla `products`
 --
 
-LOCK TABLES `products` WRITE;
+LOCK TABLE `products` WRITE;
 DELETE FROM `products`;
 INSERT INTO `products` 
    ( id, name, short_name, producer_id, year, type_id, price, description, location, altitude, soil, abv, breeding, varietal_id, varietal_comp)
@@ -197,7 +203,7 @@ UNLOCK TABLES;
 -- Datos para la tabla `images` - para tener mas de una imagen por producto (alguna vez!)
 --
 
-LOCK TABLES `images` WRITE;
+LOCK TABLE `images` WRITE;
 DELETE FROM `images`;
 INSERT INTO `images` 
    (id, file_name, product_id)
@@ -243,43 +249,52 @@ UNLOCK TABLES;
 -- Datos para la tabla `winemaker_product`
 --
 
-LOCK TABLES `winemaker_product` WRITE;
+LOCK TABLE `winemaker_product` WRITE;
 DELETE FROM `winemaker_product`;
 INSERT INTO `winemaker_product` 
    (id, product_id, winemaker_id)
 VALUES
-  (1, 1, 19),
-  (2, 2, 8),
-  (3, 3, 5),
-  (4, 4, 5),
-  (5, 5, 16),
-  (6, 6, 7),
-  (7, 7, 11),
-  (8, 8, 11),
-  (9, 9, 11),
-  (10, 10, 10),
-  (11, 11, 10),
-  (12, 12, 10),
-  (13, 13, 10),
-  (14, 14, 10),
-  (15, 15, 12),
-  (16, 16, 4),
-  (17, 17, 15),
-  (18, 18, 16),
-  (19, 19, 10),
-  (20, 20, 10),
-  (21, 21, 20),
-  (22, 22, 13),
-  (23, 23, 17),
-  (24, 24, 9),
-  (25, 25, 14),
-  (26, 26, 3),
-  (27, 27, 1),
-  (28, 28, 2),
-  (29, 29, 18),
-  (30, 30, 3),
-  (31, 31, 6);
-
+  (1, 1, 24),
+(2, 1, 19),
+(3, 2, 10),
+(4, 2, 18),
+(5, 3, 6),
+(6, 3, 7),
+(7, 4, 6),
+(8, 4, 7),
+(9, 5, 23),
+(10, 5, 1),
+(11, 6, 9),
+(12, 6, 4),
+(13, 7, 17),
+(14, 8, 17),
+(15, 9, 17),
+(16, 10, 15),
+(17, 11, 15),
+(18, 12, 15),
+(19, 13, 15),
+(20, 14, 15),
+(21, 15, 20),
+(22, 15, 11),
+(23, 16, 5),
+(24, 17, 23),
+(25, 18, 1),
+(26, 18, 23),
+(27, 19, 14),
+(28, 20, 14),
+(29, 21, 25),
+(30, 22, 21),
+(31, 23, 24),
+(32, 24, 13),
+(33, 25, 22),
+(34, 26, 3),
+(35, 27, 2),
+(36, 28, 2),
+(37, 28, 12),
+(38, 29, 16),
+(39, 29, 24),
+(40, 30, 3),
+(41, 31, 8);
 UNLOCK TABLES;
 
 
@@ -290,7 +305,7 @@ UNLOCK TABLES;
 -- Datos para la tabla `carts`
 --
 
-LOCK TABLES `carts` WRITE;
+LOCK TABLE `carts` WRITE;
 DELETE FROM `carts`;
 INSERT INTO `carts` 
    (id, user_id, product_id, item_qtty)
@@ -323,7 +338,7 @@ UNLOCK TABLES;
 -- Datos para la tabla `product_user` para implementar favoritos (alguna vez!)
 --
 
-LOCK TABLES `product_user` WRITE;
+LOCK TABLE `product_user` WRITE;
 DELETE FROM `product_user`;
 INSERT INTO `product_user` 
    (id, user_id, product_id)
@@ -340,3 +355,6 @@ VALUES
   (10, 9, 15),
   (11, 9, 22);
 UNLOCK TABLES;
+
+
+

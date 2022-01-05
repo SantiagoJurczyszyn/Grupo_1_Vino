@@ -172,3 +172,5 @@ CREATE TABLE `product_user` (
   CONSTRAINT `product_user_FK_1` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+
+
