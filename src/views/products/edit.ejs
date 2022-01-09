@@ -11,7 +11,7 @@
         </div>
         <div class="form-container">
             <br>
-            <p class="form-text">Modificá los datos del producto <%= product.id %> completando el formulario:</p>
+            <p class="form-text">Modificá los datos del producto <%=product.id%> completando el formulario:</p>
             <!-- este action va al productRuoter -->
             
             <form method="POST" action="/products/<%= product.id %>?_method=PUT" enctype="multipart/form-data" class="form">     
@@ -19,7 +19,7 @@
                 <!-- AGREGO LA IMAGEN POR ACA (PROVISORIO)-->
                 <br>
                 <figure class="product-detail-image-container">
-                    <img class="product-detail-image" src="/img/product-img/<%= product.image %>" alt="<%= product.name %>">
+                    <img class="product-detail-image" src="/img/product-img/<%=product.product_image[0].file_name%>" alt="<%= product.name %>">
                 </figure>    
                 <label for="imageProd">
                     <h3 class="label">Elegí una nueva imagen de producto:</h3>
@@ -28,16 +28,12 @@
                 <br> <br>
                 <label>
                     <h3 class="label">Tipo de vino/producto:</h3>
-					<select name="type" id="type" class="select">
-						<option value="">Elegí</option>
-						<option value="Tinto" <%= product.type == "Tinto" ? 'selected' : ''  %> >Tinto</option>
-						<option value="Blanco" <%= product.type == "Blanco" ? 'selected' : ''  %> >Blanco</option>
-                        <option value="Rosado" <%= product.type == "Rosado" ? 'selected' : ''  %> >Rosado</option>
-                        <option value="Champagne" <%= product.type == "Champagne" ? 'selected' : ''  %> >Champagne</option>
-                        <option value="Pet Nat" <%= product.type == "Pet Nat" ? 'selected' : ''  %> >Pet Nat</option>
-                        <option value="Vermut" <%= product.type == "Vermut" ? 'selected' : ''  %> >Vermut</option>
-                        <option value="Accesorio" <%= product.type == "Accesorio" ? 'selected' : ''  %> >Accesorio</option>
-					</select>
+					<select name="type_id" id="type_id" class="select">
+                        <option value="<%=product.product_type.id%>"><%=product.product_type.name%></option>
+                        <% for (let i=0;i<types.length;i++) {if (types[i].name!=product.product_type.name) { %>
+                            <option value="<%= types[i].id %>"><%= types[i].name %></option>
+                        <% }} %>
+                    </select>
                 </label>
                 <label>
                     <h3 class="label">Nombre del vino/producto:</h3>
@@ -45,11 +41,16 @@
                 </label>
                 <label>
                     <h3 class="label">Nombre reducido del vino/producto:</h3>
-                    <input class="input" type="text" name="shortname" id="shortname" placeholder="Nombre del vino/producto..." value="<%= product.shortname %>">
+                    <input class="input" type="text" name="short_name" id="short_name" placeholder="Nombre del vino/producto..." value="<%= product.short_name %>">
                 </label>
                 <label>
                     <h3 class="label">Bodega:</h3>
-                    <input class="input" type="text" name="producer" id="producer" placeholder="Bodega producto" value="<%= product.producer %>">
+					<select name="producer_id" id="producer_id" class="select">
+                        <option value="<%=product.product_producer.id%>"><%=product.product_producer.name%></option>
+                        <% for (let i=0;i<producers.length;i++) {if (producers[i].name!=product.product_producer.name) { %>
+                            <option value="<%= producers[i].id %>"><%= producers[i].name %></option>
+                        <% }} %>
+                    </select>
                 </label>
                 <label>
                     <h3 class="label">Año de la cosecha:</h3>
@@ -57,7 +58,12 @@
                 </label>
                 <label>
                     <h3 class="label">Varietal:</h3>
-                    <input class="input" type="text" name="varietal" id="varietal" placeholder="Varietal..." value="<%= product.varietal %>">
+					<select name="varietal_id" id="varietal_id" class="select">
+                        <option value="<%=product.product_varietal.id%>"><%=product.product_varietal.name%></option>
+                        <% for (let i=0;i<varietals.length;i++) {if (varietals[i].name!=product.product_varietal.name) { %>
+                            <option value="<%= varietals[i].id %>"><%= varietals[i].name %></option>
+                        <% }} %>
+                    </select>
                 </label>
                 <label>
                     <h3 class="label">Precio:</h3>
@@ -78,12 +84,39 @@
                     <input class="input" type="number" name="altitude" id="altitude" placeholder="Altitud..." value="<%= product.altitude %>">
                 </label>
                 <label>
-                    <h3 class="label">Enólogos:</h3>
-                    <input class="input" type="text" name="winemakers" id="winemakers" placeholder="Enólogos..." value="<%= product.winemakers %>">
+                    <h3 class="label">Enólogo/a:</h3>
+					<select name="winemaker_id" id="winemaker_id" class="select">
+                        <option value="<%=product.Winemaker[0].id%>"><%=product.Winemaker[0].name%></option>
+                        <% for (let i=0;i<winemakers.length;i++) {if (winemakers[i].name!=product.product_varietal.name) { %>
+                            <option value="<%= winemakers[i].id %>"><%= winemakers[i].name %></option>
+                        <% }} %>
+                    </select>
                 </label>
+                <% if (product.Winemaker[1]) { %>
                 <label>
-                    <h3 class="label">Composiciòn varietal:</h3>
-                    <input class="input" type="text" name="varietalComp" id="varietalComp" placeholder="Composiciòn varietal..." value="<%= product.varietalComp %>">
+                    <h3 class="label">Segundo/a enólogo/a:</h3>
+					<select name="winemaker_id" id="winemaker_id" class="select">
+                        <option value="<%=product.Winemaker[1].id%>"><%=product.Winemaker[1].name%></option>
+                        <option value="">Quitar enólogo/a</option>
+                        <% for (let i=0;i<winemakers.length;i++) { %>
+                            <option value="<%= winemakers[i].id%>"><%= winemakers[i].name %></option>
+                        <% } %>
+                    </select>
+                </label>
+                <% } else { %>
+                <label>
+                    <h3 class="label">Agregar otro/a enólogo/a:</h3>
+					<select name="winemaker_id" id="winemaker_id" class="select">
+                        <option value="">No agregar otro/a enólogo/a</option>
+                        <% for (let i=0;i<winemakers.length;i++) { %>
+                            <option value="<%= winemakers[i].id%>"><%= winemakers[i].name %></option>
+                        <% } %>
+                    </select>
+                </label>
+                <% } %>
+                <label>
+                    <h3 class="label">Composición varietal:</h3>
+                    <input class="input" type="text" name="varietal_comp" id="varietal_comp" placeholder="Composiciòn varietal..." value="<%= product.varietal_comp %>">
                 </label>
                 <label>
                     <h3 class="label">Composición del suelo:</h3>
@@ -91,7 +124,7 @@
                 </label>
                 <label>
                     <h3 class="label">Graduación alcohólica:</h3>
-                    <input class="input" type="number" name="avb" id="avb" placeholder="Graduación alcohólica..." step="0.1" min="0" max="16" value="<%= product.avb %>">
+                    <input class="input" type="number" name="abv" id="abv" placeholder="Graduación alcohólica..." step="0.1" min="0" max="16" value="<%= product.abv %>">
                 </label>
                 <label>
                     <h3 class="label">Crianza:</h3>

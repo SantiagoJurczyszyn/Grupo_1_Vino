@@ -26,6 +26,7 @@ const productsController = {
   // CREATE - Form to create
   create: (req, res) => {
     if (req.method == "GET") {         // Si el metodo es GET muestra el formulario
+      // se requieren las tablas secundarias necesarias para crear un producto 
       const producerPromise=db.Producer.findAll()
       const varietalPromise=db.Varietal.findAll()
       const typePromise=db.Type.findAll()
@@ -38,22 +39,33 @@ const productsController = {
         winemakers=resultados[3]
         res.render("./products/create",{producers,varietals,types,winemakers});
       })
+      .catch(error=>console.log(error))
       
       
     } else {                           // Si el método es POST crea un producto
-      console.log("------producto cargado-------")
-      console.log(req.body.winemaker_id[1])
-      console.log("-------------")
-      /* db.Product.create(req.body)
+      
+      db.Product.create(req.body)
       .then(productoCreado=>{
-        const product_id=productoCreado.id
+        //funcionalidad para crear un registro en la tabla intermedia winemaker_product
+        const arrayIdWinemakers=req.body.winemaker_id//almaceno en una variable el array que contiene el/los id del/los winemaker/s elegidos en el formulario
+        const arrayIdWinemakersValidos=arrayIdWinemakers.filter(winemaker_id=>winemaker_id!="")//Si el producto creado no tiene un segundo enólogo, el segundo elemento del array anterior es un string vacío, por lo tanto, aplico un filtro para limpiarlo 
+        productoCreado.setWinemaker(arrayIdWinemakersValidos) //al método set le pasamos el array que cumple con la condición de no tener elementos que sean un string vacío
+
+        ////funcionalidad para crear un registro en la tabla Image
+        const product_id=productoCreado.id;
         db.Image.create({
-        file_name:req.file.filename,
-        product_id:product_id
-        })
+          file_name:req.file.filename,
+          product_id:product_id
+          })
+        .then()
+        .catch(error=>console.log(error));
         res.redirect("/");
-        }) */
+        })
+      .catch(error=>console.log(error))
+
       }
+
+      
   },
 
   /*** MUESTRA EL DETALLE DE UN PRODUCTO ***/
@@ -95,17 +107,25 @@ const productsController = {
 
   // EDIT - Form to edit
   edit: (req, res) => {
-    // Solo falta autocompletar los inputs y el action y method del form
-    const requiredId = req.params.id;
-    const productToEdit = products.find((prod) => {
-      /* El primer elemento que devuelva true se guarda como resultado */
-      const condition = prod.id == requiredId;
-      return condition;
-    });
-
-    res.render("./products/edit", {
-      product: productToEdit
-    });
+    // se requieren las tablas secundarias necesarias para editar un producto
+    const producerPromise=db.Producer.findAll()
+    const varietalPromise=db.Varietal.findAll()
+    const typePromise=db.Type.findAll()
+    const winemakerPromise=db.Winemaker.findAll()
+    // se consume la asociación del modelo Product con otros modelos para mostrar las propiedades particualres del producto a editar
+    const productPromise=db.Product.findByPk(req.params.id,{
+      include:[{association:"product_producer"},{association:"product_varietal"},{association:"product_type"},{association:"Winemaker"},{association:"product_image"}]
+    })
+    Promise.all([producerPromise,varietalPromise,typePromise,winemakerPromise,productPromise])
+    .then(resultados=>{
+      producers=resultados[0]
+      varietals=resultados[1]
+      types=resultados[2]
+      winemakers=resultados[3]
+      product=resultados[4]
+      res.render("./products/edit",{producers,varietals,types,winemakers,product});
+    })
+    .catch(error=>console.log(error))
   },
 
 
@@ -113,48 +133,47 @@ const productsController = {
 
   // UPDATE - Update new product
   update: (req, res) => {
-    // Leemos el id que viene por url
-    const productId = req.params.id;
-    // Buscamos la posicion del producto que queremos editar
-    const productIndex = products.findIndex((p) => p.id == productId);
-    const productToUpdate = products[productIndex];
+    // En caso de corresponder: primero actualizo la tabla Product; segundo actualizo la tabla Image; y por último, actualizo la tabla winemaker_product  
+    db.Product.update(req.body,{
+      where:{
+          id:req.params.id
+      }
+    })
+    .then(resultados=>{
+      //si al editar se subió una imagen, corresponde reemplazar la imagen vieja por la nueva
+      if (req.file) {
+        db.Image.findOne({// esta búsqueda se realiza únicamente para obtener el nombre del archivo que contiene la imagen vieja
+          where:{product_id:req.params.id}
+        })
+        .then(resultado=>{
+          const imagenVieja=resultado.file_name
+          fs.rmSync(path.resolve(productsImagePath, imagenVieja)) //borro en la carpeta public el archivo que contine la imagen vieja del producto
+        })
+        .catch(error=>console.log(error))
+        // en la tabla Image registro el nombre del archivo que contiene la nueva imagen del producto 
+        db.Image.update({
+          file_name:req.file.filename
+        },{
+          where:{
+            product_id:req.params.id
+          }
+        })
+        .then()
+        .catch(error=>console.log(error))
+      }
 
-
-    // Generamos el producto actualizado
-    const updatedProduct = {
-      ...products[productIndex],
-      ...req.body,
-      name: req.body.name,
-      producer: req.body.producer,
-      harvestYear: Number(req.body.harvestYear),
-      varietal: req.body.varietal,
-      type: req.body.type,
-      price: Number(req.body.price),
-      description: req.body.description,
-      location: req.body.location,
-      altitude: req.body.altitude,
-      winemakers: req.body.winemakers,
-      varietalComp: req.body.varietalComp,
-      soil: req.body.soil,
-      avb: Number(req.body.avb),
-      breeding: req.body.breeding,
-      price: Number(req.body.price),
-      image: req.file ? req.file.filename : products[productIndex].image,
-    };
-
-    // Reemplazamos el objeto en el array
-    products[productIndex] = updatedProduct;
-
-    // Escribimos en el JSON el array con el producto actualizado
-    fs.writeFileSync(productsFilePath, JSON.stringify(products, null, " "));
-
-    // Si viene una imagen en la request, eliminamos la imgaen anterior de la carpeta /Public
-    if (req.file) {
-      fs.rmSync(path.resolve(productsImagePath, productToUpdate.image))
-    }
-
-    // Volvemos al listado de productos
-    res.redirect("/products");
+      //trabajo sobre la tabla intermedia winemaker_product
+      db.Product.findByPk(req.params.id)
+      .then(productoEditado=>{
+        const arrayIdWinemakers=req.body.winemaker_id
+        const arrayIdWinemakersValidos=arrayIdWinemakers.filter(id=>id!="")
+        productoEditado.setWinemaker(arrayIdWinemakersValidos)
+      })
+      .catch(error=>console.log(error))
+      
+      res.redirect("/products");
+    })
+    .catch(error=>console.log(error));
 
   },
 
@@ -163,27 +182,53 @@ const productsController = {
 
   // DESTROY - Delete one product from DB
   destroy: (req, res) => {
-    // Leer el id
-    const productId = req.params.id;
-    // Buscar la posicion actual del producto a eliminar
-    const productIndex = products.findIndex((p) => p.id == productId);
-    const productToDelete = products[productIndex]
 
-    // Recortar el array sin ese producto
+    // En primier térmido debe borrar las asociaciones del producto con la tabla Image y con la tabla intermedia winemaker_product, luego sí puedo elimar el producto en cuestión. En muy importante que la promesa de eliminar el producto esté adentro del then() asociado a la promesa de eliminar la imagen del producto
+    //Elimino tanto la asociación en la tabla "Image" como el archivo que contiene la imagen en la carpte public
+    db.Image.findOne({
+      where:{
+        product_id:req.params.id
+      }
+    })
+    .then(imagenBorrandose=>{
+      const idProductoBorrandose=imagenBorrandose.product_id
+      db.Image.destroy({
+        where:{
+          product_id:idProductoBorrandose
+        }
+      })
+      .then(resultadoImagenBorrada=>{
+        //Elimino la asociación en la tabla "winemaker_product"
+        db.Product.findByPk(idProductoBorrandose)
+        .then(productoBorrandose=>{
+          productoBorrandose.setWinemaker([])
+          //Finalmente elimino el producto
+          db.Product.destroy({
+            where:{
+              id:idProductoBorrandose
+            }
+          })
+          .then(resultado=>{
+            res.redirect("/");
+          })
+        .catch(error=>console.log(error))
+        })
+      .catch(error=>console.log(error))  
+      })
+      .catch(error=>console.log(error))
+      const imagenDestruida=imagenBorrandose.file_name
+      fs.rmSync(path.resolve(productsImagePath, imagenDestruida))
+      
+    })
+    .catch(error=>console.log(error))
+
+    
+    
+
+    
+    
 
 
-    products.splice(productIndex, 1);// Elimina un elemento indicandole en qué índice arranca (0 por defecto) e indicandole cuantos elementos borrar.. sino especifico extensión mata todo
-
-    // Eliminamos la imgaen de la carpeta /Public
-    fs.rmSync(path.resolve(productsImagePath, productToDelete.image))
-
-    // Guardar el json nuevo
-    fs.writeFileSync(productsFilePath, JSON.stringify(products, null, " "));
-
-
-
-    // Redirecciona al listado de productos
-    res.redirect("/");
   },
 };
 
