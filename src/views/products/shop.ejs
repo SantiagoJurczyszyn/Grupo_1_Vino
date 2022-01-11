@@ -25,16 +25,16 @@
         <section class="shop">
             <!-- El forEach va a crear un articulo por CADA objeto del array -->
             <!-- En cada iteracion el objeto "prod" tiene un producto completo -->
-            <% productsAMostrar.forEach((prod) => { %>    
+            <% for(i = 0; i < productsAMostrar.length; i++) { %>    
 
                 <article class="product">
-                    <a href="/products/<%= prod.id %>"><img class="product-image" src="/img/product-img/<%= prod.image %>" alt="<%= prod.name %>"></a>
-                    <h3 class="product-title"><%= prod.shortname + ' ' + prod.year %></h3>
-                    <p class="price">$ <%= prod.price %></p>
+                    <a href="/products/<%= productsAMostrar[i].id %>"><img class="product-image" src="/img/product-img/<%= productsAMostrar[i].product_image[0].file_name %>" alt="<%= productsAMostrar[i].name %>"></a>
+                    <h3 class="product-title"><%= productsAMostrar[i].short_name + ' ' + productsAMostrar[i].year %></h3>
+                    <p class="price">$ <%= productsAMostrar[i].price %></p>
                     <button class="add-to-cart">AGREGAR</button>
                 </article>
             
-            <% }) %>
+            <% } %>
         </section>
                     <div class="search-pagination">
                 <a href="" class="next-page"><img src="img/icon/next-page.svg" alt=""></a>

@@ -4,6 +4,8 @@ const productsImagePath = path.join(__dirname, "../../public/img/product-img")
 const productsFilePath = path.join(__dirname, "../database/products.json");
 const products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
 const db = require("../database/models/index.js");
+const Op = db.Sequelize.Op;
+const { resolveSoa } = require("dns");
 
 /**estas tres lineas de arriba las copie igualver lo que tengo qe corregir en este progrma */
 
@@ -16,8 +18,41 @@ const productsController = {
   // Root - List the products
 
   list: (req, res) => {
-    const productsAMostrar = products; // Recibe el listado de productos
-    res.render("./products/shop", { productsAMostrar }); // Lista todos los productos
+        db.Product.findAll(
+      {
+      include: [
+          {association:"product_image"}
+      ]
+  })     
+    .then ((products) => {
+    const productsAMostrar = products;
+      // Recibe el listado de productos   
+     res.render("./products/shop", {productsAMostrar}); // Lista todos los productos
+  })
+  .catch((error) => {
+    console.log(error);
+    res.send(500);
+  });
+  },
+
+  search: (req,res) => {
+    let wordSearch = req.query.search
+    db.Product.findAll({ 
+     where: {
+       name: {[Op.like]:"%"+ wordSearch+"%"}
+     },
+     include: [ 
+       {association:"product_image"}
+     ],
+      
+     })
+     .then ((products) => {
+     console.log(products)
+     res.render("./products/shop", {productsAMostrar: products})})
+     .catch((error) => {
+       console.log(error);
+       res.send(500);
+     });
   },
 
 
@@ -74,15 +109,15 @@ const productsController = {
   detail: (req, res) => {
     // Se recibe un objeto tipo producto
     const requiredId = req.params.id;
-
+    db.Product.findByPk(requiredId)
+    .then ((product) => { 
+      
     // Buscar el producto en el array
     const requiredProduct = products.find((prod) => {
       // guarda como resultado el primer elemento que coincida con el param
       return prod.id == requiredId;
-    });
-
+    });    
     // Filtrar los productos para los carrousel
-
     // Para el carrousel de la misma bodega             // Retorna los productos de el mismo productor
     const productsSameProducer = products.filter((prod) => {return prod.producer === requiredProduct.producer});
     // Creamos funcion para eliminar el producto actual del array
@@ -101,6 +136,11 @@ const productsController = {
     res.render("./products/productDetail", {
       product: requiredProduct, productsSameProducer, productsRecomend
     });
+  })
+  .catch((error) => {
+    console.log(error);
+    res.send(500);
+  });
   },
 
   /*** MUESTRA EL FORMULARIO DE EDICION ***/

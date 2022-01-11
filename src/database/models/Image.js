@@ -29,7 +29,7 @@ module.exports = function (sequelize, dataTypes) {
 
     Image.associate = function (models) {
         Image.belongsTo (models.Product, { 
-            as: "cart_product",
+            as: "image_product",
             foreignKey: "product_id",
             timestamps: false
     })

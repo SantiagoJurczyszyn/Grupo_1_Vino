@@ -18,7 +18,8 @@ router.get ("/create", productsController.create);
 
 /*** CREATE PRODUCT ***/
 router.post ("/",upload.single("imageProd"), productsController.create);
-
+/*** SEARCH PRODUCT ***/
+router.get("/search", productsController.search);
 /*** GET ONE PRODUCT (DETAIL) ***/
 router.get('/:id', productsController.detail);
 

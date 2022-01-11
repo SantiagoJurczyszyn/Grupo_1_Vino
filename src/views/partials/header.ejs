@@ -1,7 +1,12 @@
 <header class="main-header">
     <div class="main-header-top-bar">
         <a class="burger"><img src="/img/icon/burger.svg" alt="burger menu"></a>
-        <a class="lupe"><img src="/img/icon/lupe.svg" alt=""></a>
+        <div class="lupe">
+            <form action="/products/search" method="GET">
+        <input type="text" placeholder="Busca aquí..." name="search">
+        <button type="submit"><i class="fa fa-search"></i></button>
+    </form>
+    </div>    
         <a href="/"class="logo">VIINO</a>       
         <a class="user" href="/users/login"><img src="/img/icon/user.svg" alt="">                      
             <% if (locals.userIsLogged) { %>

@@ -113,6 +113,10 @@ input::placeholder {
     cursor: pointer;
 }
 
+#lupe {
+    background-color: black;
+}
+
 .logo {
     font-family: 'Times New Roman', serif;
     font-size: 44px;
