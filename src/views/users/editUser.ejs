@@ -1,72 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
 <%- include('../partials/head',{subtitle:'editar cuenta',styleSheetName:'styles-editUser'}) %>
-<body>
-    <%- include('../partials/header')%>
-    <main>
-                
-        <div class="texto">
-            <% if (locals.recordatorio) {%>
-                <div class="texto-error">
-                    <%=recordatorio%>
-                </div>
-            <% } %>
-            
-            <div class="main-title-container">
-                <a value="Go back!" onclick="history.back()" class="back-arrow"><img src="/img/icon/arrow.svg" alt=""></a>
-                <h1 class="main-title">EDITANDO CUENTA <%= user.email %></h1>
-            </div>
-            <!-- falta implementar control de errores-->
-            <form action="/users/editar/<%= user.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
-             
-                <figure class="product-detail-image-container">
-                    <img class="product-detail-image" src="/img/users-img/<%= user.image %>" alt="Imagen de perfil">
-                </figure>
 
-                <div class="campoEncuenta">
-                    <label for="nombre">Nombre:</label>
-                    <input class="barra" type="text" name="first_name" id="nombre" placeholder="Nombre" 
-                        value="<%=user.first_name%>">
-                    <div class="texto-error">
-                        <%if (locals.errors && errors.first_name) {%> <%=errors.first_name.msg%> <%}%>
-                    </div>
-                </div>
-                <div class="campoEncuenta">
-                    <label for="apellido">Apellido:</label>
-                    <input class="barra" type="text" name="last_name" id="apellido" placeholder="Apellido" value="<%=user.last_name%>">
-                    <div class="texto-error">
-                        <%if (locals.errors && errors.last_name) {%> <%=errors.last_name.msg%> <%}%>
-                    </div>
-                </div>
-                <div class="campoEncuenta">
-                    <label class="label">Categoría:</label>
-                    <select name="category" id="categoria" class="select">
-                        <option value="">Elegí</option>
-                        <option value="User" <%= user.category == "User" ? 'selected' : ''  %> >User</option>
-                        <option value="Admin" <%= user.category == "Admin" ? 'selected' : ''  %> >Admin</option>
-                    </select>
-                    <div class="texto-error">
-                        <%if (locals.errors && errors.category) {%> <%=errors.category.msg%> <%}%>
-                    </div>
-                </div>
+    <body>
+        <%- include('../partials/header')%>
+            <main>
 
-                <!-- no se puede preseleccionar un archivo -->
-                <!-- solucion del profeso: en el input hidden guarda la imagen original para no perderla 
+                <div class="texto">
+                    <% if (locals.recordatorio) {%>
+                        <div class="texto-error">
+                            <%=recordatorio%>
+                        </div>
+                        <% } %>
+
+                            <div class="main-title-container">
+                                <a value="Go back!" onclick="history.back()" class="back-arrow"><img
+                                        src="/img/icon/arrow.svg" alt=""></a>
+                                <h1 class="main-title">EDITANDO CUENTA <%= user.email %>
+                                </h1>
+                            </div>
+                            <!-- falta implementar control de errores-->
+                            <form action="/users/editar/<%= user.id %>?_method=PUT" method="POST"
+                                enctype="multipart/form-data">
+
+                                <figure class="product-detail-image-container">
+                                    <img class="product-detail-image" src="/img/users-img/<%= user.image %>"
+                                        alt="Imagen de perfil">
+                                </figure>
+
+                                <div class="campoEncuenta">
+                                    <label for="nombre">Nombre:</label>
+                                    <input class="barra" type="text" name="first_name" id="nombre" placeholder="Nombre"
+                                        value="<%=user.first_name%>">
+                                    <div class="texto-error">
+                                        <%if (locals.errors && errors.first_name) {%>
+                                            <%=errors.first_name.msg%>
+                                                <%}%>
+                                    </div>
+                                </div>
+                                <div class="campoEncuenta">
+                                    <label for="apellido">Apellido:</label>
+                                    <input class="barra" type="text" name="last_name" id="apellido"
+                                        placeholder="Apellido" value="<%=user.last_name%>">
+                                    <div class="texto-error">
+                                        <%if (locals.errors && errors.last_name) {%>
+                                            <%=errors.last_name.msg%>
+                                                <%}%>
+                                    </div>
+                                </div>
+                                <div class="campoEncuenta">
+                                    <label class="label">Categoría:</label>
+                                    <select name="category" id="categoria" class="select">
+                                        <option value="">Elegí</option>
+                                        <option value="User" <%=user.category=="User" ? 'selected' : '' %> >User
+                                        </option>
+                                        <option value="Admin" <%=user.category=="Admin" ? 'selected' : '' %> >Admin
+                                        </option>
+                                    </select>
+                                    <div class="texto-error">
+                                        <%if (locals.errors && errors.category) {%>
+                                            <%=errors.category.msg%>
+                                                <%}%>
+                                    </div>
+                                </div>
+
+                                <!-- no se puede preseleccionar un archivo -->
+                                <!-- solucion del profeso: en el input hidden guarda la imagen original para no perderla 
                      si el usuario no selecciona una nueva imagen-->
-                <div class="campoEncuenta">
-                    <label for="imageUser">Nueva imagen:</label>
-                                                  
-                    <input type="hidden"  name="oldImageUser"  value="<%= user.image %>">
-                    <input class="barra" type="file" name="imageUser" id="imageUser">
+                                <div class="campoEncuenta">
+                                    <label for="imageUser">Nueva imagen:</label>
+
+                                    <input type="hidden" name="oldImageUser" value="<%= user.image %>">
+                                    <input class="barra" type="file" name="imageUser" id="imageUser">
+                                </div>
+
+                                <button type="submit" class="black-button" value="enviar">GUARDAR CAMBIOS</button>
+
+                            </form>
                 </div>
-                
-                <button type="submit" class= "black-button" value="enviar">GUARDAR CAMBIOS</button>
-                                               
-            </form>
-        </div>
-    </main>
-    
-    <%- include('../partials/footer')%>
-    
-</body>
+            </main>
+
+            <%- include('../partials/footer')%>
+
+    </body>
+
 </html>
