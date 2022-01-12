@@ -1,21 +1,23 @@
 <header class="main-header">
     <div class="main-header-top-bar">
         <a class="burger"><img src="/img/icon/burger.svg" alt="burger menu"></a>
-        <div class="lupe">
-            <form action="/products/search" method="GET">
-        <input type="text" placeholder="Busca aquí..." name="search">
-        <button type="submit"><i class="fa fa-search"></i></button>
-    </form>
-    </div>    
-        <a href="/"class="logo">VIINO</a>       
-        <a class="user" href="/users/login"><img src="/img/icon/user.svg" alt="">                      
+        <div class="search-bar">
+            <form class="search-form" action="/products/search" method="GET">
+                <input class="search-input" type="text" placeholder="Busca aquí..." name="search">
+                <button class="search-lupe" type="submit"><img src="/img/icon/lupe.svg" alt="search"></button>
+            </form>
+        </div>
+        <a href="/" class="logo">VIINO</a>
+        <a class="user" href="/users/login"><img src="/img/icon/user.svg" alt="">
             <% if (locals.userIsLogged) { %>
-                <p class="user-name"><%= locals.userLoggedIn.first_name %></p>
-            <% } %>
-        </a>              
-            <a class="bag" href="/cart"><img src="/img/icon/bag.svg" alt=""></a>
-    </div>  
-    
+                <p class="user-name">
+                    <%= locals.userLoggedIn.first_name %>
+                </p>
+                <% } %>
+        </a>
+        <a class="bag" href="/cart"><img src="/img/icon/lupe.svg" alt="search"></a>
+    </div>
+
     <nav class="main-header-bottom-bar">
         <ul type="none">
             <li><a href="">NOSOTROS</a></li>
@@ -29,5 +31,5 @@
             <li><a href="">SELECCION</a></li>
         </ul>
     </nav>
-    
+
 </header>
