@@ -136,21 +136,21 @@ DELETE FROM `users`;
 INSERT INTO `users` 
    (id, first_name, last_name, email, password, category, image)
 VALUES
-(1,'Elena','Crespo','elenacrespo@gmail.com', '$2b$10$wcWUGstl.Ek.zeQRbYrr.umEtFgFjV67o3PHlyKnY/79iEZi3gUMW','admin', 'elena.jpg'),
-(2,'Martín','Crippa','martincrippa@gmail.com', '$2b$10$GDcbAL9gy1XEn49lqcnneOfZsoKIcN9jKtZ1k3FcdoVEII0va93pG','admin', 'martin.jpg'),
-(3,'Julia','Frossi','juliafrossi@gmail.com', '$2b$10$NEQO/Gmy3mZVxm2an4L8KuWsr4wgwk33EFbRBHm0qqGM0KKyfim3a','user', 'julia.jpg'),
-(4,'Santiago','Landucci','santiagolanducci@gmail.com', '$2b$10$CK1BXy8LoP3..LwW5xuuEewaMpMeQ7G8p.gtG2r2RTJrQDfgKpNWm','user', 'santiago.jpg'),
-(5,'Mirta','Lanatti','mirtalanatti@gmail.com', '$2b$10$1veeAatuznB2rSooFLzzY.l0gXqe1Qyb8fXhiW4ZmsuRHSJbpsU52','user', 'mirta.jpg'),
-(6,'Josefina','Peirone','josefinapeirone@gmail.com', '$2b$10$FMQJJD769JfznjDgtqgQI.ag8bP2.2FXQFl4Hw7zZJIMG5fsNPqLu','user', 'josefina.jpg'),
-(7,'Pablo','Ferri','pabloferri@gmail.com', '$2b$10$h2O7h8PAclw4Z1QJ1zPPiuO2MBiSLTc/l5gowehdw5IW5pi0DmY9W','user', 'pablo.jpg'),
-(8,'Hernan','Scandizzo','hernanscandizzo@gmail.com', '$2b$10$8b9vEX4IMKrnTYl7LXlt6OuhqX7EVRgI0SNpAyHITNsatVMBRrx76','user', 'hernan.jpg'),
-(9,'Fernando','Cabrera','fernandocabrera@gmail.com', '$2b$10$T2aPiDf.8dA57fs6nnCECeuXE0ivd8CqdPIjOLljo.f/QZ8Pn/JJC','user', 'fernando.jpg'),
-(10,'Eugenia','Camponucci','eugeniacamponucci@gmail.com', '$2b$10$1n/wwkGpXMiR/I97/ws3oe676xUjKvMN9AICD8y6QFqLVH44XlZhK','user', 'eugenia.jpg'),
-(11,'Sergio','Serra','sergioserra@gmail.com', '$2b$10$9UYUedTMH6vPJ851QxAwPu6m.6/R3P9UETX37HPVX8dfE5mD8u1u2','user', 'sergio.jpg'),
-(12,'Carolina','Pisac','carolinapisac@gmail.com', '$2b$10$/DTyYRQnXOHP8iFXG9vKVexaUxbwfDUW4Z47W6vIMy30SByknDIoS','user', 'carolina.jpg'),
-(13,'Ramiro','Perez','ramiroperez@gmail.com', '$2b$10$QGHBcLWi5aEEbDSWORZBguawtDPilGvqxdz0HC1FsGWlGWF01qda6','user', 'ramiro.jpg'),
-(14,'Maite','Fernández','maitefernandez@gmail.com', '$2b$10$WNJ4jPMF2kjsfegEQw9BMeyyg0S5pnn23UzjHxh2rb2uDkyBIuccK','user', 'maite.jpg'),
-(15,'Sofía','Geninatti','sofiageninatti@gmail.com', '$2b$10$FQdVZZITLuD7CHC6jIyixOMWevy2RUheQr/SSaTzY1JJ/.VnP.5hq','user', 'sofia.jpg') ;
+(1,'Elena','Crespo','elenacrespo@gmail.com', '$2b$10$wcWUGstl.Ek.zeQRbYrr.umEtFgFjV67o3PHlyKnY/79iEZi3gUMW','admin', 'generic.png'),
+(2,'Martín','Crippa','martincrippa@gmail.com', '$2b$10$GDcbAL9gy1XEn49lqcnneOfZsoKIcN9jKtZ1k3FcdoVEII0va93pG','admin', 'generic.png'),
+(3,'Julia','Frossi','juliafrossi@gmail.com', '$2b$10$NEQO/Gmy3mZVxm2an4L8KuWsr4wgwk33EFbRBHm0qqGM0KKyfim3a','user', 'generic.png'),
+(4,'Santiago','Landucci','santiagolanducci@gmail.com', '$2b$10$CK1BXy8LoP3..LwW5xuuEewaMpMeQ7G8p.gtG2r2RTJrQDfgKpNWm','user', 'generic.png'),
+(5,'Mirta','Lanatti','mirtalanatti@gmail.com', '$2b$10$1veeAatuznB2rSooFLzzY.l0gXqe1Qyb8fXhiW4ZmsuRHSJbpsU52','user', 'generic.png'),
+(6,'Josefina','Peirone','josefinapeirone@gmail.com', '$2b$10$FMQJJD769JfznjDgtqgQI.ag8bP2.2FXQFl4Hw7zZJIMG5fsNPqLu','user', 'generic.png'),
+(7,'Pablo','Ferri','pabloferri@gmail.com', '$2b$10$h2O7h8PAclw4Z1QJ1zPPiuO2MBiSLTc/l5gowehdw5IW5pi0DmY9W','user', 'generic.png'),
+(8,'Hernan','Scandizzo','hernanscandizzo@gmail.com', '$2b$10$8b9vEX4IMKrnTYl7LXlt6OuhqX7EVRgI0SNpAyHITNsatVMBRrx76','user', 'generic.png'),
+(9,'Fernando','Cabrera','fernandocabrera@gmail.com', '$2b$10$T2aPiDf.8dA57fs6nnCECeuXE0ivd8CqdPIjOLljo.f/QZ8Pn/JJC','user', 'generic.png'),
+(10,'Eugenia','Camponucci','eugeniacamponucci@gmail.com', '$2b$10$1n/wwkGpXMiR/I97/ws3oe676xUjKvMN9AICD8y6QFqLVH44XlZhK','user', 'generic.png'),
+(11,'Sergio','Serra','sergioserra@gmail.com', '$2b$10$9UYUedTMH6vPJ851QxAwPu6m.6/R3P9UETX37HPVX8dfE5mD8u1u2','user', 'generic.png'),
+(12,'Carolina','Pisac','carolinapisac@gmail.com', '$2b$10$/DTyYRQnXOHP8iFXG9vKVexaUxbwfDUW4Z47W6vIMy30SByknDIoS','user', 'generic.png'),
+(13,'Ramiro','Perez','ramiroperez@gmail.com', '$2b$10$QGHBcLWi5aEEbDSWORZBguawtDPilGvqxdz0HC1FsGWlGWF01qda6','user', 'generic.png'),
+(14,'Maite','Fernández','maitefernandez@gmail.com', '$2b$10$WNJ4jPMF2kjsfegEQw9BMeyyg0S5pnn23UzjHxh2rb2uDkyBIuccK','user', 'generic.png'),
+(15,'Sofía','Geninatti','sofiageninatti@gmail.com', '$2b$10$FQdVZZITLuD7CHC6jIyixOMWevy2RUheQr/SSaTzY1JJ/.VnP.5hq','user', 'generic.png') ;
 
 UNLOCK TABLES;
 
