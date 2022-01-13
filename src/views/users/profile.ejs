@@ -1,46 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%- include('../partials/head',{subtitle:'profile',styleSheetName:'styles'}) %>
+<%- include('../partials/head',{subtitle:'profile',styleSheetName:'styles'}) %>
 
-<body>
-    <%- include('../partials/header')%>
+    <body>
+        <%- include('../partials/header')%>
 
-    <main>
-        <div class="main-title-container">
-            <a value="Go back!" onclick="history.back()" class="back-arrow"><img src="/img/icon/arrow.svg" alt=""></a>
-            <h1 class="main-title">CUENTA <%= user.email %></h1>
-        </div>
+            <main>
+                <div class="main-title-container">
+                    <a value="Go back!" onclick="history.back()" class="back-arrow"><img src="/img/icon/arrow.svg"
+                            alt=""></a>
+                    <h1 class="main-title">CUENTA <%= user.email %>
+                    </h1>
+                </div>
 
-        <section class="form-container">
-            <figure class="product-detail-image-container">
-                <img class="product-detail-image" src="/img/users-img/<%= user.image %>" alt="Imagen de perfil">
-            </figure>
-           
-            <div class="data-sheet-content">
-                <h4>Nombre</h4>
-                <p><%= user.first_name %></p>
-                <h4>Apellido</h4>
-                <p><%= user.last_name %> </p>
-                <h4>Categoría</h4>
-                <p><%= user.category %></p>
-            </div>
-           
-            <form action="/users/editar/<%=user.id%>" method="GET">
-                <button class= "white-button"type="submit" value="enviar">EDITAR</button>
-            </form>
+                <section class="form-container">
+                    <figure class="product-detail-image-container">
+                        <img class="product-detail-image" src="/img/users-img/<%= user.image %>" alt="Imagen de perfil">
+                    </figure>
 
-            <form action="/products" method="GET">
-                <button class= "white-button"type="submit" >COMPRAR</button>
-            </form>
-            
-            <form action="/users/logout" method="GET">
-                <button class= "white-button"type="submit" value="enviar">CERRAR SESIÓN</button>
-            </form>
-        </section>
-    </main>
+                    <div class="data-sheet-content">
+                        <h4>Nombre</h4>
+                        <p>
+                            <%= user.first_name %>
+                        </p>
+                        <h4>Apellido</h4>
+                        <p>
+                            <%= user.last_name %>
+                        </p>
+                        <h4>Categoría</h4>
+                        <p>
+                            <%= user.category %>
+                        </p>
+                    </div>
 
-    <%- include('../partials/footer')%>
+                    <form action="/users/editar/<%=user.id%>" method="GET">
+                        <button class="white-button" type="submit" value="enviar">EDITAR</button>
+                    </form>
 
-    
-</body>
+                    <form action="/products" method="GET">
+                        <button class="white-button" type="submit">COMPRAR</button>
+                    </form>
+
+                    <form action="/users/logout" method="GET">
+                        <button class="white-button" type="submit" value="enviar">CERRAR SESIÓN</button>
+                    </form>
+                </section>
+            </main>
+
+            <%- include('../partials/footer')%>
+
+
+    </body>
+
 </html>

@@ -27,6 +27,63 @@ a {
     position: relative;
 }
 
+.search-bar {
+    position: relative;
+    left: 46px;
+    background-color: black;
+    border: solid 1px rgba(255, 255, 255, 0.7);
+    width: 300px;
+    height: 40px;
+    top: 8px;
+    left: 10px
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+.search-input {
+    background-color: black;
+    border: none;
+    color: white;
+    margin-top: 10px;
+    margin-left: 8px;
+}
+
+.search-input::placeholder {
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    letter-spacing: .1em;
+}
+
+.search-input:-webkit-autofill,
+.search-input:-webkit-autofill:hover, 
+.search-input:-webkit-autofill:focus, 
+.search-input:-webkit-autofill:active{
+    -webkit-box-shadow: 0 0 0 30px black inset !important;
+}
+.search-input:-webkit-autofill{
+    -webkit-text-fill-color: white !important;
+}
+
+.search-lupe {
+    cursor: pointer;
+    appearance: none;
+    border: none;
+    height: 38px;
+    background-color: black;
+    color: white;
+    position: absolute;
+    right: 10px;
+}
+
+
 .burger {
     height: 50px;
     text-align: center;
@@ -99,7 +156,7 @@ main {
     width: 385px;
     margin-top: 35px;
 }
-img {
+,img {
     width: 100%;
 }
 
@@ -162,13 +219,14 @@ label {
     margin-top: 5px;
 }
 
-button {
+.button {
     width: 100%;
     padding: 15px 10px;
     font-weight:500;
     color: white;
     background-color: black;
     border:none
+    top: 0px;
 }
 
 .texto-error {
