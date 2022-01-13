@@ -134,13 +134,17 @@ const usersController =
            where: {
               id: req.params.id
            }
+         }) .then(function(){
+             /* este .then es necesario para dar tiempo a que termine el update en la db 
+                antes de volver a mostrar el profile con los datos actualizados*/
+            db.User.findByPk(req.params.id)
+            .then(function(userUpdated){
+              res.render("./users/profile", {user:userUpdated})
+             })  ;
+
          });
-         // vuelvo a buscar en la db para mostrar los datos actualizados (pero no funciona)
-         // Hayque cargar manualmente la pagina de nuevo para que se vea la actualizacion
-         db.User.findByPk(req.params.id)
-         .then(function(userUpdated){
-           res.render("./users/profile", {user:userUpdated})
-          })  ;
+         
+        
        },
 
       
