@@ -51,10 +51,10 @@
                                             </div>
                                 </div>
                                 <div class="campoEncuenta">
-                                    <label for="apellido">Apellido:</label>
-                                    <input class="barra" type="text" name="last_name" id="apellido"
-                                        placeholder="Apellido" <% if (locals.errors && !errors.last_name) { %> value="
-                                    <%=oldData.last_name%>" <% } %>>
+                                    <label for="last_name">Apellido:</label>
+                                    <input class="barra" type="text" name="last_name" id="last_name" placeholder="Apellido"
+                                        <% if (locals.errors && !errors.last_name) { %> value="<%=oldData.last_name%>"
+                                        <% } %>>
                                             <div class="texto-error">
                                                 <%if (locals.errors && errors.last_name) {%>
                                                     <%=errors.last_name.msg%>
@@ -87,18 +87,23 @@
                                     <label class="label">Categoría:</label>
                                     <select name="category" id="categoria" class="select">
                                         <option value="">Elegí</option>
-                                        <option value="User">User</option>
-                                        <option value="Admin">Admin</option>
+                                        <option value="User" <% if (locals.errors && !errors.category && locals.oldData.category=="User"){ %> <%= "selected" %> <% } %> >User</option>
+                                        <option value="Admin" <% if (locals.errors && !errors.category && locals.oldData.category=="Admin"){ %> <%= "selected" %> <% } %> >Admin</option>
                                     </select>
                                     <div class="texto-error">
                                         <%if (locals.errors && errors.category) {%>
                                             <%=errors.category.msg%>
-                                                <%}%>
+                                        <%}%>
                                     </div>
                                 </div>
                                 <div class="campoEncuenta">
                                     <label for="imageUser">Imagen:</label>
                                     <input class="barra" type="file" name="imageUser" id="imageUser">
+                                    <div class="texto-error">
+                                        <%if (locals.errors && errors.imageUser) {%>
+                                            <%=errors.imageUser.msg%>
+                                        <%}%>
+                                    </div>
                                 </div>
                                 <button class="button"type="submit" value="enviar">CREAR CUENTA</button>
                             </form>

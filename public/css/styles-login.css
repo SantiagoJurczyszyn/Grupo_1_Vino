@@ -9,6 +9,7 @@ body {
 }
 a {
     text-decoration: none;
+    color: black;
 }
 
 .main-header {
@@ -156,7 +157,7 @@ main {
     width: 385px;
     margin-top: 35px;
 }
-,img {
+img {
     width: 100%;
 }
 
@@ -225,7 +226,7 @@ label {
     font-weight:500;
     color: white;
     background-color: black;
-    border:none
+    border:none;
     top: 0px;
 }
 

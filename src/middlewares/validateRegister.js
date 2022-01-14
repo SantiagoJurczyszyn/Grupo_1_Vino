@@ -1,5 +1,6 @@
 const validator = require('express-validator');
 let db = require("../database/models");
+const path=require("path")
 
 const validateRegister = [
     validator.check('first_name')
@@ -9,7 +10,7 @@ const validateRegister = [
         .notEmpty().withMessage('Tenés que ingresar un apellido')
         .isStrongPassword({ minLength: 0, minLowercase: 0, minUppercase: 1, minNumbers: 0, minSymbols: 0 }).withMessage('Tenés que ingresar tu apellido comenzando con una mayúscula'),
     validator.check('email')
-        .notEmpty().withMessage('Tenés que ingresar un email').bail()
+        .notEmpty().withMessage('Tenés que ingresar un email')
         .isEmail().withMessage('Tenés que ingresar un email válido')
         // en el userController revisa si el email esta repetido
         // pero creo que es mejor hacerlo aca (si entiendo como)
@@ -22,18 +23,28 @@ const validateRegister = [
 
                 })
         }),
-
-    validator.check('category')
-        .notEmpty().withMessage('Tenés que elegir una categoría'),
-
-
     validator.check('password')
         .notEmpty().withMessage('Tenés que ingresar una contraseña').bail()
         .isStrongPassword({ minLength: 6, minLowercase: 0, minUppercase: 0, minNumbers: 0, minSymbols: 0 }).withMessage("La contraseña tiene que incluir al menos 6 caracteres").bail()
         .isStrongPassword({ minLength: 6, minLowercase: 1, minUppercase: 0, minNumbers: 0, minSymbols: 0 }).withMessage("La contraseña tiene que incluir al menos una letra minúscula").bail()
         .isStrongPassword({ minLength: 6, minLowercase: 1, minUppercase: 1, minNumbers: 0, minSymbols: 0 }).withMessage("La contraseña tiene que incluir al menos una letra mayúscula").bail()
         .isStrongPassword({ minLength: 6, minLowercase: 1, minUppercase: 1, minNumbers: 1, minSymbols: 0 }).withMessage("La contraseña tiene que incluir al menos un caracter que sea numérico").bail()
-        .isStrongPassword({ minLength: 6, minLowercase: 1, minUppercase: 1, minNumbers: 1, minSymbols: 1 }).withMessage("La contraseña tiene que incluir al menos un caracter que sea un símbolo")
+        .isStrongPassword({ minLength: 6, minLowercase: 1, minUppercase: 1, minNumbers: 1, minSymbols: 1 }).withMessage("La contraseña tiene que incluir al menos un caracter que sea un símbolo"),
+    validator.check('category')
+    .notEmpty().withMessage('Tenés que elegir una categoría'),    
+    validator.check('imageUser').custom((value,{req})=>{
+        let file=req.file
+        if (file) {
+            let fileExtension=path.extname(file.originalname)
+            let acceptedExtensions=[".jpg",".jpeg",".png",".gif"]
+            console.log(acceptedExtensions.includes(fileExtension))
+            if (file && !acceptedExtensions.includes(fileExtension)) {
+                throw new Error (`El formato de la imagen debe ser ${acceptedExtensions.join(", ")}`);
+            }   
+        }
+        
+        return true
+    })  
 ]
 
 module.exports = validateRegister
