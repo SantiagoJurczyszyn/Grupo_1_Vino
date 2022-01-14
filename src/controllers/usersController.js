@@ -125,31 +125,31 @@ const usersController =
     guardar: function (req, res) {
 
         db.User.update({
-          first_name: req.body.first_name ,
-          last_name: req.body.last_name,
-          category: req.body.category,
-          image: req.file ? req.file.filename : req.body.oldImageUser, //si el usuario no modifico la image se vuelve a grabar la anterior
-         }, 
-         {
-           where: {
-              id: req.params.id
-           }
-         }) .then(function(){
-             /* este .then es necesario para dar tiempo a que termine el update en la db 
-                antes de volver a mostrar el profile con los datos actualizados*/
-            db.User.findByPk(req.params.id)
-            .then(function(userUpdated){
-              res.render("./users/profile", {user:userUpdated})
-             })  ;
+            first_name: req.body.first_name,
+            last_name: req.body.last_name,
+            category: req.body.category,
+            image: req.file ? req.file.filename : req.body.oldImageUser, //si el usuario no modifico la image se vuelve a grabar la anterior
+        },
+            {
+                where: {
+                    id: req.params.id
+                }
+            }).then(function () {
+                /* este .then es necesario para dar tiempo a que termine el update en la db 
+                    antes de volver a mostrar el profile con los datos actualizados*/
+                db.User.findByPk(req.params.id)
+                    .then(function (userUpdated) {
+                        res.render("./users/profile", { user: userUpdated })
+                    });
 
-         });
-         
-        
-       },
+            });
 
-      
-    
-     
+
+    },
+
+
+
+
 }
 
 module.exports = usersController;
