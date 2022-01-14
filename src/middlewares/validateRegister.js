@@ -37,9 +37,8 @@ const validateRegister = [
         if (file) {
             let fileExtension=path.extname(file.originalname)
             let acceptedExtensions=[".jpg",".jpeg",".png",".gif"]
-            console.log(acceptedExtensions.includes(fileExtension))
-            if (file && !acceptedExtensions.includes(fileExtension)) {
-                throw new Error (`El formato de la imagen debe ser ${acceptedExtensions.join(", ")}`);
+            if (!acceptedExtensions.includes(fileExtension)) {
+                throw new Error ("El formato de la imagen debe ser JPG, JPEG, PNG o GIF");
             }   
         }
         

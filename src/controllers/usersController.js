@@ -28,8 +28,7 @@ const usersController =
                 } else if (!validation.isEmpty()) {//Si el usuario quiere registarse, pero no cumple con los requisitos de registración, los mismos son informados                        
                     const errors = validation.mapped()
                     const oldData = req.body
-                    const oldFile=req.file
-                    return res.render("users/register", { errors, oldData, oldFile })
+                    return res.render("users/register", { errors, oldData})
                 } else {// agregando la db
                     db.User.create({
                             first_name: req.body.first_name,
