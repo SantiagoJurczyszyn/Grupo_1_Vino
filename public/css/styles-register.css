@@ -208,7 +208,11 @@ main {
 .completar {
     font-weight: 300;
 }
-.campoEncuenta {
+
+.elementoLista{
+    padding: 5px 0px;
+}
+.campoEncuesta {
     margin-bottom: 15px;
     display: block;
 }
