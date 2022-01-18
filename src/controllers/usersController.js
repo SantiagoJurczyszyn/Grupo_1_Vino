@@ -24,7 +24,7 @@ const usersController =
             })
             .then(registeredUser=>{
                 if (registeredUser) { // Si el usuario quiere registrarse, pero ya lo hizo, se le informa que no debe registrarse nuevamente
-                    return res.render("users/register", { recordatorio: "Ya se había registrado previamente, inicia sesión con la contraseña ingresada oportunamente", oldData: req.body })
+                    return res.render("users/register", { recordatorio: "Ya existe una cuenta con este correo electrónico, iniciá sesión con la contraseña ingresada oportunamente", oldData: req.body })
                 } else if (!validation.isEmpty()) {//Si el usuario quiere registarse, pero no cumple con los requisitos de registración, los mismos son informados                        
                     const errors = validation.mapped()
                     const oldData = req.body

@@ -2,6 +2,8 @@
 window.addEventListener("load",function () {
     alert("El único campo que no es obligatorio completar es el de Imagen")
 
+    
+
     //capturo tanto el div que contendrá los campos completados incorrectamente
     const campoErrorres=document.getElementById("campoErrores")
 
@@ -71,17 +73,33 @@ window.addEventListener("load",function () {
 
 
     email.addEventListener("blur",(evento)=>{
-        const valorIngresado=email.value
-        const emailCorrecto=validator.isEmail(valorIngresado)
-        if (!emailCorrecto) {
-            const emailError=document.createElement("p")
-            emailError.textContent="Debe ingresar un email válido"
-            emailError.classList="texto-error"
-            campoEmail.appendChild(emailError)
-            email.style.border=bordeRojo
-        } else {
-            email.style.border=bordeVerde
-        }
+        fetch("http://localhost:3030/api/users")
+        .then(resultado=>{
+            return resultado.json()
+        })
+        .then(informacion=>{
+            const arrayUusuarios=informacion.data
+            const valorIngresado=email.value
+            const emailCorrecto=validator.isEmail(valorIngresado)
+            const usuarioRegistrado=arrayUusuarios.find(usuario=>usuario.email==valorIngresado)
+            if (usuarioRegistrado) {
+                const emailRegistrado=document.createElement("p")
+                emailRegistrado.textContent="Ya existe una cuenta con este correo electrónico, iniciá sesión con la contraseña ingresada oportunamente"
+                emailRegistrado.classList="texto-error"
+                campoEmail.appendChild(emailRegistrado)
+                email.style.border=bordeRojo
+            } else if (!emailCorrecto) {
+                const emailError=document.createElement("p")
+                emailError.textContent="Debe ingresar un email válido"
+                emailError.classList="texto-error"
+                campoEmail.appendChild(emailError)
+                email.style.border=bordeRojo
+            } else {
+                email.style.border=bordeVerde
+            }
+        })
+        .catch(error=>console.log(error))
+        
     })
 
     password.addEventListener("blur",(evento)=>{
@@ -116,7 +134,7 @@ window.addEventListener("load",function () {
     //cuando se quiere enviar el formulario, se corrobora el color de los campos, en caso que existan campos en rojo, el formulario no se envía, informándose el campo que debe revisarse
     form.addEventListener("submit",(evento)=>{
         let errores=[]
-        if (first_name.style.border!=bordeVerde) {errores.push("Nombre")}
+        if (first_name.style.border!=bordeVerde) {errores.push("Nombre")} 
         if (last_name.style.border!=bordeVerde) {errores.push("Apellido")}
         if (email.style.border!=bordeVerde) {errores.push("Email")}
         if (password.style.border!=bordeVerde) {errores.push("Contraseña")}
