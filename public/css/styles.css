@@ -708,6 +708,13 @@ svg:hover path {
     margin-top: 14px;
 }
 
+/* para que los errores de la edicion del producto se muestren en rojo */
+div.erroresV {
+    color: red;
+    font-size: smaller;
+    font-weight: bold;
+}
+
 /* .delete {
     background-color: #bdbdbd;
 } */
