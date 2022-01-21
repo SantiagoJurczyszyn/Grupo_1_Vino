@@ -124,7 +124,8 @@
             const valorIngresado=imageUser.value
             const extPermitidas=/(.jpg|.jpeg|.png|.gif)$/i;
             if (!extPermitidas.exec(valorIngresado)) {
-                const imageUserError=document.createElement("p")
+            const imageUserError=document.createElement("p")
+            imageUserError.setAttribute("id","imageUserError")
             imageUserError.textContent="El formato de la imagen debe ser JPG, JPEG, PNG o GIF"
             imageUserError.classList="texto-error"
             campoImageUser.appendChild(imageUserError)
