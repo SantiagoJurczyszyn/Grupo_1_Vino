@@ -3,7 +3,7 @@ window.addEventListener("load",function () {
     alert("El único campo que no es obligatorio completar es el de Imagen")
 
     
-
+    //comentarios
     //capturo tanto el div que contendrá los campos completados incorrectamente
     const campoErrorres=document.getElementById("campoErrores")
 
