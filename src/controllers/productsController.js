@@ -4,10 +4,12 @@ const productsImagePath = path.join(__dirname, "../../public/img/product-img")
 const productsFilePath = path.join(__dirname, "../database/products.json");
 const products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
 const db = require("../database/models/index.js");
+const { validationResult } = require("express-validator");
 const Op = db.Sequelize.Op;
 const { resolveSoa } = require("dns");
 
-/**estas tres lineas de arriba las copie igualver lo que tengo qe corregir en este progrma */
+
+/**estas tres lineas de arriba las copie, igual ver lo que tengo qe corregir en este progrma */
 
 
 const productsController = {
@@ -61,6 +63,7 @@ const productsController = {
 
   // CREATE - Form to create
   create: (req, res) => {
+    const validation = validationResult(req)
     if (req.method == "GET") {         // Si el metodo es GET muestra el formulario
       // se requieren las tablas secundarias necesarias para crear un producto 
       const producerPromise = db.Producer.findAll()
@@ -78,7 +81,15 @@ const productsController = {
         .catch(error => console.log(error))
 
 
-    } else {                           // Si el método es POST crea un producto
+      } else if (!validation.isEmpty()) { //Si el formulario de creación del producto tiene errores los mismos son informados
+       
+        const errors = validation.mapped()
+        const oldData = req.body
+        return res.render("products/create", { errors, oldData })
+
+
+    
+   } else  { // Si el método es POST crea un producto
 
       db.Product.create(req.body)
         .then(productoCreado => {
@@ -87,7 +98,6 @@ const productsController = {
           const arrayIdWinemakersValidos = arrayIdWinemakers.filter(winemaker_id => winemaker_id != "")//Si el producto creado no tiene un segundo enólogo, el segundo elemento del array anterior es un string vacío, por lo tanto, aplico un filtro para limpiarlo 
           productoCreado.setWinemaker(arrayIdWinemakersValidos) //al método set le pasamos el array que cumple con la condición de no tener elementos que sean un string vacío
 
-          ////funcionalidad para crear un registro en la tabla Image
           const product_id = productoCreado.id;
           db.Image.create({
             file_name: req.file.filename,

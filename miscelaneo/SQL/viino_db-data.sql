@@ -1,15 +1,7 @@
 /* Script de datos de Viino_db*/
 
 USE viino_db;
-show table
-/*ejemplo 
-INSERT INTO MyTable
-  ( Column1, Column2, Column3 )
-VALUES
-  ('John', 123, 'Lloyds Office'), 
-  ('Jane', 124, 'Lloyds Office'), 
-  ('Billy', 125, 'London Office'),
-  ('Miranda', 126, 'Bristol Office');*/
+
 
 
 --
@@ -182,7 +174,7 @@ VALUES
   (16, 'Ver Sacrum La Dama del Abrigo Rojo Nebbiolo', 'Ver Sacrum Nebbiolo', 17, 2017, 6, 9900, 'La Dama del Abrigo Rojo, un Nebbiolo, uva emblemática del Piemonte italiano, de viñedos pedregosos en Los Chacayes, es un vino floral y mineral, con la fineza y potencia típica de la variedad, pero con una mayor concentración y amplitud que aporta el clima mendocino.', 'El Cepillo, San Carlos, Mendoza', 990, 'Aluvial sobre una textura arenosa',	13.8, '18 meses en barricas usadas', 5, 'Nebbiolo 100%'),
   (17, 'Pielihueso Naranjo', 'Pielihueso Naranjo', 13, 2020, 1, 1700, 'Cofermentación en huevo de hormigón del Sauvignon Blanc y el Chardonnay. El Torrontés fermentó una parte en barrica y el resto se le agregó a medida que bajaba la fermentación de la cofermentación. Se pasó a tanque de acero inoxidable y la parte con mayor cantidad de borras se pasó a barrica, por tres meses', 'Los Chacayes, Tunuyán, Mendoza', 1300, 'Franco arenoso',	11.7, 'Cofermentación en huevo de cemento en contacto con pieles y semillas al estilo de los vinos naranjos de Georgia. Crianza en tanque y barrica usada', 1, 'Torrontés 50% · Chardonnay 30% · Sauvignon Blanc 15% · Pinot Gris 5%'),
   (18, 'Pielihueso Tinto de Los Sauces', 'Tinto de Los Sauces', 13, 2020, 6, 1100, 'Pielihueso es un proyecto de vinos joven de la familia Bartolomé, que nace en Los Chacayes, con el objetivo de hacer vinos de mínima intervención, vinos que hagan sentir y que sorprendan. Tinto de Los Sauces es un blend de Malbec y Cabernet Sauvignon de Los Sauces, Tunuyán', 'Los Sauces, Tunuyán, Mendoza', 1300, 'Franco arenoso', 14.3, 'Sin paso por barrica', 1, 'Malbec 50% · Cabernet Sauvignon 50%'),
-  (19, 'Rocamadre Rosado', 'Rocamadre Rosado', 15, 2020, 5, 1700, 'Rocamadre Rosado, viene de las parcelas más pedregosas del viñedo ubicado en la zona que llaman “Altamira nuevo”, la parte más alta, mas fría y con más calcáreo. Prensado sin moler ni despalillar, un rosado lineal, punzante, con notas cítricas y florales, y con la clásica textura de Altamira en boca', 'Paraje Altamira, San Carlos, Mendoza', 1100, 'Pedregoso, calcáreo', 11.8, 'Sin Crianza', 8, 'Pinot Noir 100%'),
+  (19, 'Rocamadre Rosado', 'Rocamadre Rosado', 15, 2020, 5, 1700, 'Rocamadre Rosado, viene de las parcelas más pedregosas del viñedo ubicado en la zona que llaman “Altamira nuevo�?, la parte más alta, mas fría y con más calcáreo. Prensado sin moler ni despalillar, un rosado lineal, punzante, con notas cítricas y florales, y con la clásica textura de Altamira en boca', 'Paraje Altamira, San Carlos, Mendoza', 1100, 'Pedregoso, calcáreo', 11.8, 'Sin Crianza', 8, 'Pinot Noir 100%'),
   (20, 'Finca Suarez Malbec', 'Malbec', 8, 2019, 6, 1600, 'De Paraje Altamira, este Malbec es un vino puro, con mínimo intervención, de una finca muy pedregosa, un porcentaje del vino pasa por barricas usadas para redondear y apaciguar los potentes taninos de Altamira sin dejar rastros. Fresco, pura fruta y textura', 'Paraje Altamira, Valle de Uco, Mendoza', 1100, 'Arenoso',	14, '30%, 12 meses en barricas usadas'	, 4, 'Malbec 100%'),
   (21, 'Vuela Rosado Pinot Gris', 'Vuela Rosado Pinot Gris', 12, 2019, 5, 950, 'Pinot Gris. El resultado es un vino de gran frescura e intensidad aromática, basado en elaboración por prensado y por sangrado de esta variedad.', 'Los Chacayes, Tupungato, Mendoza', 1100, 'Pedregoso, calcáreo', 13, 'Sin Madera', 6, 'Pinot Gris 100%'),
   (22, 'Nacha Pinot Noir Rosé', 'Nacha Pinot Noir Rosé', 5, 2020, 5, 3700, 'Nacha es un vino orgánico y biodinámico, hecho a la manera del rosé, con poco contacto con pieles, fácil de beber, con poco alcohol, con buena acidez natural, simple, un vino que se da fácilmente', 'Mainque, Alto Valle del Río Negro, Río Negro', 300, 'Arenoso', 12.5, 'Sin Crianza', 8, 'Pinot Noir 100%'),

@@ -13,40 +13,41 @@ let db = require("../database/models");
 const usersController =
 {
     register: (req, res) => {
+
         const validation = validationResult(req)
         if (req.method == "GET") {         // Si el metodo es GET muestra el formulario de registro de usuario
             return res.render("../views/users/register");
-        } else {
-            db.User.findOne({
-                where:{
-                    email:req.body.email
-                }
-            })
-            .then(registeredUser=>{
-                if (registeredUser) { // Si el usuario quiere registrarse, pero ya lo hizo, se le informa que no debe registrarse nuevamente
-                    return res.render("users/register", { recordatorio: "Ya existe una cuenta con este correo electrónico, iniciá sesión con la contraseña ingresada oportunamente", oldData: req.body })
-                } else if (!validation.isEmpty()) {//Si el usuario quiere registarse, pero no cumple con los requisitos de registración, los mismos son informados                        
-                    const errors = validation.mapped()
-                    const oldData = req.body
-                    return res.render("users/register", { errors, oldData})
-                } else {// agregando la db
-                    db.User.create({
-                            first_name: req.body.first_name,
-                            last_name: req.body.last_name,
-                            email: req.body.email,
-                            password: bcryptjs.hashSync(req.body.password, 10),
-                            category: req.body.category,
-                            image: req.file ? req.file.filename : "generic.png ", //si no viene una imagen cargo una genérica
-                            // imageUser?
-                        })
-                    .then(function () {
-                        res.redirect("/users/login"); //se redirige el usuario a la vista de login  
-                    })
-                    .catch(error=>console.log(error));        
-                }
-            })
-            .catch(error=>console.log(error))
         }
+
+        else if // Si el usuario quiere registrarse, pero ya lo hizo, se le informa que no debe registrarse nuevamente
+            (users.find(usuario => usuario.email == req.body.email)) {
+            return res.render("users/register", { recordatorio: "Ya se había registrado previamente, inicia sesión con la contraseña ingresada oportunamente", oldData: req.body })
+        }
+
+
+        else if //Si el usuario quiere registarse, pero no cumple con los requisitos de registración, los mismos son informados
+            (!validation.isEmpty()) {
+            const errors = validation.mapped()
+            const oldData = req.body
+            return res.render("users/register", { errors, oldData })
+        }
+
+        else
+
+        // agregando la db
+        {
+            db.User.create({
+                first_name: req.body.first_name,
+                last_name: req.body.last_name,
+                email: req.body.email,
+                password: bcryptjs.hashSync(req.body.password, 10),
+                category: req.body.category,
+                image: req.file ? req.file.filename : "generic.png ", //si no viene una imagen cargo una genérica
+                // imageUser?
+            });
+            res.redirect("/users/login"); //se redirige el usuario a la vista de login
+        }
+
     },
     login: (req, res) => {
         res.render("./users/login");
@@ -124,31 +125,31 @@ const usersController =
     guardar: function (req, res) {
 
         db.User.update({
-            first_name: req.body.first_name,
-            last_name: req.body.last_name,
-            category: req.body.category,
-            image: req.file ? req.file.filename : req.body.oldImageUser, //si el usuario no modifico la image se vuelve a grabar la anterior
-        },
-            {
-                where: {
-                    id: req.params.id
-                }
-            }).then(function () {
-                /* este .then es necesario para dar tiempo a que termine el update en la db 
-                    antes de volver a mostrar el profile con los datos actualizados*/
-                db.User.findByPk(req.params.id)
-                    .then(function (userUpdated) {
-                        res.render("./users/profile", { user: userUpdated })
-                    });
+          first_name: req.body.first_name ,
+          last_name: req.body.last_name,
+          category: req.body.category,
+          image: req.file ? req.file.filename : req.body.oldImageUser, //si el usuario no modifico la image se vuelve a grabar la anterior
+         }, 
+         {
+           where: {
+              id: req.params.id
+           }
+         }) .then(function(){
+             /* este .then es necesario para dar tiempo a que termine el update en la db 
+                antes de volver a mostrar el profile con los datos actualizados*/
+            db.User.findByPk(req.params.id)
+            .then(function(userUpdated){
+              res.render("./users/profile", {user:userUpdated})
+             })  ;
 
-            });
+         });
+         
+        
+       },
 
-
-    },
-
-
-
-
+      
+    
+     
 }
 
 module.exports = usersController;

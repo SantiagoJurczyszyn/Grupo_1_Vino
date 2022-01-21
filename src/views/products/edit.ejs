@@ -26,10 +26,6 @@
                     <input class="image-input"  type="file" name="imageProd" id="imageProd">
                 </label>
                 <br> <br>
-                <div class = "erroresV">
-                    <ul></ul>
-                </div>
-                <br> <br>
                 <label>
                     <h3 class="label">Tipo de vino/producto:</h3>
 					<select name="type_id" id="type_id" class="select">
@@ -128,22 +124,18 @@
                 </label>
                 <label>
                     <h3 class="label">Graduación alcohólica:</h3>
-                    <!-- saco min="0" max="16" y valido por front-->
-                    <input class="input" type="number" name="abv" id="abv" placeholder="Graduación alcohólica..." step="0.1" value="<%= product.abv %>">
+                    <input class="input" type="number" name="abv" id="abv" placeholder="Graduación alcohólica..." step="0.1" min="0" max="16" value="<%= product.abv %>">
                 </label>
                 <label>
                     <h3 class="label">Crianza:</h3>
                     <input class="input" type="text" name="breeding" id="breeding" placeholder="Crianza..." value="<%= product.breeding %>">
                 </label>
-                <button class="black-button separation" id="submitbtn" type="submit">MODIFICAR PRODUCTO</button>
+                <button class="black-button separation" type="submit">MODIFICAR PRODUCTO</button>
             </form>
         </div>
     </main>
 
     <%- include('../partials/footer')%>
-    
-    <script src="https://unpkg.com/validator@latest/validator.min.js"></script>
-    <script src="/JS/editProdValFront.js"></script> 
     
 </body>
 </html>

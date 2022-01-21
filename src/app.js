@@ -6,10 +6,7 @@ const path = require('path')
 const session = require('express-session');
 const cookieParser = require('cookie-parser');
 
-// Requerir los ruteadores para rutas específicos de APIs
-const apiUsersRouter=require("../src/routes/api/users")
-
-// Requerir los ruteadores para rutas comunes
+// Requerir los ruteadores
 const mainRouter = require ("./routes/main");
 const productsRouter = require ("./routes/products");
 const usersRouter = require ("./routes/users");
@@ -44,10 +41,7 @@ app.use(express.static(path.join(__dirname, '../public')));
 app.set ("view engine", "ejs");
 app.set('views', path.join(__dirname, '/views'));
 
-// URLs específicas de APIs
-app.use("/api/users",apiUsersRouter)
 
-// URLs comunes
 app.use ("/", mainRouter);
 app.use ("/products", productsRouter);
 app.use ("/users", usersRouter);

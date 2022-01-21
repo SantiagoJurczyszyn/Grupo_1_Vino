@@ -181,6 +181,10 @@ input::placeholder {
     left: 10px
 }
 
+.search-form {
+
+}
+
 .search-input {
     background-color: black;
     border: none;
@@ -201,7 +205,6 @@ input::placeholder {
 .search-input:-webkit-autofill:focus, 
 .search-input:-webkit-autofill:active{
     -webkit-box-shadow: 0 0 0 30px black inset !important;
-    box-shadow: 0 0 0 30px black inset !important;
 }
 .search-input:-webkit-autofill{
     -webkit-text-fill-color: white !important;
@@ -666,6 +669,17 @@ svg:hover path {
 
 /* CREATE PRODUCT */
 
+.texto-error {
+    color: red;
+    margin-top: 2px;
+    font-weight: bolder;
+}
+
+.erroresCPF {
+    color: red;
+    margin-top: 2px;
+    font-weight: bolder;
+}
 
 
 /* EDIT DELETE PRODUCT */
@@ -706,13 +720,6 @@ svg:hover path {
 
 .image-input {
     margin-top: 14px;
-}
-
-/* para que los errores de la edicion del producto se muestren en rojo */
-div.erroresV {
-    color: red;
-    font-size: smaller;
-    font-weight: bold;
 }
 
 /* .delete {

@@ -6,6 +6,7 @@ const productsController = require ("../controllers/productsController.js");
 // Middleware
 
 const upload = require('../middlewares/upload');
+const createProdValBack = require ("../middlewares/createProdValBack.js")
 
 
 /*** SHOP ***/
@@ -17,7 +18,7 @@ router.get ("/create", productsController.create);
 
 
 /*** CREATE PRODUCT ***/
-router.post ("/",upload.single("imageProd"), productsController.create);
+router.post ("/",upload.single("imageProd"),createProdValBack, productsController.create);
 /*** SEARCH PRODUCT ***/
 router.get("/search", productsController.search);
 /*** GET ONE PRODUCT (DETAIL) ***/
