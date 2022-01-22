@@ -11,16 +11,16 @@
                     <h1 class="main-title">CREAR PRODUCTO</h1>
                 </div>
                 <div class="form-container">
-                    <section class="erroresCPF">
-                        <ul>
+                    <div class="erroresCPF">
+                        <ul >
 
 
                         </ul>
 
-                    </section>
+                    </div>
                     <br>
                     <p class="form-text">Creá un nuevo producto completando el formulario:</p>
-                    <form action="/products" method="POST" enctype="multipart/form-data">
+                    <form id="create-form" action="/products" method="POST" enctype="multipart/form-data">
                         <p class="form-subtext">DATOS PRINCIPALES</p>
 
                         <div>
@@ -54,7 +54,7 @@
                                 !errors.producer_id) { %> value="<%=oldData.producer_id%>"
                                     <% } %> >
                                         <option value="">Elegí una bodega</option>
-                                        <%producers.forEach(producer=>{%>
+                                        <%producer.forEach(producer=>{%>
                                             <option value="<%= producer.id%>">
                                                 <%= producer.name%>
                                             </option>
@@ -257,11 +257,14 @@
                         <button class="black-button separation" type="submit" value="enviar">CREAR PRODUCTO</button>
                     </form>
                 </div>
+               
             </main>
 
             <%- include('../partials/footer')%>
-                <script src="/JS/createProdValFront.js"></script>
+
+    <script src="https://unpkg.com/validator@latest/validator.min.js"></script>
+    <script src="/JS/createProdValFront.js"></script>
+            
 
     </body>
-
 </html>

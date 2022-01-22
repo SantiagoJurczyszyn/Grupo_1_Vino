@@ -72,11 +72,11 @@ const productsController = {
       const winemakerPromise = db.Winemaker.findAll()
       Promise.all([producerPromise, varietalPromise, typePromise, winemakerPromise])
         .then(resultados => {
-          producers = resultados[0]
+          producer = resultados[0]
           varietals = resultados[1]
           types = resultados[2]
           winemakers = resultados[3]
-          res.render("./products/create", { producers, varietals, types, winemakers });
+          res.render("./products/create", { producer: producer, varietals, types, winemakers });
         })
         .catch(error => console.log(error))
 

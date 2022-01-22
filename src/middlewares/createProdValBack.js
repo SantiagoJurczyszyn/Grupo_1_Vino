@@ -1,12 +1,14 @@
 const validator = require('express-validator');
 let db = require("../database/models");
 
+
 const createProdValBack = [
     validator.check('name')
-    .notEmpty().withMessage('El nombre del producto no puede estar vacío'),
+    .notEmpty().withMessage('El nombre del producto no puede estar vacío')
+    .isLength({min: 5}).withMessage("El nombre debe tener al menos 5 carácteres"),
     validator.check('short_name')
     .notEmpty().withMessage('El nombre reducido del producto no puede estar vacío')
-    .isLength({minLength: 5, maxLength:30}).withMessage("El nombre reducido del producto debe tener entre 5 y 30 caracteres"),
+    .isLength({min: 5, max:30}).withMessage("El nombre reducido del producto debe tener entre 5 y 30 caracteres"),
     validator.check('producer_id')
     .notEmpty().withMessage('Tenés que elegir un productor'),
     validator.check('year')
@@ -21,9 +23,19 @@ const createProdValBack = [
     .notEmpty().withMessage('Tenés que ingresar un precio')
     .isInt().withMessage("El precio debe ser un número"),
     validator.check('imageProd')
-    .notEmpty().withMessage('El formato de la imagen debe ser JPG, JPEG, PNG o GIF'),
+    .notEmpty().withMessage('Debes subir una imagen en formato .JPG, .JPEG, .PNG o .GIF')
+    .custom( imageProd => {           
+        let isExtValid = true;
+          imageProd.forEach(image => {
+            if (!(image.mimetype == "image/png" || image.mimetype == "image/jpg" || image.mimetype == "image/jpeg" || image.mimetype == "image/gif")){
+              isExtValid = false;
+            }
+          });
+          return isExtValid;
+      }).withMessage("Solo se permite formato .gif, .png, .jpg y .jpeg"),
     validator.check('description')
-    .notEmpty().withMessage('La descripción del producto no puede estar vacía'),
+    .notEmpty().withMessage('La descripción del producto no puede estar vacía')
+    .isLength({min: 20}).withMessage("El nombre debe tener al menos 20 carácteres"),
     validator.check('location')
     .notEmpty().withMessage('La ubicación del viñedo no puede estar vacía'),
     validator.check('altitude')

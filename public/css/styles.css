@@ -676,6 +676,7 @@ svg:hover path {
     color: red;
     margin-top: 2px;
     font-weight: bolder;
+    display:block;
 }
 
 
