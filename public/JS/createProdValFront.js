@@ -1,12 +1,13 @@
 window.addEventListener("load", function () {
   // capturo los elementos del formulario a validar
-  let form = document.querySelector("form");
+  let form = document.querySelector("#create-form");
+
   // creo que no necesito validar los select (options) porque se eligen de una lista
   // y no podrian quedar vacios!
 
   // let button4 = document.querySelector('#submitbtn');
   let name = document.querySelector("#name");
-  let short_name = document.querySelector("#short_name");
+  let short_name = document.querySelector("#shortname");
   let producer = document.querySelector("#producer_id");
   let year = document.querySelector("#year"); // Año de cosecha
   let varietal = document.querySelector("#varietal_id");
@@ -20,10 +21,11 @@ window.addEventListener("load", function () {
   let winemaker = document.querySelector("#winemaker_id");
   let varietal_comp = document.querySelector("#varietal_comp");
   let soil = document.querySelector("#soil");
-  let abv = document.querySelector("#abv");
+  let abv = document.querySelector("#avb");
   let breeding = document.querySelector("#breeding");
 
   form.addEventListener("submit", function (event) {
+    event.preventDefault();
     let errores = [];
 
     // obligatorio para el sprint 7
@@ -138,18 +140,16 @@ window.addEventListener("load", function () {
 
     console.log(errores);
 
-    if (errores.length > 0) {
+   if (errores.length > 0) {
       event.preventDefault();
       let ulErrores = document.querySelector(".erroresCPF ul");
-      ulErrores.innerHTML = "";
-      for (let i = 0; i < errores.length; i++) {
-        ulErrores.innerHTML += "<li>" + errores[i] + "</li>";
-      }
-    } else {
+      errores.forEach( error => {
+          ulErrores.innerHTML += "<li>" + error + "</li>";      
+    }) 
+} else {
       alert("El producto fue creado de forma adecuada");
       form.submit();
     }
-
-    console.log("errores");
-  });
+   
+})
 });
