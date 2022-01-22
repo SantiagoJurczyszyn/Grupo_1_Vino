@@ -147,5 +147,3 @@ window.onload = function(){
     });
 
 }
-
-   
