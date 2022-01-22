@@ -152,4 +152,35 @@ Sprint 4 - 11/11/2021
       - Acuerdo de plazos y tareas.
       - Investigación de la documentación.
 
+// Sprint 7 - 12/01/2022
 
+    > Tareas completadas:
+
+      - División del sprint 7.
+      - Evacuación de dudas.
+
+    > Impedimentos encontrados: -
+
+
+    > Soluciones:
+      - Puesta en común en videollamada y acuerdo entre los integrantes respecto de la organización.
+      - Evacuación de dudas en conjunto.
+      - Revisión de entregables y asignación de responsabilidades.
+      - Plazos para cumplimentar y secuenciación de tareas.
+
+22/01/2022
+> Tareas completadas:
+
+      - Puesta en común avances del sprint 7.
+      - Evacuación de dudas.
+      - Puesta en común tareas restantes.
+      - Actualización trello.
+
+    > Impedimentos encontrados: -
+
+
+    > Soluciones:
+      - Puesta en común en videollamada y acuerdo entre los integrantes respecto de la organización.
+      - Evacuación de dudas en conjunto.
+      - Revisión de entregables y asignación de responsabilidades.
+      - Plazos para cumplimentar y secuenciación de tareas.
