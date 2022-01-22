@@ -9,6 +9,7 @@ body {
 }
 a {
     text-decoration: none;
+    color: black;
 }
 
 .main-header {
@@ -67,7 +68,7 @@ button:focus {
 .search-input:-webkit-autofill:focus, 
 .search-input:-webkit-autofill:active{
     -webkit-box-shadow: 0 0 0 30px black inset !important;
-    box-shadow: 0 0 0 30px black inset !important;
+    box-shadow:  0 0 0 30px black inset !important;
 }
 .search-input:-webkit-autofill{
     -webkit-text-fill-color: white !important;
@@ -157,7 +158,7 @@ main {
     width: 385px;
     margin-top: 35px;
 }
-.img {
+img {
     width: 100%;
 }
 

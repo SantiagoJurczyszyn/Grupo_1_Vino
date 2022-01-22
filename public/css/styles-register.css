@@ -68,7 +68,7 @@ button:focus {
 .search-input:-webkit-autofill:focus, 
 .search-input:-webkit-autofill:active{
     -webkit-box-shadow: 0 0 0 30px black inset !important;
-    box-shadow: 0 0 0 30px black inset !important;
+    box-shadow:  0 0 0 30px black inset !important;
 }
 .search-input:-webkit-autofill{
     -webkit-text-fill-color: white !important;
@@ -208,7 +208,11 @@ main {
 .completar {
     font-weight: 300;
 }
-.campoEncuenta {
+
+.elementoLista{
+    padding: 5px 0px;
+}
+.campoEncuesta {
     margin-bottom: 15px;
     display: block;
 }
