@@ -140,6 +140,7 @@ window.addEventListener("load",function () {
         } else {
             category.style.border=bordeVerde
         }
+        
     })
 
     //cuando se quiere enviar el formulario, se corrobora el color de los campos, en caso que existan campos en rojo, el formulario no se envía, informándose el campo que debe revisarse
@@ -155,8 +156,9 @@ window.addEventListener("load",function () {
         if (errores.length>0) {
             
             evento.preventDefault() 
+            campoErrorres.innerHTML=""
             const mensajeError=document.createElement("p")
-            mensajeError.textContent="Para craer exitosamente la cuenta corregí previamente estos campos:"
+            mensajeError.textContent="Para craer exitosamente la cuenta corregí previamente estos campos"
             campoErrorres.appendChild(mensajeError)
             const listaErrores=document.createElement("ul")
             listaErrores.style.listStyle="none"
