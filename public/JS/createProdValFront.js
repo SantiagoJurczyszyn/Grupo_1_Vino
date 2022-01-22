@@ -18,7 +18,7 @@ window.addEventListener("load", function () {
 
   let location = document.querySelector("#location");
   let altitude = document.querySelector("#altitude");
-  let winemaker = document.querySelector("#winemaker_id");
+  let winemaker = document.querySelector("#primary");
   let varietal_comp = document.querySelector("#varietal_comp");
   let soil = document.querySelector("#soil");
   let abv = document.querySelector("#avb");
@@ -143,6 +143,7 @@ window.addEventListener("load", function () {
    if (errores.length > 0) {
       event.preventDefault();
       let ulErrores = document.querySelector(".erroresCPF ul");
+      ulErrores.innerHTML = ""
       errores.forEach( error => {
           ulErrores.innerHTML += "<li>" + error + "</li>";      
     }) 
