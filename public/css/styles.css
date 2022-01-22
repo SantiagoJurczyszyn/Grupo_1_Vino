@@ -181,10 +181,6 @@ input::placeholder {
     left: 10px
 }
 
-.search-form {
-
-}
-
 .search-input {
     background-color: black;
     border: none;
@@ -205,6 +201,7 @@ input::placeholder {
 .search-input:-webkit-autofill:focus, 
 .search-input:-webkit-autofill:active{
     -webkit-box-shadow: 0 0 0 30px black inset !important;
+    box-shadow: 0 0 0 30px black inset !important;
 }
 .search-input:-webkit-autofill{
     -webkit-text-fill-color: white !important;
@@ -679,6 +676,7 @@ svg:hover path {
     color: red;
     margin-top: 2px;
     font-weight: bolder;
+    display:block;
 }
 
 

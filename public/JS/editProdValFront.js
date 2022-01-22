@@ -102,5 +102,3 @@ window.addEventListener('load', function(){
     });
 
 })
-
-   

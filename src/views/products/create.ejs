@@ -2,263 +2,269 @@
 <html lang="en">
 <%- include('../partials/head',{subtitle:'create product',styleSheetName:'styles'}) %>
 
-<body>
-    <%- include('../partials/header')%>
-    <main>
-        <div class="main-title-container">
-            <a value="Go back!" onclick="history.back()" class="back-arrow"><img src="/img/icon/arrow.svg" alt=""></a>
-            <h1 class="main-title">CREAR PRODUCTO</h1>
-        </div>
-        <div class="form-container">
-            <section class="erroresCPF">
-                <ul>
+    <body>
+        <%- include('../partials/header')%>
+            <main>
+                <div class="main-title-container">
+                    <a value="Go back!" onclick="history.back()" class="back-arrow"><img src="/img/icon/arrow.svg"
+                            alt=""></a>
+                    <h1 class="main-title">CREAR PRODUCTO</h1>
+                </div>
+                <div class="form-container">
+                    <div class="erroresCPF">
+                        <ul >
 
 
-                </ul>
+                        </ul>
 
-            </section>
-            <br>
-            <p class="form-text">Creá un nuevo producto completando el formulario:</p>
-            <form action="/products" method="POST" enctype="multipart/form-data">
-                <p class="form-subtext">DATOS PRINCIPALES</p>
-
-               <div>
-                    <input class="input" type="text" name="name" id="name" placeholder="Nombre completo del vino/producto, sin incluír la bodega..." 
-                <% if (locals.errors && !errors.name) { %>
-                    value = <%=oldData.name%> 
-                <% } %> >
-                    <div class="texto-error">
-                        <%if (locals.errors && errors.name) {%>
-                            <%=errors.name.msg%>
-                                <%}%>
                     </div>
+                    <br>
+                    <p class="form-text">Creá un nuevo producto completando el formulario:</p>
+                    <form id="create-form" action="/products" method="POST" enctype="multipart/form-data">
+                        <p class="form-subtext">DATOS PRINCIPALES</p>
+
+                        <div>
+                            <input class="input" type="text" name="name" id="name"
+                                placeholder="Nombre completo del vino/producto, sin incluír la bodega..." <% if
+                                (locals.errors && !errors.name) { %>
+                            value = <%=oldData.name%>
+                                <% } %> >
+                                    <div class="texto-error">
+                                        <%if (locals.errors && errors.name) {%>
+                                            <%=errors.name.msg%>
+                                                <%}%>
+                                    </div>
+                        </div>
+
+
+                        <div>
+                            <input class="input" type="text" name="short_name" id="shortname"
+                                placeholder="Acá escribí una versión reducida del nombre..." <% if (locals.errors &&
+                                !errors.short_name) { %> value=<%=oldData.short_name%>
+                                <% } %> >
+                                    <div class="texto-error">
+                                        <%if (locals.errors && errors.short_name) {%>
+                                            <%=errors.short_name.msg%>
+                                                <%}%>
+                                    </div>
+                        </div>
+
+                        <div>
+                            <select name="producer_id" id="producer_id" class="select" <% if (locals.errors &&
+                                !errors.producer_id) { %> value="<%=oldData.producer_id%>"
+                                    <% } %> >
+                                        <option value="">Elegí una bodega</option>
+                                        <%producer.forEach(producer=>{%>
+                                            <option value="<%= producer.id%>">
+                                                <%= producer.name%>
+                                            </option>
+                                            <%})%>
+                            </select>
+                            <div class="texto-error">
+                                <%if (locals.errors && errors.producer_id) {%>
+                                    <%=errors.producer_id.msg%>
+                                        <%}%>
+                            </div>
+                        </div>
+
+
+                        <div>
+                            <input class="input" type="number" name="year" id="year" placeholder="Año de la cosecha..."
+                                <% if (locals.errors && !errors.year) { %> value="<%=oldData.year%>"
+                                <% } %> >
+                                    <div class="texto-error">
+                                        <%if (locals.errors && errors.year) {%>
+                                            <%=errors.year.msg%>
+                                                <%}%>
+                                    </div>
+                        </div>
+
+                        <div>
+                            <select name="varietal_id" id="varietal_id" class="select" <% if (locals.errors &&
+                                !errors.varietal_id) { %> value="<%=oldData.varietal_id%>"
+                                    <% } %> >
+                                        <option value="">Elegí un varietal de vino / producto</option>
+                                        <%varietals.forEach(varietal=>{%>
+                                            <option value="<%= varietal.id%>">
+                                                <%= varietal.name%>
+                                            </option>
+                                            <%})%>
+                            </select>
+                            <div class="texto-error">
+                                <%if (locals.errors && errors.varietal_id) {%>
+                                    <%=errors.varietal_id.msg%>
+                                        <%}%>
+                            </div>
+                        </div>
+
+                        <div>
+                            <select name="type_id" id="type_id" class="select" <% if (locals.errors && !errors.type_id)
+                                { %> value="<%=oldData.type_id%>"
+                                    <% } %> >
+                                        <option value="">Elegí un tipo de vino / producto</option>
+                                        <%types.forEach(type=>{%>
+                                            <option value="<%= type.id%>">
+                                                <%= type.name%>
+                                            </option>
+                                            <%})%>
+                            </select>
+                            <div class="texto-error">
+                                <%if (locals.errors && errors.type_id) {%>
+                                    <%=errors.type_id.msg%>
+                                        <%}%>
+                            </div>
+                        </div>
+
+                        <div>
+                            <input class="input" type="number" name="price" id="price" placeholder="Precio..." <% if
+                                (locals.errors && !errors.price) { %> value="<%=oldData.price%>"
+                                <% } %> >
+                                    <div class="texto-error">
+                                        <%if (locals.errors && errors.price) {%>
+                                            <%=errors.price.msg%>
+                                                <%}%>
+                                    </div>
+                        </div>
+
+                        <div>
+                            <label for="imageProd" class="label">
+                                <h3 class="label">Subí una imagen del vino / producto:</h3>
+                                <input class="image-input" type="file" name="imageProd" id="imageProd" <% if
+                                    (locals.errors && !errors.imageProd) { %> value="<%=oldData.imageProd%>"
+                                    <% } %> >
+                            </label>
+
+                            <div class="texto-error">
+                                <%if (locals.errors && errors.imageProd) {%>
+                                    <%=errors.imageProd.msg%>
+                                        <%}%>
+                            </div>
+                        </div>
+
+                        <div>
+                            <textarea class="input area" name="description" id="description" cols="30" rows="10"
+                                placeholder="Descripción..." <% if (locals.errors && !errors.description) { %> value="<%=oldData.description%>"
+                                <% } %>></textarea>
+
+                            <div class="texto-error">
+                                <%if (locals.errors && errors.description) {%>
+                                    <%=errors.description.msg%>
+                                        <%}%>
+                            </div>
+                        </div>
+
+                        <p class="form-subtext">FICHA TÉCNICA</p>
+                        <div>
+                            <input class="input" type="text" name="location" id="location"
+                                placeholder="Locación del viñedo..." <% if (locals.errors && !errors.location) { %>
+                            value="<%=oldData.location%>"
+                                <% } %> >
+
+                                    <div class="texto-error">
+                                        <%if (locals.errors && errors.location) {%>
+                                            <%=errors.location.msg%>
+                                                <%}%>
+                                    </div>
+                        </div>
+
+                        <div>
+                            <input class="input" type="number" name="altitude" id="altitude" placeholder="Altitud..." <%
+                                if (locals.errors && !errors.altitude) { %> value="<%=oldData.altitude%>"
+                                <% } %> >
+                                    <div class="texto-error">
+                                        <%if (locals.errors && errors.altitude) {%>
+                                            <%=errors.altitude.msg%>
+                                                <%}%>
+                                    </div>
+                        </div>
+
+                        <div>
+                            <select name="winemaker_id" id="primary" class="select" <% if (locals.errors &&
+                                !errors.winemaker_id) { %> value="<%=oldData.winemaker_id%>"
+                                    <% } %> >
+                                        <option value="">Elegí enólogo/a</option>
+                                        <% winemakers.forEach(winemaker=> { %>
+                                            <option value="<%=winemaker.id%>">
+                                                <%=winemaker.name%>
+                                            </option>
+                                            <% }) %>
+                            </select>
+                            <div class="texto-error">
+                                <%if (locals.errors && errors.winemaker_id) {%>
+                                    <%=errors.winemaker_id.msg%>
+                                        <%}%>
+                            </div>
+                        </div>
+
+                        <select name="winemaker_id" id="winemaker_id" class="select">
+                            <option value="">En caso de corresponder, elegí otro/a enólogo/a</option>
+                            <% winemakers.forEach(winemaker=> { %>
+                                <option value="<%=winemaker.id%>">
+                                    <%=winemaker.name%>
+                                </option>
+                                <% }) %>
+                        </select>
+
+                        <div>
+                            <input class="input" type="text" name="varietal_comp" id="varietal_comp"
+                                placeholder="Composiciòn varietal..." <% if (locals.errors && !errors.varietal_comp) {
+                                %> value="<%=oldData.varietal_comp%>"
+                                <% } %> >
+                                    <div class="texto-error">
+                                        <%if (locals.errors && errors.varietal_comp) {%>
+                                            <%=errors.varietal_comp.msg%>
+                                                <%}%>
+                                    </div>
+                        </div>
+
+                        <div>
+                            <input class="input" type="text" name="soil" id="soil"
+                                placeholder="Composición del suelo..." <% if (locals.errors && !errors.soil) { %>
+                            value="<%=oldData.soil%>"
+                                <% } %> >
+                                    <div class="texto-error">
+                                        <%if (locals.errors && errors.soil) {%>
+                                            <%=errors.soil.msg%>
+                                                <%}%>
+                                    </div>
+                        </div>
+
+                        <div>
+                            <input class="input" type="number" step="0.1" name="abv" id="avb"
+                                placeholder="Graduación alcohólica..." <% if (locals.errors && !errors.abv) { %> value="
+                            <%=oldData.abv%>"
+                                <% } %> >
+                                    <div class="texto-error">
+                                        <%if (locals.errors && errors.abv) {%>
+                                            <%=errors.abv.msg%>
+                                                <%}%>
+                                    </div>
+                        </div>
+
+                        <div>
+                            <input class="input" type="text" name="breeding" id="breeding" placeholder="Crianza..." <%
+                                if (locals.errors && !errors.breeding) { %> value="<%=oldData.breeding%>"
+                                <% } %> >
+                                    <div class="texto-error">
+                                        <%if (locals.errors && errors.breeding) {%>
+                                            <%=errors.breeding.msg%>
+                                                <%}%>
+                                    </div>
+                        </div>
+
+
+
+                        <button class="black-button separation" type="submit" value="enviar">CREAR PRODUCTO</button>
+                    </form>
                 </div>
-                
-
-                <div>
-                <input class="input" type="text" name="short_name" id="shortname" placeholder="Acá escribí una versión reducida del nombre..." 
-                <% if (locals.errors && !errors.short_name) {
-                    %> value=<%=oldData.short_name%>
-               <% } %> >
-                   <div class="texto-error">
-                       <%if (locals.errors && errors.short_name) {%>
-                           <%=errors.short_name.msg%>
-                               <%}%>
-                   </div>
-                </div>
-
-                <div>
-                <select name="producer_id" id="producer_id" class="select" 
-                <% if (locals.errors && !errors.producer_id) {
-                    %> value="<%=oldData.producer_id%>"
-               <% } %> >
-                    <option value="">Elegí una bodega</option>
-                    <%producers.forEach(producer=>{%>
-                    <option value="<%= producer.id%>"><%= producer.name%></option>
-                    <%})%>
-                </select>                
-                   <div class="texto-error">
-                       <%if (locals.errors && errors.producer_id) {%>
-                           <%=errors.producer_id.msg%>
-                               <%}%>
-                   </div>
-                </div>
-
-
-                <div>
-                <input class="input" type="number" name="year" id="year" placeholder="Año de la cosecha..."
-                <% if (locals.errors && !errors.year) {
-                    %> value="<%=oldData.year%>"
-               <% } %> >
-                   <div class="texto-error">
-                       <%if (locals.errors && errors.year) {%>
-                           <%=errors.year.msg%>
-                               <%}%>
-                   </div>
-                </div>
-
-               <div>
-                <select name="varietal_id" id="varietal_id" class="select"
-                <% if (locals.errors && !errors.varietal_id) {
-                    %> value="<%=oldData.varietal_id%>"
-               <% } %> >
-                    <option value="">Elegí un varietal de vino / producto</option>
-                    <%varietals.forEach(varietal=>{%>
-                    <option value="<%= varietal.id%>"><%= varietal.name%></option>
-                    <%})%>
-                </select>               
-                   <div class="texto-error">
-                       <%if (locals.errors && errors.varietal_id) {%>
-                           <%=errors.varietal_id.msg%>
-                               <%}%>
-                   </div>
-                </div>
-
-                <div>
-				<select name="type_id" id="type_id" class="select"
-                <% if (locals.errors && !errors.type_id) {
-                    %> value="<%=oldData.type_id%>"
-               <% } %> >
-					<option value="">Elegí un tipo de vino / producto</option>
-					<%types.forEach(type=>{%>
-                        <option value="<%= type.id%>"><%= type.name%></option>
-                        <%})%>
-				</select>                
-                   <div class="texto-error">
-                       <%if (locals.errors && errors.type_id) {%>
-                           <%=errors.type_id.msg%>
-                               <%}%>
-                   </div>
-                </div>
-
-                <div>
-                <input class="input" type="number" name="price" id="price" placeholder="Precio..."
-                <% if (locals.errors && !errors.price) {
-                    %> value="<%=oldData.price%>"
-               <% } %> >
-                   <div class="texto-error">
-                       <%if (locals.errors && errors.price) {%>
-                           <%=errors.price.msg%>
-                               <%}%>
-                   </div>
-                </div>
-
-                <div>
-                <label for="imageProd" class="label">
-                    <h3 class="label">Subí una imagen del vino / producto:</h3>
-                    <input class="image-input" type="file" name="imageProd" id="imageProd"  
-                    <% if (locals.errors && !errors.imageProd) {
-                        %> value="<%=oldData.imageProd%>"
-                   <% } %> >
-                </label>
                
-                   <div class="texto-error">
-                       <%if (locals.errors && errors.imageProd) {%>
-                           <%=errors.imageProd.msg%>
-                               <%}%>
-                   </div>
-                </div>
+            </main>
 
-                <div>
-                <textarea class="input area"name="description" id="description" cols="30" rows="10" placeholder="Descripción..." 
-                <% if (locals.errors && !errors.description) {
-                    %> value="<%=oldData.description%>"
-               <% } %>></textarea></textarea>
-                
-                   <div class="texto-error">
-                       <%if (locals.errors && errors.description) {%>
-                           <%=errors.description.msg%>
-                               <%}%>
-                   </div>
-                </div>
+            <%- include('../partials/footer')%>
 
-                <p class="form-subtext">FICHA TÉCNICA</p>
-                <div>
-                <input class="input" type="text" name="location" id="location" placeholder="Locación del viñedo..."
-                <% if (locals.errors && !errors.location) {
-                    %> value="<%=oldData.location%>"
-               <% } %> >
-                
-                   <div class="texto-error">
-                       <%if (locals.errors && errors.location) {%>
-                           <%=errors.location.msg%>
-                               <%}%>
-                   </div>
-                </div>
-
-                <div>
-                <input class="input" type="number" name="altitude" id="altitude" placeholder="Altitud..."
-                <% if (locals.errors && !errors.altitude) {
-                    %> value="<%=oldData.altitude%>"
-               <% } %> >
-                   <div class="texto-error">
-                       <%if (locals.errors && errors.altitude) {%>
-                           <%=errors.altitude.msg%>
-                               <%}%>
-                   </div>
-                </div>
-
-                <div>
-                <select name="winemaker_id" id="" class="select"
-                <% if (locals.errors && !errors.winemaker_id) {
-                    %> value="<%=oldData.winemaker_id%>"
-               <% } %> >
-                    <option value="">Elegí enólogo/a</option>
-                    <% winemakers.forEach(winemaker=> { %>
-                        <option value="<%=winemaker.id%>"><%=winemaker.name%></option>
-                    <% }) %>
-                </select>               
-                   <div class="texto-error">
-                       <%if (locals.errors && errors.winemaker_id) {%>
-                           <%=errors.winemaker_id.msg%>
-                               <%}%>
-                   </div>
-                </div>
-                
-                <select name="winemaker_id" id="winemaker_id" class="select">
-                    <option value="">En caso de corresponder, elegí otro/a enólogo/a</option>
-                    <% winemakers.forEach(winemaker=> { %>
-                        <option value="<%=winemaker.id%>"><%=winemaker.name%></option>
-                    <% }) %>
-                </select>
-
-                <div>
-                <input class="input" type="text" name="varietal_comp" id="varietal_comp" placeholder="Composiciòn varietal..."
-                <% if (locals.errors && !errors.varietal_comp) {
-                    %> value="<%=oldData.varietal_comp%>"
-               <% } %> >
-                   <div class="texto-error">
-                       <%if (locals.errors && errors.varietal_comp) {%>
-                           <%=errors.varietal_comp.msg%>
-                               <%}%>
-                   </div>
-                </div>
-
-                <div>
-                <input class="input" type="text" name="soil" id="soil" placeholder="Composición del suelo..."
-                <% if (locals.errors && !errors.soil) {
-                    %> value="<%=oldData.soil%>"
-               <% } %> >
-                   <div class="texto-error">
-                       <%if (locals.errors && errors.soil) {%>
-                           <%=errors.soil.msg%>
-                               <%}%>
-                   </div>
-                </div>
-
-                <div>
-                <input class="input" type="number" step="0.1" name="abv" id="avb" placeholder="Graduación alcohólica..."
-                <% if (locals.errors && !errors.abv) {
-                    %> value="<%=oldData.abv%>"
-               <% } %> >
-                   <div class="texto-error">
-                       <%if (locals.errors && errors.abv) {%>
-                           <%=errors.abv.msg%>
-                               <%}%>
-                   </div>
-                </div>    
-
-                <div>
-                <input class="input" type="text" name="breeding" id="breeding" placeholder="Crianza..."
-                <% if (locals.errors && !errors.breeding) {
-                    %> value="<%=oldData.breeding%>"
-               <% } %> >
-                   <div class="texto-error">
-                       <%if (locals.errors && errors.breeding) {%>
-                           <%=errors.breeding.msg%>
-                               <%}%>
-                   </div>
-                </div>
-
-
-
-                <button class="black-button separation" type="submit" value="enviar">CREAR PRODUCTO</button>
-            </form>
-        </div>
-    </main>
-
-    <%- include('../partials/footer')%>
+    <script src="https://unpkg.com/validator@latest/validator.min.js"></script>
     <script src="/JS/createProdValFront.js"></script>
-   
-</body>
+            
+
+    </body>
 </html>
