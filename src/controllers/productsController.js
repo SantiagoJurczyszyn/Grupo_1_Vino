@@ -184,6 +184,12 @@ const productsController = {
 
   // UPDATE - Update new product
   update: (req, res) => {
+    let errors = validationResult(req);
+    if (!errors.isEmpty())  {
+        // asi lo hacen en los dos videos de PG
+        res.render("products/edit", { errors: errors.array(), oldData: req.body });
+       
+    } else {
     // En caso de corresponder: primero actualizo la tabla Product; segundo actualizo la tabla Image; y por último, actualizo la tabla winemaker_product  
     db.Product.update(req.body, {
       where: {
@@ -225,7 +231,7 @@ const productsController = {
         res.redirect("/products");
       })
       .catch(error => console.log(error));
-
+    }
   },
 
 

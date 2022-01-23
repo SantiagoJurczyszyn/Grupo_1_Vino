@@ -23,12 +23,23 @@
                 </figure>    
                 <label for="imageProd">
                     <h3 class="label">Elegí una nueva imagen de producto:</h3>
-                    <input class="image-input"  type="file" name="imageProd" id="imageProd">
+                    <input class="image-input"  type="file" name="imageProd" id="imageProd" >
                 </label>
                 <br> <br>
-                <div class = "erroresV">
+                <!-- Si hay, muestra los errores de la validacion del FRONTEND-->
+                <div class = "show-error">
                     <ul></ul>
                 </div>
+                <!-- Si hay, muestra los errores de la validacion del BACKEND-->
+                <div >
+                   
+                    <% if (locals && locals.errors) { 
+                        errors.forEach(error => {%> 
+                             <p class="show-error"><%= error.msg %></p>
+                        <% }) 
+                  } %> 
+                </div>
+               
                 <br> <br>
                 <label>
                     <h3 class="label">Tipo de vino/producto:</h3>
@@ -41,11 +52,16 @@
                 </label>
                 <label>
                     <h3 class="label">Nombre del vino/producto:</h3>
-                    <input class="input" type="text" name="name" id="name" placeholder="Nombre del vino/producto..." value="<%= product.name %>">
+                    <input class="input" type="text" name="name" id="name" placeholder="Nombre del vino/producto..." 
+                    value = "<%= locals.oldData && oldData.name ? oldData.name : product.name %>">
+                    <!-- value="<%= product.name %>"> -->
+                
                 </label>
                 <label>
                     <h3 class="label">Nombre reducido del vino/producto:</h3>
-                    <input class="input" type="text" name="short_name" id="short_name" placeholder="Nombre del vino/producto..." value="<%= product.short_name %>">
+                    <input class="input" type="text" name="short_name" id="short_name" placeholder="Nombre reducido del vino/producto..." 
+                    value = "<%= locals.oldData && oldData.short_name ? oldData.short_name : product.short_name %>">
+                    <!-- value="<%= product.short_name %>">-->
                 </label>
                 <label>
                     <h3 class="label">Bodega:</h3>
@@ -58,7 +74,9 @@
                 </label>
                 <label>
                     <h3 class="label">Año de la cosecha:</h3>
-                    <input class="input" type="number" name="year" id="year" placeholder="Año de la cosecha..." value="<%= product.year %>">
+                    <input class="input" type="number" name="year" id="year" placeholder="Año de la cosecha..." 
+                    value = "<%= locals.oldData && oldData.year ? oldData.year : product.year %>">
+                    <!-- value="<%= product.year %>"> --> 
                 </label>
                 <label>
                     <h3 class="label">Varietal:</h3>
@@ -71,21 +89,30 @@
                 </label>
                 <label>
                     <h3 class="label">Precio:</h3>
-                    <input class="input" type="number" name="price" id="price" placeholder="Precio..." value="<%= product.price %>">
+                    <input class="input" type="number" name="price" id="price" placeholder="Precio..." 
+                    value = "<%= locals.oldData && oldData.price ? oldData.price : product.price %>">
+                    <!-- value="<%= product.price %>"> --> 
                 </label>
                 <label>
                     <h3 class="label">Descripción:</h3>
-                    <textarea class="input area" name="description" id="description" cols="30" rows="10" placeholder="Descripción..." ><%= product.description %></textarea>
+                    <textarea class="input area" name="description" id="description" cols="30" rows="10" 
+                    placeholder="Descripción..." ><%= locals.oldData && oldData.description ? oldData.description : product.description %></textarea>
+                    <!-- placeholder="Descripción..." ><%= product.description %></textarea>-->
+                    
                 </label>
                 <p class="form-subtext">FICHA TÉCNICA</p>
                 <label>
                     <h3 class="label">Locación del viñedo:</h3>
-                    <input class="input" type="text" name="location" id="location" placeholder="Locación del viñedo..." value="<%= product.location %>">
+                    <input class="input" type="text" name="location" id="location" placeholder="Locación del viñedo..." 
+                    value = "<%= locals.oldData && oldData.location ? oldData.location : product.location %>">
+                    <!--value="<%= product.location %>">-->
                 </label>
                 <label>
                     <h3 class="label">Altitud:
                     </h3>
-                    <input class="input" type="number" name="altitude" id="altitude" placeholder="Altitud..." value="<%= product.altitude %>">
+                    <input class="input" type="number" name="altitude" id="altitude" placeholder="Altitud..." 
+                    value = "<%= locals.oldData && oldData.altitude ? oldData.altitude : product.altitude %>">
+                    <!--value="<%= product.altitude %>">-->
                 </label>
                 <label>
                     <h3 class="label">Enólogo/a:</h3>
@@ -120,20 +147,28 @@
                 <% } %>
                 <label>
                     <h3 class="label">Composición varietal:</h3>
-                    <input class="input" type="text" name="varietal_comp" id="varietal_comp" placeholder="Composiciòn varietal..." value="<%= product.varietal_comp %>">
+                    <input class="input" type="text" name="varietal_comp" id="varietal_comp" placeholder="Composiciòn varietal..." 
+                    value = "<%= locals.oldData && oldData.varietal_comp ? oldData.varietal_comp : product.varietal_comp %>">
+                    <!-- value="<%= product.varietal_comp %>">-->
                 </label>
                 <label>
                     <h3 class="label">Composición del suelo:</h3>
-                    <input class="input" type="text" name="soil" id="soil" placeholder="Composición del suelo..." value="<%= product.soil %>">
+                    <input class="input" type="text" name="soil" id="soil" placeholder="Composición del suelo..." 
+                    value = "<%= locals.oldData && oldData.soil ? oldData.soil : product.soil %>">
+                    <!-- value="<%= product.soil %>">-->
                 </label>
                 <label>
                     <h3 class="label">Graduación alcohólica:</h3>
                     <!-- saco min="0" max="16" y valido por front-->
-                    <input class="input" type="number" name="abv" id="abv" placeholder="Graduación alcohólica..." step="0.1" value="<%= product.abv %>">
+                    <input class="input" type="number" name="abv" id="abv" placeholder="Graduación alcohólica..." step="0.1" 
+                    value = "<%= locals.oldData && oldData.abv ? oldData.abv : product.abv %>">
+                    <!-- value="<%= product.abv %>"> -->
                 </label>
                 <label>
                     <h3 class="label">Crianza:</h3>
-                    <input class="input" type="text" name="breeding" id="breeding" placeholder="Crianza..." value="<%= product.breeding %>">
+                    <input class="input" type="text" name="breeding" id="breeding" placeholder="Crianza..." 
+                    value = "<%= locals.oldData && oldData.breeding ? oldData.breeding : product.breeding %>">
+                    <!-- value="<%= product.breeding %>"> -->
                 </label>
                 <button class="black-button separation" id="submitbtn" type="submit">MODIFICAR PRODUCTO</button>
             </form>
@@ -141,9 +176,9 @@
     </main>
 
     <%- include('../partials/footer')%>
-    
+   <!-- comenté estas dos lineas para probar la validacion por backend --> 
     <script src="https://unpkg.com/validator@latest/validator.min.js"></script>
-    <script src="/JS/editProdValFront.js"></script> 
+    <script src="/JS/editProdValFront.js"></script>
     
 </body>
 </html>

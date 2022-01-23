@@ -720,6 +720,12 @@ svg:hover path {
     margin-top: 14px;
 }
 
+.show-error {
+    color: red;
+    font-weight: bolder;
+    font-size: smaller;
+}
+
 /* .delete {
     background-color: #bdbdbd;
 } */

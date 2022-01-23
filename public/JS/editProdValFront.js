@@ -37,6 +37,7 @@ window.addEventListener('load', function(){
             errores.push('La descripción del producto debe tener 20 caracteres o más');
         }
 
+        // solo valida si cambio la imagen
         if(imageProd.value != ""){
             // uso la validacion de la extension que hizo Facu
             let extPermitidas=/(.jpg|.jpeg|.png|.gif)$/i;
@@ -46,6 +47,8 @@ window.addEventListener('load', function(){
         }
 
         // ademas validamos..
+        // no valido los campos select porque creo que no podrian quedar vacios
+        // (al menos eso espero)
 
         if(short_name.value == ""){
             errores.push('El nombre reducido del producto no puede estar vacío');
@@ -88,7 +91,7 @@ window.addEventListener('load', function(){
     
         if (errores.length > 0) {
             event.preventDefault(); 
-            let ulErrores = document.querySelector('div.erroresV ul');
+            let ulErrores = document.querySelector('div.show-error ul');
             ulErrores.innerHTML = ''
 
             for(let i = 0; i<errores.length; i++){
@@ -102,3 +105,5 @@ window.addEventListener('load', function(){
     });
 
 })
+
+   

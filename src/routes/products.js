@@ -7,7 +7,7 @@ const productsController = require ("../controllers/productsController.js");
 
 const upload = require('../middlewares/upload');
 const createProdValBack = require ("../middlewares/createProdValBack.js")
-
+const editProdValBack = require ("../middlewares/editProdValBack.js")
 
 /*** SHOP ***/
 
@@ -28,7 +28,7 @@ router.get('/:id', productsController.detail);
 router.get('/:id/edit', productsController.edit);
 
 /*** UPDATE PRODUCT ***/
-router.put('/:id', upload.single('imageProd'), productsController.update);
+router.put('/:id', upload.single('imageProd'), editProdValBack,productsController.update);
 
 /*** DELETE PRODUCT ***/
 router.delete ('/:id', productsController.destroy);
