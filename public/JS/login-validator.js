@@ -45,6 +45,8 @@ const validarCampo = (expresion, input, campo) => {
 	}
 }
 
+// Creamos una función para validar el mail en la db
+
 const validarMail = (input, campo) => {
 	fetch("http://localhost:3030/api/users")
             .then(resultado => {
