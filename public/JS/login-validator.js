@@ -7,7 +7,7 @@ const inputs = document.querySelectorAll('#formulario input');
 
 const expresiones = {
 	email: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/, // Correo válido.
-	password: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{6,}$/ // Mínimo ocho caracteres, al menos una letra mayúscula, una letra minúscula y un número.
+	password: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{6,}$/ // Mínimo seis caracteres, al menos una letra mayúscula, una letra minúscula y un número.
 }
 
 // Guardamos el estado de los campos
