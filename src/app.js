@@ -8,6 +8,7 @@ const cookieParser = require('cookie-parser');
 
 // Requerir los ruteadores para rutas específicos de APIs
 const apiUsersRouter=require("../src/routes/api/users")
+const apiProductsRouter=require("../src/routes/api/products")
 
 // Requerir los ruteadores para rutas comunes
 const mainRouter = require ("./routes/main");
@@ -46,6 +47,7 @@ app.set('views', path.join(__dirname, '/views'));
 
 // URLs específicas de APIs
 app.use("/api/users",apiUsersRouter)
+app.use("/api/products",apiProductsRouter)
 
 // URLs comunes
 app.use ("/", mainRouter);
