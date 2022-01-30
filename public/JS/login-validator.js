@@ -23,7 +23,7 @@ const validarFormulario = (e) => {
 	switch (e.target.name) {
 		case "email":
 			validarCampo(expresiones.email, e.target, 'email');
-			validarMail(e.target, "email")
+			validarMail(e.target.value, "email")
 		break;
 		case "password":
 			validarCampo(expresiones.password, e.target, 'password');
@@ -31,7 +31,7 @@ const validarFormulario = (e) => {
 	}
 }
 
-// Creamos una función para validar cada campo indivisual
+// Creamos una función para validar cada campo individual
 
 const validarCampo = (expresion, input, campo) => {
 	if(expresion.test(input.value)){
@@ -49,11 +49,11 @@ const validarCampo = (expresion, input, campo) => {
 
 const validarMail = (input, campo) => {
 	fetch("http://localhost:3030/api/users")
-            .then(resultado => {
-                return resultado.json()
+            .then(result => {
+                return result.json()
             })
-			.then(informacion => {
-				const arrayUsuarios = informacion.data;
+			.then(data => {
+				const arrayUsuarios = data.data;
 				const usuarioRegistrado = arrayUsuarios.find(usuario => usuario.email == input);
 				if(usuarioRegistrado){
 					document.getElementById(`${campo}`).style.border = "2px solid limegreen";
@@ -65,6 +65,7 @@ const validarMail = (input, campo) => {
 					campos[campo] = false; // Cambiamos el estado del campo
 				}
 			})
+			.catch(error => console.log(error))
 }
 
 // Recorremos cada input para aplicar los eventos que validarán los campos
