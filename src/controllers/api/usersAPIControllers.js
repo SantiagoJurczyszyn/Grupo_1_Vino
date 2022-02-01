@@ -3,19 +3,35 @@ const db = require("../../database/models/index.js")
 const usersAPIControllers={
 
     list:(req,res)=>{
-        db.User.findAll()
+        db.User.findAll({
+            attributes: ['id','first_name','last_name','email']
+          })
         .then(users=>{
+            for (let i=0;i<users.length;i++) {
+                users[i].dataValues.detail=`http://localhost:3030/api/users/${users[i].id}`
+            }
+            
             let respuesta={
                 meta:{
                     status:200,
-                    total:users.length,
+                    count:users.length,
                     url:"api/users"
                 },
                 data:users
             }
             res.json(respuesta)
         })
-        .catch(error=>{console.log(error)})
+        .catch(error=>{
+            console.log(error)
+            let respuesta={
+                meta:{
+                    status:500,
+                    statusMsg : "Error inesperado... fijate en la terminal, debería haber un mensaje de error más claro "
+                },
+                data:[]
+            }
+            res.status(500).json(respuesta)
+        })
         
         
     },
@@ -34,7 +50,8 @@ const usersAPIControllers={
         .then(user => {
         
         let image = user.image;
-
+        console.log("usuario") 
+        console.log(user)   
         if(user){ 
     
         let response = {
