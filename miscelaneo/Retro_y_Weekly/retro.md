@@ -288,4 +288,72 @@ Sprint 6 -
           
           > Pactar reuniones y cambiar luego el horario con poco margen.
 
+Sprint 7 -
+
+        1. Comenzar a hacer.      
+            
+
+        2. Hacer más.
+
+            > Consultar a profesores y documentación online para resolver problemas de código.
+
+            > Seguimiento constanste de tareas, control cruzado.     
+
+            > Acordar fechas y reuniones   
+
+            
+
+        3. Continuar haciendo.
+
+          > Intercambio ACTIVO entre participantes con margen de tiempo favorece un avance ordenado y óptimo del proyecto.
+
+            > Comunicar nuestros pareceres en tiempo y forma en un marco de respeto y empatía.
+
+            > Evacuar las dudas mutuamente.
+
+             > Analizar el sprint siguiente para hacer las reuniones más dinámicas si es que sobra tiempo.
+
+            > Actualizar trablero con tareas nuevas y encargados ordenadas por prioridad.
+
+            > Definir plazos de entrega
+
+            > Coordinar reuniones con anticipación.
+
+            > Coordinar los push de commits para no pisarnos.
+
+            > Puesta en común antes de la entrega.
+
+            > Comunicar nuestros pareceres en tiempo y forma en un marco de respeto y empatía.
+
+            > Márgenes de tiempo para correcciones.
+
+            > Seguir trabajando con el mismo entusiasmo para cumplir con las consignas de cada sprint.
+
+            > Proactividad de cada integrante y generosidad en la realización de las tareas.
+
+            > División de tareas de acuerdo al trabajo actual.
+
+            > Reuniones periódicas.
+
+            > Mantener actualizados los conocimientos.
+
+            > Respetar el trabajo de cada uno en su individualidad y dar críticar constructivas.
+
+        4. Hacer menos.
+
+           
+
+            > Estimar mejor los tiempos de las tareas.
+
+            > Repartir tareas desiguales en carga de trabajo.
+
+
+        5. Dejar de hacer.
+
+        > Correcciones el mismo día de la entrega, solo una puesta en común final.
           
+        > Pactar reuniones y cambiar luego el horario con poco margen.  
+
+        > Trabajar con márgenes de tiempo reducidos.
+
+        > Dejar pasar mucho tiempo entre reunión y reunión.    

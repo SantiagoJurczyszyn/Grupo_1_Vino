@@ -184,3 +184,20 @@ Sprint 4 - 11/11/2021
       - Evacuación de dudas en conjunto.
       - Revisión de entregables y asignación de responsabilidades.
       - Plazos para cumplimentar y secuenciación de tareas.
+
+31/01/2022
+> Tareas completadas:
+
+      - Distribución del sprint 8.
+      - Evacuación de dudas.
+      - Puesta en común tareas restantes.
+      - Actualización trello.
+
+    > Impedimentos encontrados: -
+
+
+    > Soluciones:
+      - Puesta en común en videollamada y acuerdo entre los integrantes respecto de la organización.
+      - Evacuación de dudas en conjunto.
+      - Revisión de entregables y asignación de responsabilidades.
+      - Plazos para cumplimentar y secuenciación de tareas.
