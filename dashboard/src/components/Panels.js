@@ -93,21 +93,21 @@ class Panels extends Component{
                 {
                   color:   "success",
                   titulo: "Varietales",
-                  valor: 8,
+                  valor: products.data.varietalsTotal,
                   icono: "fas fa-window-restore",
                 },   
                     
                 {
                   color:   "primary",
                   titulo: "Enólogos confían en nosotros",
-                  valor: 25,
+                  valor: products.data.winemakersTotal,
                   icono: "fas fa-wine-glass",
                 },
                     
                 {
                   color: "success",
                   titulo: "Productores nos acompañan",
-                  valor: 20,
+                  valor: products.data.producersTotal,
                   icono: "fas fa-smile-wink",
                 }
               ]

@@ -34,6 +34,9 @@ module.exports = {
             data: {
                 count: 0,
                 countByType: {},
+                varietalsTotal: 0,
+                winemakersTotal: 0,
+                producersTotal: 0,
                 productsList: [],
 
             }
@@ -43,12 +46,20 @@ module.exports = {
             DB.Product.findAndCountAll({ include: ['product_type', 'Winemaker'] }),
             DB.Type.findAll(),
             DB.Winemaker.findAll(),
+            // aca va el nombre de Modelo (uf!)
+            DB.Varietal.count(),
+            DB.Winemaker.count(),
+            DB.Producer.count(),
+            
         ];
         Promise.all(promises)
             .then(result => {
                 let products = result[0];
                 let types = result[1];
                 let winemakers = result[2];
+                let varietalsTot = result[3];
+                let winemakersTot = result[4];
+                let producersTot = result[5];
 
                 types.forEach(type => {
                     response.data.countByType[type.name] = 0;
@@ -59,6 +70,10 @@ module.exports = {
                 // tendria que usar products.count que devuelve findAndCountAll - pero cuenta 42
                 response.data.count = products.rows.length;
 
+                // los que agregamos para completar los paneles de totales
+                response.data.varietalsTotal = varietalsTot;
+                response.data.winemakersTotal = winemakersTot;
+                response.data.producersTotal = producersTot;
 
                 response.data.productsList = products.rows.map(row => {
                     response.data.countByType[row.product_type.name]++;
