@@ -4,8 +4,8 @@ function TypesList(props){
     return(
         <React.Fragment>
             <tr >
-				<td >{props.name}</td>
-                <td >{props.amount}</td>
+				<td >{props[0]}</td>
+                <td >{props[1]}</td>
 			</tr>
         </React.Fragment>
     )

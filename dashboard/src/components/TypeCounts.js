@@ -1,9 +1,10 @@
-import React from 'react';
+//import React from 'react';
+import React, {Component} from 'react';
 import TypesList from './TypesList';
 
-function TypeCounts(){
+//function TypeCounts(){
 
-let productTypes = [
+/*let productTypes = [
 		{name: "Blanco",
 		amount: 5},
 		{name:"Champagne",
@@ -19,12 +20,36 @@ let productTypes = [
 		{name:"Cantidad Totales",
 		amount: 6},
 		
-	]
+	]*/
 	
+	class TypeCounts extends Component{
+		constructor(){
+			super();
+			this.state = {
+				ourTypes : [] //estado inicial
+			}
+	
+		}
+	
+		componentDidMount(){
+			fetch('/api/products')
+			.then(response => {
+				return response.json()
+			})
+			.then(types =>{
+				/* Object.entries(types.data.countByType) convierte objeto literal en array 
+				   asi puedo leer las keys del objeto literal donde vienen 
+				   los nombres de los types y tambien para usar map*/
+				this.setState({
+					ourTypes: Object.entries(types.data.countByType)
+				})
+			})
+		}
 
-    return(
-        <React.Fragment>
-				    {/*<!-- PRODUCTS LIST -->*/}
+		render(){
+			return (
+				<React.Fragment>
+					{/*<!-- types LIST -->*/}
 					<h1 className="h3 mb-2 text-gray-800">Nuestras categorías</h1>
 					
 					{/*<!-- DataTales Example -->*/}
@@ -39,9 +64,10 @@ let productTypes = [
 										</tr>
 									</thead>									
 									<tbody>	
-								{								                                 
-									productTypes.map((product,index) => {
-								  return <TypesList  {...product}  key={index} /> 
+								{/*<!-- uso slice porque no quiero mostrar el ultimo elemento: totalTypes -->*/}
+								{			
+								  this.state.ourTypes.slice(0, this.state.ourTypes.length-1).map((type,index) => {
+								  return <TypesList  {...type}  key={type + index} /> 
 								})
 								}	                                  
                                 											
@@ -49,9 +75,13 @@ let productTypes = [
 								</table>
 							</div>
 						</div>
-					</div>            
-        </React.Fragment>
-    )
+					</div>  
+			   
+			</React.Fragment>
+			)
+		}
+
+    
 	
 }
 export default TypeCounts;
