@@ -43,7 +43,7 @@
                     </form>
                 </section>
 
-                <% if (locals.userIsLogged && (locals.userLoggedIn.category == 'Admin')) { %>
+                <% if (locals.userIsLogged && (locals.userLoggedIn.category == 'admin')) { %>
                 <section class="edit-delete-buttons">
                     <form action="/products/<%= product.id %>/?_method=DELETE" method="POST">
                         <button type="submit" class="grey-button delete">ELIMINAR PRODUCTO</button>
