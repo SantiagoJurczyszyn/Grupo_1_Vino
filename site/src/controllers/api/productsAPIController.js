@@ -107,7 +107,7 @@ module.exports = {
         try{
             const product = await DB.Product.findByPk( id,
                 {
-                    include : ['product_type', 'Winemaker', "product_image"]
+                    include : ['product_type', 'Winemaker', "product_image", "product_producer"]
                 });
                 return res.json({
                     meta: {
@@ -119,6 +119,7 @@ module.exports = {
                         
                         id: product.id,
                         name: product.name,
+                        producer: product.product_producer.name,
                         year: product.year,
                         price: product.price,
                         description: product.description,

@@ -118,41 +118,19 @@ const productsController = {
 
   // DETAIL - Detail from one product
   detail: (req, res) => {
-    // Se recibe un objeto tipo producto
-    const requiredId = req.params.id;
-    db.Product.findByPk(requiredId)
-      .then((product) => {
 
-        // Buscar el producto en el array
-        const requiredProduct = products.find((prod) => {
-          // guarda como resultado el primer elemento que coincida con el param
-          return prod.id == requiredId;
-        });
-        // Filtrar los productos para los carrousel
-        // Para el carrousel de la misma bodega             // Retorna los productos de el mismo productor
-        const productsSameProducer = products.filter((prod) => { return prod.producer === requiredProduct.producer });
-        // Creamos funcion para eliminar el producto actual del array
-        function removeProduct(arr, prod) {
-          var i = arr.indexOf(prod);
-          if (i !== -1) {
-            arr.splice(i, 1)
-          }
-        };
-        // Ejecutamos la funcion para sugerir todos los productos de la bodega menos el actual
-        removeProduct(productsSameProducer, requiredProduct);
+    let id = Number(req.params.id);
+    db.Product.findByPk(id,{ include: ['product_type', 'Winemaker', "product_image", "product_producer"]} )
+        .then((product)=>{
+            console.log({product})
 
-        // Para el segundo carrousel
-        const productsRecomend = products.slice(11, 19);
 
-        res.render("./products/productDetail", {
-          product: requiredProduct, productsSameProducer, productsRecomend
-        });
-      })
-      .catch((error) => {
-        console.log(error);
-        res.send(500);
-      });
-  },
+            res.render('products/productDetail', {product}); 
+        })
+        .catch(error=>{
+            res.status(404).send('Página no encontrada - Vista error 404 pendiente de construir')
+        })
+      },
 
   /*** MUESTRA EL FORMULARIO DE EDICION ***/
 

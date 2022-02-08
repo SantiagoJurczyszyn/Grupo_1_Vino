@@ -20,11 +20,11 @@
 
         <section class="product-detail">
             <figure class="product-detail-image-container">
-                <img class="product-detail-image" src="/img/product-img/<%= product.image %>" alt="<%= product.name %>">
+                <img class="product-detail-image" src="/img/product-img/<%= product.product_image.map(i => i.file_name) %>" alt="<%= product.name %>">
             </figure>
             <article class= "product-info">
                 <section class="product-id">
-                    <h3 class="detail-producer"><%= product.producer %></h3>
+                    <h3 class="detail-producer"><%= product.product_producer.name %></h3>
                     <div class="line"></div>
                     <h2 class="product-detail-title"><%= product.name + ' ' + + product.year %></h2>
                     <p class="product-detail-text"><%= product.description %></p>
@@ -62,48 +62,18 @@
                 <h4>Altura</h4>
                 <p><%= product.altitude %> msnm</p>
                 <h4>Enólogos</h4>
-                <p><%= product.winemakers %></p>
+                <p><%= product.Winemaker.map(w => w.name) %></p>
                 <h4>Composición varietal</h4>
-                <p><%= product.varietalComp %></p>
+                <p><%= product.varietal_comp %></p>
                 <h4>Composición del suelo</h4>
                 <p><%= product.soil %></p>
                 <h4>Graduación alcoholica</h4>
-                <p><%= product.avb %>º</p>
+                <p><%= product.abv %>º</p>
                 <h4>Crianza</h4>
                 <p><%= product.breeding %></p>
             </div>
         </section>
 
-
-        <% if(productsSameProducer.length != 0  ) { %>
-            <section class="carrousel-recomendation">
-                <h2 class="carrousel-title">MÁS DE <%= product.producer %>...</h2>
-                <div class="carrousel">
-                    <% productsSameProducer.forEach((prod) => { %> 
-                        <article class="carrousel-product">
-                            <a href="/products/<%= prod.id %>"><img class="product-image" src="/img/product-img/<%= prod.image %>" alt="<%= prod.name %>"></a>
-                            <h3 class="product-title"><%= prod.shortname + ' ' + prod.year %></h2>
-                            <p class="price">$ <%= prod.price %></p>
-                            <button class="add-to-cart">AGREGAR</button>
-                        </article>
-                    <% }) %>
-                </div>
-            </section>
-        <% } %>
-
-        <section class="carrousel-recomendation">
-            <h2 class="carrousel-title">TAMBIÉN TE RECOMENDAMOS...</h2>
-            <div class="carrousel">
-                <% productsRecomend.forEach((prod) => { %> 
-                    <article class="carrousel-product">
-                        <a href="/products/<%= prod.id %>"><img class="product-image" src="/img/product-img/<%= prod.image %>" alt="<%= prod.name %>"></a>
-                        <h3 class="product-title"><%= prod.shortname + ' ' + prod.year %></h2>
-                        <p class="price">$ <%= prod.price %></p>
-                        <button class="add-to-cart">AGREGAR</button>
-                    </article>
-                <% }) %>
-            </div>
-        </section>
 
 
         <section class="newsletter">
