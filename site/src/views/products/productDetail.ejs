@@ -43,6 +43,7 @@
                     </form>
                 </section>
 
+                <% if (locals.userIsLogged && (locals.userLoggedIn.category == 'admin')) { %>
                 <section class="edit-delete-buttons">
                     <form action="/products/<%= product.id %>/?_method=DELETE" method="POST">
                         <button type="submit" class="grey-button delete">ELIMINAR PRODUCTO</button>
@@ -50,7 +51,8 @@
                     <form action="/products/<%= product.id %>/edit">
                         <button  class="grey-button">EDITAR PRODUCTO</a></button>
                     </form>
-                </div>
+                </section>
+                <% } %>
             </article>
         </section>
 

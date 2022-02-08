@@ -1,4 +1,3 @@
-const User = require('./User.js')
 const db=require("../database/models/index")
 
 function userLoggedAppMiddleware(req, res, next) {
