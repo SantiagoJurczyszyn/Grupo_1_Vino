@@ -1,9 +1,12 @@
 const path = require("path");
 const fs = require("fs");
 const usersImagePath = path.join(__dirname, "../../public/img/users-img");
+const usersFilePath = path.join(__dirname, "../database/users.json");
+const users = JSON.parse(fs.readFileSync(usersFilePath, "utf-8"));
 const { validationResult } = require("express-validator");
 const bcryptjs = require('bcryptjs')
 // lo hice como explican en el video de login completo - usan este model 
+const User = require("../middlewares/User.js");
 let db = require("../database/models");
 
 

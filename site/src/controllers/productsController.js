@@ -1,6 +1,8 @@
 const path = require("path");
 const fs = require("fs");
 const productsImagePath = path.join(__dirname, "../../public/img/product-img")
+const productsFilePath = path.join(__dirname, "../database/products.json");
+const products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
 const db = require("../database/models/index.js");
 const { validationResult } = require("express-validator");
 const Op = db.Sequelize.Op;
@@ -120,11 +122,13 @@ const productsController = {
     let id = Number(req.params.id);
     db.Product.findByPk(id,{ include: ['product_type', 'Winemaker', "product_image", "product_producer"]} )
         .then((product)=>{
+            console.log({product})
+
+
             res.render('products/productDetail', {product}); 
         })
         .catch(error=>{
-          console.log(error)
-          res.status(404).send('Página no encontrada - Vista error 404 pendiente de construir')
+            res.status(404).send('Página no encontrada - Vista error 404 pendiente de construir')
         })
       },
 
@@ -252,6 +256,14 @@ const productsController = {
 
       })
       .catch(error => console.log(error))
+
+
+
+
+
+
+
+
   },
 };
 
