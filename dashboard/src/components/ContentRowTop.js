@@ -44,13 +44,13 @@ function ContentRowTop(){
 				{/*<!-- Content Row Top -->*/}
 				<div className="container-fluid">					
 				
-					<Panels />
+					<Panels key={0} />
 					
 	
 					{/*<!-- Content Row Last Movie in Data Base -->*/}
 					<div className="row">
 					                       
-                     <LastUser {...users} key={users} />                    
+                     <LastUser {...users} key={0} />                    
                     				
 					{/*<!-- Genres in DB -->*/}
 					<LastProduct {...products} key={products}  />

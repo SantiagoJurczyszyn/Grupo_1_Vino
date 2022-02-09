@@ -9,7 +9,8 @@ return(
     <div className="card-body">
         <div className="text-center">  
         <h1>¡Hola!</h1>
-        <h2> {props.first_name}</h2>          
+        <h2> {props.first_name}</h2> 
+        <h2> {props.last_name}</h2>          
         </div>
         <p>Gracias por unirte a nuestra comunidad, esperamos que puedas acompañarnos en esta maravillosa experiencia</p>
     </div>
