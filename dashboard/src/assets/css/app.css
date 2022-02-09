@@ -1295,8 +1295,9 @@ pre code {
     }
 
     .col-lg-6 {
-        flex: 0 0 50%;
-        max-width: 50%
+        flex: 0 0 30%;
+        max-width: 100%;
+        text-align: center;
     }
 
     .col-lg-7 {
